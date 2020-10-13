@@ -14,7 +14,6 @@ namespace PowerWebsite.Controllers
 {
     public class ExportExcelController : Controller
     {
-        // GET: ExportExcel
         public ActionResult Index()
         {
             return View();
