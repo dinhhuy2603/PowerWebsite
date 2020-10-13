@@ -1,0 +1,563 @@
+﻿@{
+    ViewBag.Title = "Chart LP-SNACK-2 Report";
+}
+@section Styles
+{
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/Content//css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <link href="~/Content/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+    <link href="~/Content/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+    <link href="~/Content/css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+
+    <!-- icons -->
+    <link href="~/Content/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+}
+@{
+    var fromDate = (DateTime)ViewBag.fromDate;
+    var toDate = (DateTime)ViewBag.toDate;
+}
+<style>
+    /* Popup Export */
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    label {
+        margin-bottom: 0;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .modal-dialog {
+        min-width: 500px;
+    }
+    .apex-charts {
+        height: 380px;
+    }
+    .apex-charts {
+        height: 380px;
+    }
+
+    .highcharts-tooltip span {
+        width: 160px !important;
+        overflow: auto;
+        white-space: normal !important;
+        font-size: 12px;
+    }
+
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+</style>
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active"><a href="javascript: void(0);">Charts</a></li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Charts LP-SNACK-2 Report</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-xl-12 col-md-12">
+                    <!-- Portlet card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="header-title mb-0"><b>KW</b></h4>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2">
+                                        <button class="btn btn-primary" type="button" id="btn_export_kw">
+                                            Export Excel   <i class="fas fa-file-excel"></i>
+                                        </button>
+                                    </div>
+                                    <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close font-20"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="maximize_height pt-3 show highcharts-figure" dir="ltr">
+                                <div id="chart1" class="apex-charts" data-colors="#f672a7"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="header-title mb-0"><b>Kwh</b></h4>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2">
+                                        <select class="form-control" id="compare-chart">
+                                            <option value="today">Today</option>
+                                            <option value="curr_week">This week</option>
+                                            <option value="curr_month">This Month</option>
+                                            <option value="curr_year">This Year</option>
+                                            <option value="yesterday">Yesterday</option>
+                                            <option value="last_week">Last week</option>
+                                            <option value="last_month">Last month</option>
+                                            <option value="last_year">Last Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="mr-2">
+                                        <button class="btn btn-primary" type="button" id="btn_export">
+                                            Export Excel   <i class="fas fa-file-excel"></i>
+                                        </button>
+                                    </div>
+                                    <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close font-20"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="maximize_height collapse pt-3 show highcharts-figure" dir="ltr">
+                                <div id="chart2" class="apex-charts" data-colors="#CED4DC,#6658dd"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+            </div>
+            <!-- end row -->
+
+        </div> <!-- container -->
+    </div> <!-- content -->
+</div>
+
+<div class="modal fade modal-export" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myCenterModalLabel">Export Excel</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body bg-card">
+                <div class="main-container">
+                    <div class="container">
+                        <div class="container_box">
+                            @using (Html.BeginForm("ExportLPSNACK2Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            {
+                                <label>
+                                    From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
+                                </label>
+                                <label class="ml-2">
+                                    To: @Html.TextBox("toDate", string.Format("{0:dd/MM/yyyy}", toDate), new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "toDate", autocomplete = "off" })
+                                </label>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-file-download"></i>
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="~/Content/js/vendor.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.src.js"></script>
+<!-- App js-->
+<script src="~/Content/js/app.min.js"></script>
+<script type="text/javascript">
+    var chart_2;
+    var curr_year = new Date().getFullYear();
+    var curr_month = new Date().getMonth() + 1;
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    $(document).ready(function () {
+        //Perform Ajax request.
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+        showChartKwhCompare('today');
+    });
+
+    $('#btn_export').click(function (event) {
+        event.preventDefault();
+        $('#centermodal').modal('show');
+    });
+    function getChartKenh3Data() {
+        var chartData = [];
+        $.ajax({
+            url: '/Report/GetReportDataKenh3/',
+            data: {
+                year: curr_year,
+                month: curr_month
+            },
+            type: 'get',
+            async: false,
+            success: function (data) {
+                data.forEach(function (item) {
+                    chartData.push([
+                        parseInt(item.Thoigian.replace(/\/Date\((-?\d+)\)\//, '$1')),
+                        parseFloat(parseFloat(item.Ptotal || 0).toFixed(2)),
+                    ]);
+                });
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + responseText.xhrcontent
+                $('#;').html(errorMsg);
+            }
+        });
+        return chartData;
+    }
+
+    let chart_1 = new Highcharts.stockChart('chart1', {
+        chart: {
+            height: 380,
+            type: 'areaspline',
+        },
+        rangeSelector: {
+            allButtonsEnabled: true,
+            buttons: [{
+                type: 'week',
+                count: 1,
+                text: '1w'
+            }, {
+                type: 'month',
+                count: 1,
+                text: '1m'
+            }, {
+                type: 'month',
+                count: 6,
+                text: '6m'
+            }, {
+                type: 'year',
+                count: 1,
+                text: '1y'
+            }, {
+                type: 'all',
+                text: 'All'
+            }],
+            selected: 2,
+        },
+        title: {
+            text: ''
+        },
+        yAxis: {
+            title: { text: 'Kw' },
+            plotLines: [{ value: 0, width: 1, color: '#808080' }],
+            opposite: false,
+            //min: 0,
+            //max: 500, 
+        },
+        credits: { enabled: false },
+        subtitle: {
+            text: ''
+        },
+        _navigator: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'Kw',
+            color: '#2764C1',
+            data: getChartKenh3Data(),
+            marker: {
+                enabled: null, // auto
+                radius: 3,
+                lineWidth: 1,
+                lineColor: '#FFFFFF'
+            },
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+    });
+
+
+    function getChartKwhCompare(type) {
+        var chartData = [];
+        $.ajax({
+            url: '/Report/GetReportKwhKenh3/',
+            data: {
+                year: curr_year,
+                month: curr_month,
+                type: type
+            },
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartData = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + responseText.xhrcontent
+                $('#;').html(errorMsg);
+            }
+        });
+        return chartData;
+    }
+
+    $('#compare-chart').change(function(){
+        showChartKwhCompare($(this).val());
+    });
+
+    var getDaysInMonth = function(month,year) {
+        return new Date(year, month, 0).getDate();
+    };
+
+    function showChartKwhCompare(type) {
+        let data = getChartKwhCompare(type);
+        let seriesOptions = [];
+        seriesOptions[0] = [];
+        seriesOptions[0].name = 'Kwh';
+        seriesOptions[0].color = '#2764C1';
+        seriesOptions[0].data = [];
+        seriesOptions[0].categories = [];
+        //categories = [];
+        switch(type){
+            case 'curr_year':
+                for(i = 0; i < data.length; i++){
+                    if(typeof data[i] !== 'undefined'){
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    }
+                }
+                for (k = 0; k < seriesOptions[0].data.length; k++) {
+                    seriesOptions[0].categories.push(monthNames[k])
+                    if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
+                        seriesOptions[0].data[k] = 0;
+                    }
+                }
+                break;
+            case 'last_year':
+
+                for (i = 0; i < data.length; i++) {
+                    if (typeof data[i] !== 'undefined') {
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    }
+                }
+                for (k = 0; k < 12; k++) {
+                    seriesOptions[0].categories.push(monthNames[k])
+                    if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
+                        seriesOptions[0].data[k] = 0;
+                    }
+                }
+                break;
+            case 'curr_month':
+                for(i = 0; i < data.length; i++){
+                    if(typeof data[i] !== 'undefined'){
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    }
+                }
+                for (k = 0; k < seriesOptions[0].data.length; k++) {
+                    seriesOptions[0].categories.push(monthNames[curr_month - 1] + ' ' + [k + 1])
+                    if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
+                        seriesOptions[0].data[k] = 0;
+                    }
+                }
+                //for (k = 0; k < getDaysInMonth(curr_month, curr_year) ; k++) {
+                //    seriesOptions[0].categories.push(monthNames[curr_month-1]+ ' '+[k + 1])
+                //    if(typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k]))
+                //        seriesOptions[0].data[k] = 0;
+                //}
+                break;
+            case 'last_month':
+                for (i = 0; i < data.length; i++) {
+                    if (typeof data[i] !== 'undefined') {
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    }
+                }
+                for (k = 0; k < seriesOptions[0].data.length; k++) {
+                    seriesOptions[0].categories.push(monthNames[curr_month - 2] + ' ' + [k + 1])
+                    if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
+                        seriesOptions[0].data[k] = 0;
+                    }
+                }
+                break;
+            case 'curr_week':
+            case 'last_week':
+                for (i = 0; i < data.length; i++) {
+                    if (typeof data[i] !== 'undefined') {
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2)) || 0;
+                        seriesOptions[0].categories.push(monthNames[data[i].Thang - 1] + ' ' + [data[i].Thoigian])
+                    }
+                }
+                break;
+            case 'today':
+            case 'yesterday':
+                var arr_hours = [];
+                for (var i = 0; i < 24; i++) {
+                    arr_hours.push(i + ":00");
+                    seriesOptions[0].categories.push(i + ":00");
+                }
+                for (i = 0; i < seriesOptions[0].categories.length; i++) {
+                    if (typeof data[i] !== 'undefined') {
+                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                        seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    }
+                }
+                for (k = 0; k < seriesOptions[0].data.length; k++)
+                {
+                    if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
+                        seriesOptions[0].data[k] = 0;
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+
+       chart_2 = Highcharts.chart('chart2', {
+            chart: {
+                type: 'column',
+                animation: { duration: 500 },
+            },
+            title: { text: '' },
+            xAxis: {
+                categories: seriesOptions[0].categories,
+            },
+            yAxis: { title: { text: 'Kwh' },
+                plotLines: [{ value: 0, width: 1, color: '#808080' }],
+                //min: 0,
+                //max: 500,
+            },
+            tooltip: {
+                useHTML:true,
+                xDateFormat: '%Y-%m-%d %H:%M:%S',
+                shared: true,
+                split: false,
+                enabled: true
+            },
+            legend: { enabled: true },
+            credits: { enabled: false },
+            exporting: {
+                enabled: true,
+                filename: 'chart_lp-snack-2',
+                tableCaption: 'Chart LP-SNACK-2 Report',
+                csv: {
+                    dateFormat: '%Y-%m-%d'
+                }
+            },
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'horizontal'
+                        },
+                        yAxis: {
+                            labels: {
+                                align: 'left',
+                                x: 0,
+                                y: -5
+                            },
+                            title: {
+                                text: null
+                            }
+                        },
+                        subtitle: {
+                            text: null
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    }
+                }]
+            },
+            series: seriesOptions,
+        });
+    }
+    $('.button-menu-mobile').click(function (event) {
+        chart_1.setSize(null)
+        chart_2.setSize(null)
+    });
+
+    $('#btn_export').click(function (event) {
+        event.preventDefault();
+        $('#fromDate').val('');
+        $('#toDate').val('');
+        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK2Report');
+        $('#centermodal').modal('show');
+    });
+
+    var minDate = $('input.highcharts-range-selector:eq(0)');
+    var maxDate = $('input.highcharts-range-selector:eq(1)');
+    $('input.highcharts-range-selector:eq(0)').change(function () {
+        $('#fromDate').val($(this).val())
+    });
+
+    $('input.highcharts-range-selector:eq(1)').change(function () {
+        $('#toDate').val($(this).val())
+    });
+
+    $('#btn_export_kw').click(function (event) {
+        event.preventDefault();
+        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK2KWReport');
+        $('#fromDate').val(minDate.val());
+        $('#toDate').val(maxDate.val());
+        $('#centermodal').modal('show');
+    });
+</script>

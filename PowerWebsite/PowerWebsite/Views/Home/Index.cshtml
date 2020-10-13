@@ -1,0 +1,1254 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles
+{
+<link rel="shortcut icon" href="~/Content/images/favicon.ico">
+
+<!-- App css -->
+<link href="~/Content/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+<link href="~/Content/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+<link href="~/Content/css/common.css" rel="stylesheet" type="text/css" />
+<!-- icons -->
+<link href="~/Content/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+}
+<style>
+
+</style>
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<div class="content-page pd-0-mobile">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid pd-0-mobile">
+            <div class="row mt-5">
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20"><span class="chart_color" id="gas_status" style="background:red"></span>LƯU LƯỢNG GAS</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase23" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartGas1" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartGas2" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20"><span class="chart_color" id="water_status" style="background:red"></span>LƯU LƯỢNG NƯỚC</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartWater1" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartWater2" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="1"><span class="chart_color" id="kenh1_status" style="background:red"></span>KÊNH 1</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh1A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh1B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="2"><span class="chart_color" id="kenh2_status" style="background:red"></span>KÊNH 2</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh2A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh2B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="3"><span class="chart_color" id="kenh3_status" style="background:red"></span>KÊNH 3</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh3A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh3B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="4"><span class="chart_color" id="kenh4_status" style="background:red"></span>KÊNH 4</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh4A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh4B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card" >
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="5"><span class="chart_color" id="kenh5_status" style="background:red"></span>KÊNH 5</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh5A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh5B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card" >
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="6"><span class="chart_color" id="kenh6_status" style="background:red"></span>KÊNH 6</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartKenh6A" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartKenh6B" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+            </div>
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
+<!-- Modal popup click -->
+<!-- Center modal content -->
+<div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myCenterModalLabel">Center modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body bg-card">
+                <div class="main-container">
+                    <div class="container">
+                        <div class="container_box">
+                            <section class="section-01">
+                                <div class="section-content">
+                                    <p class="title">Volts II</p>
+                                    <div class="box box-01">
+                                        <p class="box-title">Current</p>
+                                        <div class="box-cnt">
+                                            <span id="Cac">375</span>
+                                            <span> A c</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-02">
+                                        <p class="box-title">Power</p>
+                                        <div class="box-cnt">
+                                            <span id="Pc">375</span>
+                                            <span>kW c</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-19">
+                                        <p class="box-title">Frequency</p>
+                                        <div class="box-cnt">
+                                            <span id="F">50.11</span>
+                                            <span>Hz</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-01"></div>
+                                <div class="arrow-01"></div>
+                                <div class="arrow-02"></div>
+                            </section>
+                            <section class="section-02">
+                                <div class="section-content">
+                                    <div class="box box-03">
+                                        <div class="box-cnt">
+                                            <span id="Vbc">482</span>
+                                            <span>V bc</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="arrow-03"></div>
+                            </section>
+                            <section class="section-03">
+                                <div class="section-content">
+                                    <div class="box box-04">
+                                        <div class="box-cnt">
+                                            <span id="Vca">480</span>
+                                            <span>V ca</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-05">
+                                        <div class="box-cnt">
+                                            <span id="Cab">1,548 </span>
+                                            <span>A b</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-06">
+                                        <div class="box-cnt">
+                                            <span id="Pb">407 </span>
+                                            <span>kW b</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-20">
+                                        <p class="box-title">Power Factor</p>
+                                        <div class="box-cnt">
+                                            <span id="PF">94.2</span>
+                                            <span> %</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-02"></div>
+                            </section>
+                            <section class="section-04">
+                                <div class="section-content">
+                                    <div class="box box-03">
+                                        <div class="box-cnt">
+                                            <span id="Vab">480 </span>
+                                            <span>V ab</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="section-05">
+                                <div class="section-content">
+                                    <div class="box box-08">
+                                        <div class="box-cnt">
+                                            <span id="Caa">1,793 </span>
+                                            <span>A a</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-09">
+                                        <div class="box-cnt">
+                                            <span id="Pa">468 </span>
+                                            <span>kW a</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-21">
+                                        <p class="box-title">kWh</p>
+                                        <div class="box-cnt">
+                                            <span id="Kwh">233333</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-03"></div>
+                            </section>
+                            <section class="section-06">
+                                <div class="section-content">
+                                    <div class="box box-10">
+                                        <p class="box-title">kW total</p>
+                                        <div class="box-cnt">
+                                            <span id="Ptotal">1,250 </span>
+                                            <span>kW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="section-07">
+                                <div class="section-content">
+                                    <div class="box box-11">
+                                        <p class="box-title">% V unbal</p>
+                                        <div class="box-cnt">
+                                            <span id="Vun">0.3</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-12">
+                                        <p class="box-title">I average</p>
+                                        <div class="box-cnt">
+                                            <span id="Civg">1,591 </span>
+                                            <span>A</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-13">
+                                        <p class="box-title">kVAR total</p>
+                                        <div class="box-cnt">
+                                            <span id="Pkvar">446 </span>
+                                            <span>kVAR</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-14">
+                                        <div class="box-cnt">
+                                            <span id="Van">277 </span>
+                                            <span>V an</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-15">
+                                        <div class="box-cnt">
+                                            <span id="Vbn">279 </span>
+                                            <span>V bn</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-16">
+                                        <div class="box-cnt">
+                                            <span id="Vcn">278 </span>
+                                            <span>V cn</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-22">
+                                        <p class="box-title">VIn average</p>
+                                        <div class="box-cnt">
+                                            <span id="Vin">278 </span>
+                                            <span>V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="section-08">
+                                <div class="section-content">
+                                    <div class="box box-17">
+                                        <p class="box-title">VII average</p>
+                                        <div class="box-cnt">
+                                            <span id="VII">481 </span>
+                                            <span>V</span>
+                                        </div>
+                                    </div>
+                                    <div class="box box-18">
+                                        <p class="box-title">kVA Total</p>
+                                        <div class="box-cnt">
+                                            <span id="Pkva">1,327 </span>
+                                            <span>kVA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-04"></div>
+                                <div class="arrow-04"></div>
+                                <div class="arrow-05"></div>
+                                <div class="arrow-06"></div>
+                            </section>
+                            <section class="section-09">
+                                <p class="title">Volts In</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+@*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="~/Content/js/vendor.min.js"></script>
+<script src="~/Content/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="~/Content/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Content/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+
+<!-- Dashboard 2 init -->
+<script src="~/Content/js/pages/dashboard-2.init.js"></script>
+<!-- App js-->
+<script src="~/Content/js/app.min.js"></script>
+
+<script type="text/javascript">
+    var gas_obj = @Html.Raw(Json.Encode(ViewBag.gas));
+    var water_obj = @Html.Raw(Json.Encode(ViewBag.water));
+    // Get Chart GAS
+
+    $(document).ready(function () {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+    });
+
+    function getGasData() {
+        var gasData = gas_obj;
+        $.ajax({
+            url: '/Home/GetGasData/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                gasData = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return gasData;
+    }
+
+    function getWaterData() {
+        var waterData = water_obj;
+        $.ajax({
+            url: '/Home/GetWaterData/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                waterData = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return waterData;
+    }
+
+    function getHienThiData(kenh) {
+        var hienthi = {};
+        $.ajax({
+            url: '/Home/GetHienThiData/',
+            type: 'get',
+            data: {kenh: kenh},
+            async: false,
+            success: function (data) {
+                hienthi = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return hienthi;
+    }
+
+    function GetChartKenh1Data() {
+        var chartKenh1 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh1Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh1 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh1;
+    }
+
+    function GetChartKenh2Data() {
+        var chartKenh2 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh2Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh2 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh2;
+    }
+
+    function GetChartKenh3Data() {
+        var chartKenh3 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh3Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh3 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh3;
+    }
+
+    function GetChartKenh4Data() {
+        var chartKenh4 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh4Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh4 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh4;
+    }
+
+    function GetChartKenh5Data() {
+        var chartKenh5 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh5Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh5 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh5;
+    }
+
+    function GetChartKenh6Data() {
+        var chartKenh6 = {};
+        $.ajax({
+            url: '/Home/GetChartKenh6Data/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                chartKenh6 = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return chartKenh6;
+    }
+
+
+    var gas = getGasData();
+    var water = getWaterData();
+    var kenh1 = GetChartKenh1Data();
+    var kenh2 = GetChartKenh2Data();
+    var kenh3 = GetChartKenh3Data();
+    var kenh4 = GetChartKenh4Data();
+    var kenh5 = GetChartKenh5Data();
+    var kenh6 = GetChartKenh6Data();
+
+    var gaugeOptions = {
+        chart: {
+            type: 'solidgauge',
+            backgroundColor:'#1c2a47',
+            colors:['#ffff']
+        },
+        title: null,
+        pane: {
+            center: ['50%', '85%'],
+            size: '140%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+        tooltip: {
+            enabled: false
+        },
+        exporting: { enabled: false },
+        // the value axis
+        yAxis: {
+            stops: [
+                [0.1, '#55bf3b'], // green
+                [0.5, '#dddf0d'], // yellow
+                [0.9, '#df5353'] // red
+            ],
+            lineWidth: 0,
+            tickWidth: 0,
+            minorTickInterval: null,
+            tickAmount: 2,
+            title: {
+                y: -75,
+                fontWeight: 'bold',
+                fontSize: '25px'
+            },
+            labels: {
+                y: 16
+            }
+        },
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true,
+                    color:'#fff'
+                }
+            }
+        }
+    };
+
+    var chartGas1 = Highcharts.chart('chartGas1', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Lưu lượng hiện tại'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas_obj.luu_luong_hien_tai],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' '
+            }
+        }]
+    }));
+
+    var chartGas2 = Highcharts.chart('chartGas2', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Lưu lượng tổng'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas_obj.luu_luong_tong],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+
+    var chartWater1 = Highcharts.chart('chartWater1', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Lưu lượng hiện tại'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [water_obj.luu_luong_hien_tai],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' '
+            }
+        }]
+    }));
+
+    var chartWater2 = Highcharts.chart('chartWater2', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Lưu lượng tổng'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [water_obj.luu_luong_tong],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh1A = Highcharts.chart('chartKenh1A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh1.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh1B = Highcharts.chart('chartKenh1B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh1.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh2A = Highcharts.chart('chartKenh2A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh2.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh2B = Highcharts.chart('chartKenh2B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh2.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh3A = Highcharts.chart('chartKenh3A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh3.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh3B = Highcharts.chart('chartKenh3B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh3.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh4A = Highcharts.chart('chartKenh4A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh4.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh4B = Highcharts.chart('chartKenh4B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh4.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh5A = Highcharts.chart('chartKenh5A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh5.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh5B = Highcharts.chart('chartKenh5B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh5.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh6A = Highcharts.chart('chartKenh6A', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Ptotal'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh6.Ptotal],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    var chartKenh6B = Highcharts.chart('chartKenh6B', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'Kwh'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [kenh1.Kwh],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+    setInterval(function () {
+        // Speed
+        var point,
+            newVal,
+            chartGasData = getGasData(),
+            chartWaterData = getWaterData(),
+            chartKenh1Data = GetChartKenh1Data(),
+            chartKenh2Data = GetChartKenh2Data(),
+            chartKenh3Data = GetChartKenh3Data(),
+            chartKenh4Data = GetChartKenh4Data(),
+            chartKenh5Data = GetChartKenh5Data(),
+            chartKenh6Data = GetChartKenh6Data();
+            // Cập nhật status
+            if(chartGasData.status == 0){
+                $('#gas_status').css('background', 'green');
+            }
+            else{
+                $('#gas_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartWaterData.status == 0){
+                $('#water_status').css('background', 'green');
+            }
+            else{
+                $('#water_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh1Data.status == 0){
+                $('#kenh1_status').css('background', 'green');
+            }
+            else{
+                $('#kenh1_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh2Data.status == 0){
+                $('#kenh2_status').css('background', 'green');
+            }
+            else{
+                $('#kenh2_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh3Data.status == 0){
+                $('#kenh3_status').css('background', 'green');
+            }
+            else{
+                $('#kenh3_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh4Data.status == 0){
+                $('#kenh4_status').css('background', 'green');
+            }
+            else{
+                $('#kenh4_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh5Data.status == 0){
+                $('#kenh5_status').css('background', 'green');
+            }
+            else{
+                $('#kenh5_status').css('background', 'red');
+            }
+            // Cập nhật status
+            if(chartKenh6Data.status == 0){
+                $('#kenh6_status').css('background', 'green');
+            }
+            else{
+                $('#kenh6_status').css('background', 'red');
+            }
+
+
+        if (chartGas1) {
+            point = chartGas1.series[0].points[0];
+            newVal = chartGasData.luu_luong_hien_tai ? parseFloat(chartGasData.luu_luong_hien_tai) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartGasData.luu_luong_hien_tai ? parseFloat(chartGasData.luu_luong_hien_tai) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartGas2) {
+            
+            point = chartGas2.series[0].points[0];
+            newVal = chartGasData.luu_luong_tong ? parseFloat(chartGasData.luu_luong_tong) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartGasData.luu_luong_tong ? parseFloat(chartGasData.luu_luong_tong) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartWater1) {
+            
+            point = chartWater1.series[0].points[0];
+            newVal = chartWaterData.luu_luong_hien_tai ? parseFloat(chartWaterData.luu_luong_hien_tai) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartWaterData.luu_luong_hien_tai ? parseFloat(chartWaterData.luu_luong_hien_tai) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartWater2) {
+            
+            point = chartWater2.series[0].points[0];
+            newVal = chartWaterData.luu_luong_tong ? parseFloat(chartWaterData.luu_luong_tong) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartWaterData.luu_luong_tong ? parseFloat(chartWaterData.luu_luong_tong) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartKenh1A) {
+            point = chartKenh1A.series[0].points[0];
+            newVal = chartKenh1Data.Ptotal ? parseFloat(chartKenh1Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh1Data.Ptotal ? parseFloat(chartKenh1Data.Ptotal) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartKenh1B) {
+            point = chartKenh1B.series[0].points[0];
+            newVal = chartKenh1Data.Kwh ? parseFloat(chartKenh1Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh1Data.Kwh ? parseFloat(chartKenh1Data.Kwh) : 0;
+            }
+
+            point.update(newVal);
+        }
+        if (chartKenh2A) {
+            point = chartKenh2A.series[0].points[0];
+            newVal = chartKenh2Data.Ptotal ? parseFloat(chartKenh2Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh2Data.Ptotal ? parseFloat(chartKenh2Data.Ptotal) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh2B) {
+            point = chartKenh2B.series[0].points[0];
+            newVal = chartKenh2Data.Kwh ? parseFloat(chartKenh2Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh2Data.Kwh ? parseFloat(chartKenh2Data.Kwh) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh3A) {
+            point = chartKenh3A.series[0].points[0];
+            newVal = chartKenh3Data.Ptotal ? parseFloat(chartKenh3Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh3Data.Ptotal ? parseFloat(chartKenh3Data.Ptotal) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh3B) {
+            point = chartKenh3B.series[0].points[0];
+            newVal = chartKenh3Data.Kwh ? parseFloat(chartKenh3Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh3Data.Kwh ? parseFloat(chartKenh3Data.Kwh) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh4A) {
+            point = chartKenh4A.series[0].points[0];
+            newVal = chartKenh4Data.Ptotal ? parseFloat(chartKenh4Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh4Data.Ptotal ? parseFloat(chartKenh4Data.Ptotal) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh4B) {
+            point = chartKenh4B.series[0].points[0];
+            newVal = chartKenh4Data.Kwh ? parseFloat(chartKenh4Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh4Data.Kwh ? parseFloat(chartKenh4Data.Kwh) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh5A) {
+            point = chartKenh5A.series[0].points[0];
+            newVal = chartKenh5Data.Ptotal ? parseFloat(chartKenh5Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh5Data.Ptotal ? parseFloat(chartKenh5Data.Ptotal) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh5B) {
+            point = chartKenh5B.series[0].points[0];
+            newVal = chartKenh5Data.Kwh ? parseFloat(chartKenh5Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh5Data.Kwh ? parseFloat(chartKenh5Data.Kwh) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh6A) {
+            point = chartKenh6A.series[0].points[0];
+            newVal = chartKenh6Data.Ptotal ? parseFloat(chartKenh6Data.Ptotal) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh6Data.Ptotal ? parseFloat(chartKenh6Data.Ptotal) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartKenh6B) {
+            point = chartKenh6B.series[0].points[0];
+            newVal = chartKenh6Data.Kwh ? parseFloat(chartKenh6Data.Kwh) : 0;
+
+            if (newVal < 0 || newVal > 200) {
+                newVal = chartKenh6Data.Kwh ? parseFloat(chartKenh6Data.Kwh) : 0;
+            }
+            point.update(newVal);
+        }
+    }, 1000);
+
+    // Map
+
+    // Show popup
+    var myVar;
+    $(document).ready(function(){
+        $(".show-kenh").on("click", function(){
+            $('#centermodal').modal('show');
+            clearInterval(myVar);
+            var kenh = $(this).attr('data-value');
+            //console.log(kenh);
+
+            myVar = setInterval(function () {
+                data_hienthi = getHienThiData(kenh);
+                console.log(kenh);
+                if(data_hienthi){
+                    $('#Vca').html(data_hienthi.Vca)
+                    $('#Vbc').html(data_hienthi.Vbc)
+                    $('#Vab').html(data_hienthi.Vab)
+                    $('#Vun').html(data_hienthi.Vun)
+                    $('#VII').html(data_hienthi.VII)
+                    $('#Cac').html(data_hienthi.Cac)
+                    $('#Cab').html(data_hienthi.Cab)
+                    $('#Caa').html(data_hienthi.Caa)
+                    $('#Civg').html(data_hienthi.Civg)
+                    $('#Pc').html(data_hienthi.Pc)
+                    $('#Pb').html(data_hienthi.Pb)
+                    $('#Pa').html(data_hienthi.Pa)
+                    $('#Ptotal').html(data_hienthi.Ptotal)
+                    $('#Pkvar').html(data_hienthi.Pkvar)
+                    $('#Pkva').html(data_hienthi.Pkva)
+                    $('#Van').html(data_hienthi.Van)
+                    $('#Vbn').html(data_hienthi.Vbn)
+                    $('#Vcn').html(data_hienthi.Vcn)
+                    $('#F').html(data_hienthi.F)
+                    $('#PF').html(data_hienthi.PF)
+                    $('#Kwh').html(data_hienthi.Kwh)
+                    $('#Vin').html(data_hienthi.Vin)
+                }
+            }, 1000);
+        });
+    });
+   // });
+
+</script>

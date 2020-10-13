@@ -1,0 +1,616 @@
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\PagedList.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\bin\PagedList.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\PagedList.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\PagedList.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\PagedList.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\PagedList.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0309\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite0409\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Owin.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\PagedList.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\PagedList.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+C:\Users\Huy\OneDrive\Documents\Visual Studio 2015\Projects\PowerWebsite09042020\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\ApplicationInsights.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\csc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\vbc.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll.config
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\PowerWebsite.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Owin.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\WebGrease.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\EntityFramework.SqlServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.Web.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\MySql.Data.Entity.EF6.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\PagedList.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Helpers.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Mvc.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Optimization.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\System.Web.WebPages.Razor.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Antlr3.Runtime.pdb
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Newtonsoft.Json.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.csprojResolveAssemblyReference.cache
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.dll
+D:\ProjectPersional\A-Sang\PowerWebsite\PowerWebsite\PowerWebsite\obj\Debug\PowerWebsite.pdb

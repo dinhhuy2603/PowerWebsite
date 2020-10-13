@@ -1,0 +1,150 @@
+﻿@using PowerWebsite.Models
+@model UserAccLogin
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Website - Đăng nhập</title>
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link href="~/Content/build/style.min.css" rel="stylesheet" type="text/css">
+    <script src="~/Content/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Custom styles for this template-->
+</head>
+<body id="login-wrap">
+    <!-- <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li class="active">
+                            <a class="has-arrow" href="index.html">
+                               <i class="icon nalika-home icon-wrap"></i>
+                               <span class="mini-click-non">Ecommerce</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Charts1</span></a>
+                            <ul class="submenu-angle collapse" aria-expanded="false">
+                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts2</span></a>
+                            <ul class="submenu-angle collapse" aria-expanded="false">
+                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div> -->
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="header-advance-area">
+            <div class="header-top-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="header-top-wraper">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item">
+                                                    <a href="#" role="button" aria-expanded="false" class="nav-link"><img class="main-logo" src="~/Content/img/logo/logo.png" alt="" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row formrow">
+            <div class="col-md-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="formimg"><img src="~/Content/img/bg.png" alt=""></div>
+            </div>
+            <div class="col-md-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="form_wrap">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "user", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                                if (@ViewBag.Message != null)
+                                {
+                                    <div style="border: 1px solid red; color: orangered">
+                                        @ViewBag.Message
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label class="control-label" for="username">Username</label>
+                                    @Html.TextBoxFor(m => m.user_name, new { placeholder = "Tên đăng nhập", @class = "form-control form-control-user", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    @Html.PasswordFor(m => m.password, new { placeholder = "Mật khẩu", @class = "form-control form-control-user", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                                </div>
+                                <input type="submit" value="Đăng nhập" class="btn btn-success btn-block loginbtn" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2020. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jquery
+        ============================================ -->
+    <script src="~/Content/js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/build/app.min.js"></script>
+    <script src="~/Content/js/charts/chart.min.js"></script>
+    <script src="~/Content/js/charts/line-chart.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/js/charts/canvasjs.stock.min.js"></script>
+    <script src="~/Content/js/charts/stockchart.js"></script>
+    <script src="~/Content/js/c3-charts/d3.min.js"></script>
+    <script src="~/Content/js/c3-charts/c3.min.js"></script>
+    <script src="~/Content/js/c3-charts/c3-active.js"></script>
+    <script src="~/Content/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/Content/js/sparkline/sparkline-active.js"></script>
+</body>
+</html>

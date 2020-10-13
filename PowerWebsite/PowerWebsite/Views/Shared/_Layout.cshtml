@@ -1,0 +1,213 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @RenderSection("Styles", false)
+</head>
+<body class="loading">
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                    <li class="notification-list d-flex justify-content-center align-items-center">
+                        <a class="nav-link nav-user mr-0 waves-effect waves-light">
+                            <img src="~/Content/images/users/Admin-User-256.png" alt="user-image" class="rounded-circle">
+                            <span class="pro-user-name ml-1">
+                                admin
+                            </span>
+                        </a>
+                        <a href="javascript:void(0);" class="nav-link waves-effect waves-light">
+                            <i class="fe-log-out"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </li>
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="#" class="logo logo-light text-center">
+                        <span class="logo-sm">
+                            <img src="~/Content/images/logo.png" alt="user-image" width="50">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="~/Content/images/logo.png" alt="user-image">
+                        </span>
+                    </a>
+                </div>
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <!-- Mobile menu toggle (Horizontal Layout)-->
+                        <a class="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+
+                    <li class="dropdown d-none d-xl-block">
+                        <a class="nav-link" href="#">
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end Topbar -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+            <div class="h-100" data-simplebar>
+                <!-- User box -->
+                <div class="user-box text-center">
+                    <img src="~/Content/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
+                         class="rounded-circle avatar-md">
+                    <div class="dropdown">
+                        <a href="javascript: void(0);" class="text-dark h5 mt-2 mb-1 d-block">Geneva Kennedy</a>
+                        <a href="javascript:void(0);" class="notify-item">
+                            <i class="fe-log-out mr-1"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+                    <p class="text-muted">Admin Head</p>
+                </div>
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul id="side-menu">
+                        <li>
+                            <a href="@Url.Action("Index","Home")">
+                                <i class="fe-bar-chart-line"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+                        @*<li>
+                            <a href="@Url.Action("Trang2","Home")">
+                                <i data-feather="calendar"></i>
+                                <span> Chart </span>
+                            </a>
+                        </li>*@
+
+                        <li>
+                            <a href="#menu2" data-toggle="collapse">
+                                <i data-feather="calendar"></i>
+                                <span> Chart Online</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="menu2">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="@Url.Action("Trang2","Home")">Chart Gas Online</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Products</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i data-feather="shopping-cart"></i>
+                                <span> Menu 3 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i data-feather="shopping-cart"></i>
+                                <span> Menu 4 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i data-feather="shopping-cart"></i>
+                                <span> Menu 5 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i data-feather="shopping-cart"></i>
+                                <span> Menu 6 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i data-feather="shopping-cart"></i>
+                                <span> Menu 7 </span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        @RenderBody()
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    <div class="rightbar-overlay"></div>
+    @*@Scripts.Render("~/bundles/js")*@
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>
