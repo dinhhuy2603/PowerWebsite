@@ -150,16 +150,16 @@
         myVar = setInterval(function () {
             data_hienthi = getIndexData();
             if (data_hienthi) {
-                $('#gas_now').html(data_hienthi[0].luu_luong_hien_tai);
-                $('#gas_inday').html(data_hienthi[0].luu_luong_tong_ngay);
-                $('#gas_total').html(data_hienthi[0].luu_luong_tong + " m3");
-                $('#water_now').html(data_hienthi[1].luu_luong_hien_tai);
-                $('#water_inday').html(data_hienthi[1].luu_luong_tong_ngay);
-                $('#water_total').html(data_hienthi[1].luu_luong_tong + " m3");
+                $('#gas_now').html(addCommas(data_hienthi[0].luu_luong_hien_tai));
+                $('#gas_inday').html(addCommas(data_hienthi[0].luu_luong_tong_ngay));
+                $('#gas_total').html(addCommas(data_hienthi[0].luu_luong_tong) + " m3");
+                $('#water_now').html(addCommas(data_hienthi[1].luu_luong_hien_tai));
+                $('#water_inday').html(addCommas(data_hienthi[1].luu_luong_tong_ngay));
+                $('#water_total').html(addCommas(data_hienthi[1].luu_luong_tong) + " m3");
 
-                $('#sum_ptotal').html(data_hienthi[2].Ptotal);
-                $('#sum_kwh_inday').html(data_hienthi[2].KWhDay);
-                $('#sum_kwh').html(data_hienthi[2].Kwh + " MWh");
+                $('#sum_ptotal').html(addCommas(data_hienthi[2].Ptotal));
+                $('#sum_kwh_inday').html(addCommas(data_hienthi[2].KWhDay));
+                $('#sum_kwh').html(addCommas(data_hienthi[2].Kwh) + " MWh");
                     
             }
         }, 1000);

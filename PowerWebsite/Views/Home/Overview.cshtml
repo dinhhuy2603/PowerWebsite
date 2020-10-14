@@ -179,10 +179,10 @@
         myVar = setInterval(function () {
             data_hienthi = getOverviewData();
             if (data_hienthi) {
-                $('#gas_now').html(data_hienthi[0].luu_luong_hien_tai);
-                $('#gas_total').html(data_hienthi[0].luu_luong_tong);
-                $('#water_now').html(data_hienthi[1].luu_luong_hien_tai);
-                $('#water_total').html(data_hienthi[1].luu_luong_tong);
+                $('#gas_now').html(addCommas(data_hienthi[0].luu_luong_hien_tai));
+                $('#gas_total').html(addCommas(data_hienthi[0].luu_luong_tong));
+                $('#water_now').html(addCommas(data_hienthi[1].luu_luong_hien_tai));
+                $('#water_total').html(addCommas(data_hienthi[1].luu_luong_tong));
                 var data_kenh = data_hienthi[2]||[];
                 var total_kw = data_hienthi[3] || 0;
                 var total_kwh = data_hienthi[4] || 0;
@@ -190,28 +190,28 @@
                     for (i = 0; i < data_kenh.length; i++) {
                         switch (data_kenh[i].Kenh) {
                             case "1":
-                                $('#kenh1_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh1_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh1_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh1_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             case "2":
-                                $('#kenh2_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh2_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh2_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh2_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             case "3":
-                                $('#kenh3_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh3_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh3_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh3_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             case "4":
-                                $('#kenh4_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh4_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh4_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh4_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             case "5":
-                                $('#kenh5_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh5_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh5_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh5_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             case "6":
-                                $('#kenh6_ptotal').html(data_kenh[i].Ptotal);
-                                $('#kenh6_kwh').html(data_kenh[i].Kwh);
+                                $('#kenh6_ptotal').html(addCommas(data_kenh[i].Ptotal));
+                                $('#kenh6_kwh').html(addCommas(data_kenh[i].Kwh));
                                 break;
                             default:
                                 break;
@@ -219,10 +219,10 @@
                         //total_kw += parseFloat(data_kenh[i].Ptotal);
                         //total_kwh += parseFloat(data_kenh[i].Kwh);
                     }
-                    $('#total_kw').html(total_kw);
+                    $('#total_kw').html(addCommas(total_kw));
                     //if (total_kwh > 100000) {
                     total_kwh = Math.round((total_kwh / 1000) * 10) / 10;
-                    $('#total_kwh').html(total_kwh + " MWh");
+                    $('#total_kwh').html(addCommas(total_kwh) + " MWh");
                     //}
                     //else {
                     //    $('#total_kwh').html(total_kwh);

@@ -31,9 +31,9 @@ namespace PowerWebsite.Controllers
                     if (gas != null)
                     {
                         var gas_total_last = (gas_recoder_begin != null) ? gas_recoder_begin.luu_luong_tong : "0";
-                        gas_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(gas.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                        gas_view.luu_luong_tong = ((float)Math.Round(float.Parse(gas.luu_luong_tong) * 10f) / 10f).ToString();
-                        gas_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(gas.luu_luong_tong) - float.Parse(gas_total_last)) * 10f) / 10f).ToString();
+                        gas_view.luu_luong_hien_tai = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(gas.luu_luong_hien_tai) * 10f) / 10f));
+                        gas_view.luu_luong_tong = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(gas.luu_luong_tong) * 10f) / 10f));
+                        gas_view.luu_luong_tong_ngay = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(gas.luu_luong_tong) - float.Parse(gas_total_last)) * 10f) / 10f));
                         gas_view.status = gas.status;
                     }
                     //Get Water table
@@ -44,9 +44,9 @@ namespace PowerWebsite.Controllers
                     if (water != null)
                     {
                         var water_total_last = (water_recoder_begin != null) ? water_recoder_begin.luu_luong_tong : "0";
-                        water_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(water.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                        water_view.luu_luong_tong = ((float)Math.Round(float.Parse(water.luu_luong_tong) * 10f) / 10f).ToString();
-                        water_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(water.luu_luong_tong) - float.Parse(water_total_last)) * 10f) / 10f).ToString();
+                        water_view.luu_luong_hien_tai = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(water.luu_luong_hien_tai) * 10f) / 10f));
+                        water_view.luu_luong_tong = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(water.luu_luong_tong) * 10f) / 10f));
+                        water_view.luu_luong_tong_ngay = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(water.luu_luong_tong) - float.Parse(water_total_last)) * 10f) / 10f));
                         water_view.status = water.status;
                     }
 
@@ -140,9 +140,9 @@ namespace PowerWebsite.Controllers
                             sum_Ptotal += float.Parse(hienthi[i].Ptotal);
                         }
                     }
-                    ViewBag.sumPtotal = (float)Math.Round(sum_Ptotal * 10f) / 10f;
-                    ViewBag.sumKwh = (float)Math.Round((sum_Kwh / 1000) * 10f) / 10f;
-                    ViewBag.sumKwhInday = (float)Math.Round(sum_Kwh_inday * 10f) / 10f;
+                    ViewBag.sumPtotal = string.Format("{0:#,##0.##}", (float)Math.Round(sum_Ptotal * 10f) / 10f);
+                    ViewBag.sumKwh = string.Format("{0:#,##0.##}", (float)Math.Round((sum_Kwh / 1000) * 10f) / 10f);
+                    ViewBag.sumKwhInday = string.Format("{0:#,##0.##}", (float)Math.Round(sum_Kwh_inday * 10f) / 10f);
                     ViewBag.gas = gas_view;
                     ViewBag.water = water_view;
                 }
@@ -354,8 +354,8 @@ namespace PowerWebsite.Controllers
                     var gas = db.gas.FirstOrDefault();
                     if (gas != null)
                     {
-                        gas.luu_luong_hien_tai = ((float)Math.Round(float.Parse(gas.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                        gas.luu_luong_tong = ((float)Math.Round(float.Parse(gas.luu_luong_tong) * 10f) / 10f).ToString();
+                        gas.luu_luong_hien_tai = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(gas.luu_luong_hien_tai) * 10f) / 10f));
+                        gas.luu_luong_tong = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(gas.luu_luong_tong) * 10f) / 10f));
                     }
                     else
                     {
@@ -365,8 +365,8 @@ namespace PowerWebsite.Controllers
                     var water = db.water.FirstOrDefault();
                     if (water != null)
                     {
-                        water.luu_luong_hien_tai = ((float)Math.Round(float.Parse(water.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                        water.luu_luong_tong = ((float)Math.Round(float.Parse(water.luu_luong_tong) * 10f) / 10f).ToString();
+                        water.luu_luong_hien_tai = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(water.luu_luong_hien_tai) * 10f) / 10f));
+                        water.luu_luong_tong = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(water.luu_luong_tong) * 10f) / 10f));
                     }
                     else
                     {
@@ -391,38 +391,38 @@ namespace PowerWebsite.Controllers
                             {
                                 case "1":
                                     kenh1.Kenh = hienthi[i].Kenh;
-                                    kenh1.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh1.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
+                                    kenh1.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh1.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh1.Kwh);
                                     break;
                                 case "2":
                                     kenh2.Kenh = hienthi[i].Kenh;
-                                    kenh2.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh2.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
+                                    kenh2.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh2.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh2.Kwh);
                                     break;
                                 case "3":
                                     kenh3.Kenh = hienthi[i].Kenh;
-                                    kenh3.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh3.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f).ToString();
+                                    kenh3.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh3.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh3.Kwh);
                                     break;
                                 case "4":
                                     kenh4.Kenh = hienthi[i].Kenh;
-                                    kenh4.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh4.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
+                                    kenh4.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh4.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh4.Kwh);
                                     break;
                                 case "5":
                                     kenh5.Kenh = hienthi[i].Kenh;
-                                    kenh5.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh5.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f).ToString();
+                                    kenh5.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh5.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh5.Kwh);
                                     break;
                                 case "6":
                                     kenh6.Kenh = hienthi[i].Kenh;
-                                    kenh6.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                    kenh6.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f).ToString();
+                                    kenh6.Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f));
+                                    kenh6.Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f));
                                     count_Kwh += float.Parse(kenh6.Kwh);
                                     break;
                                 default:
@@ -442,8 +442,8 @@ namespace PowerWebsite.Controllers
                     ViewBag.kenh6 = kenh6;
                     ViewBag.gas = gas;
                     ViewBag.water = water;
-                    ViewBag.count_Ptotal = ((float)Math.Round(count_Ptotal * 10f) / 10f);
-                    ViewBag.count_Kwh = ((float)Math.Round(count_Kwh * 10f) / 10f);
+                    ViewBag.count_Ptotal = string.Format("{0:#,##0.##}", ((float)Math.Round(count_Ptotal * 10f) / 10f));
+                    ViewBag.count_Kwh = string.Format("{0:#,##0.##}", ((float)Math.Round(count_Kwh * 10f) / 10f));
                 }
                 return View();
             }
