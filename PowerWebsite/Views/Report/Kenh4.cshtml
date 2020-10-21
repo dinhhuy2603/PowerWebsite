@@ -40,9 +40,11 @@
     .modal-dialog {
         min-width: 500px;
     }
+
     .apex-charts {
         height: 380px;
     }
+
     .apex-charts {
         height: 380px;
     }
@@ -298,14 +300,14 @@
             plotLines: [{ value: 0, width: 1, color: '#808080' }],
             opposite: false,
             //min: 0,
-            //max: 500, 
+            //max: 500,
         },
         yAxis: {
             title: { text: 'Kw' },
             plotLines: [{ value: 0, width: 1, color: '#808080' }],
             opposite: false,
             //min: 0,
-            //max: 500, 
+            //max: 500,
         },
         credits: { enabled: false },
         subtitle: {
@@ -425,10 +427,17 @@
                 break;
             case 'last_month':
                 for (i = 0; i < data.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
+                    if (typeof data[i] !== 'undefined' && typeof data[i-1] !== 'undefined') {
                         data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
                         data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i - 1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data[i] !== 'undefined') {
+                            data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                            data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                            seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        }
                     }
                 }
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
@@ -457,10 +466,22 @@
                     seriesOptions[0].categories.push(i + ":00");
                 }
                 for (i = 0; i < seriesOptions[0].categories.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
+                    //if (typeof data[i] !== 'undefined') {
+                    //    data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                    //    data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                    //    seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    //}
+                    if (typeof data[i] !== 'undefined' && typeof data[i - 1] !== 'undefined') {
                         data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
                         data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i-1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data[i] !== 'undefined') {
+                            data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                            data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                            seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        }
                     }
                 }
                 for (k = 0; k < seriesOptions[0].data.length; k++)
