@@ -407,10 +407,22 @@
                 break;
             case 'curr_month':
                 for(i = 0; i < data.length; i++){
-                    if(typeof data[i] !== 'undefined'){
+                    //if(typeof data[i] !== 'undefined'){
+                    //    data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                    //    data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                    //    seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    //}
+                    if (typeof data[i] !== 'undefined' && typeof data[i - 1] !== 'undefined') {
                         data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
                         data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i - 1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data[i] !== 'undefined') {
+                            data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                            data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                            seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                        }
                     }
                 }
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
@@ -450,11 +462,26 @@
             case 'curr_week':
             case 'last_week':
                 for (i = 0; i < data.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
+                    //if (typeof data[i] !== 'undefined') {
+                    //    data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                    //    data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                    //    seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2)) || 0;
+                    //    seriesOptions[0].categories.push(monthNames[data[i].Thang - 1] + ' ' + [data[i].Thoigian])
+                    //}
+
+                    if (typeof data[i] !== 'undefined' && typeof data[i - 1] !== 'undefined') {
                         data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
                         data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2)) || 0;
+                        seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i - 1].lastValue).toFixed(2)) || 0;
                         seriesOptions[0].categories.push(monthNames[data[i].Thang - 1] + ' ' + [data[i].Thoigian])
+                    }
+                    else {
+                        if (typeof data[i] !== 'undefined') {
+                            data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
+                            data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
+                            seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2)) || 0;
+                            seriesOptions[0].categories.push(monthNames[data[i].Thang - 1] + ' ' + [data[i].Thoigian])
+                        }
                     }
                 }
                 break;
