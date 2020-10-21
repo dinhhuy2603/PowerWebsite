@@ -127,6 +127,9 @@
             <div class="col-md-6">
                 <span class="font-16">Energy from: <strong>20/09/2020</strong></span>
             </div>
+            <div class="col-md-6" style="text-align: right">
+                <span class="font-16"><strong id="getTime">@DateTime.Now.DayOfWeek, @DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")</strong></span>
+            </div>
         </div>
     </div>
 </footer>
@@ -145,6 +148,16 @@
 
 <script type="text/javascript">
     var myVar;
+    
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
     $(document).ready(function () {
         clearInterval(myVar);
         myVar = setInterval(function () {
@@ -160,8 +173,18 @@
                 $('#sum_ptotal').html(addCommas(data_hienthi[2].Ptotal));
                 $('#sum_kwh_inday').html(addCommas(data_hienthi[2].KWhDay));
                 $('#sum_kwh').html(addCommas(data_hienthi[2].Kwh) + " MWh");
-                    
             }
+
+            var currentdate = new Date();
+            var today = weekday[currentdate.getDay()];
+            var datetime = today + ", "
+                + currentdate.getDate() + "/"
+                + (currentdate.getMonth() + 1) + "/"
+                + currentdate.getFullYear() + " "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+            $("#getTime").html(datetime)
         }, 1000);
     });
 

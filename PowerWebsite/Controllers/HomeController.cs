@@ -14,7 +14,7 @@ namespace PowerWebsite.Controllers
         float kenh1_2009 = (float)226.72;
         float kenh2_2009 = (float)30813.393;
         float kenh3_2009 = (float)18308.866;
-        float kenh4_2009 = (float)90579.025;
+        float kenh4_2009 = (float)83015.867;
         float kenh5_2009 = (float)28150.823;
         float kenh6_2009 = (float)291055.695;
         public ActionResult Index()

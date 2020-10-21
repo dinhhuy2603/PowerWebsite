@@ -55,8 +55,8 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.luu_luong_hien_tai;
-                    Sheet.Cells[string.Format("C{0}", row)].Value = item.luu_luong_tong;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.luu_luong_hien_tai);
+                    Sheet.Cells[string.Format("C{0}", row)].Value = float.Parse(item.luu_luong_tong);
 
                     row++;
                 }
@@ -113,7 +113,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.luu_luong_hien_tai;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.luu_luong_hien_tai);
                     //Sheet.Cells[string.Format("C{0}", row)].Value = item.luu_luong_tong;
 
                     row++;
@@ -171,7 +171,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.luu_luong_hien_tai;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.luu_luong_hien_tai);
                     //Sheet.Cells[string.Format("C{0}", row)].Value = item.luu_luong_tong;
 
                     row++;
@@ -228,8 +228,8 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.luu_luong_hien_tai;
-                    Sheet.Cells[string.Format("C{0}", row)].Value = item.luu_luong_tong;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.luu_luong_hien_tai);
+                    Sheet.Cells[string.Format("C{0}", row)].Value = float.Parse(item.luu_luong_tong);
 
                     row++;
                 }
@@ -285,7 +285,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -339,7 +339,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
@@ -394,7 +394,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -449,7 +449,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
@@ -504,7 +504,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -559,7 +559,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
@@ -614,7 +614,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -669,7 +669,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
@@ -724,7 +724,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
@@ -779,7 +779,7 @@ namespace PowerWebsite.Controllers
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
 
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -833,7 +833,7 @@ namespace PowerWebsite.Controllers
                 {
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Ptotal;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Ptotal);
 
                     row++;
                 }
@@ -887,7 +887,7 @@ namespace PowerWebsite.Controllers
                 {
                     Sheet.Cells[string.Format("A{0}", row)].Style.Numberformat.Format = "dd/MM/yyyy HH:mm:ss";
                     Sheet.Cells[string.Format("A{0}", row)].Value = item.Thoigian;
-                    Sheet.Cells[string.Format("B{0}", row)].Value = item.Kwh;
+                    Sheet.Cells[string.Format("B{0}", row)].Value = float.Parse(item.Kwh);
 
                     row++;
                 }
