@@ -7,9 +7,18 @@ using System.Web.Mvc;
 
 namespace PowerWebsite.Controllers
 {
+    public class Result
+    {
+        public int Thoigian { get; set; }
+        public int Thang { get; set; }
+        public string firstValue { get; set; }
+        public string lastValue { get; set; }
+    }
+
     public class ReportController : Controller
     {
         private object result;
+        private string first_value;
         DateTime startTodayTime = DateTime.Today; //Today at 00:00:00
         DateTime endTodayTime = DateTime.Today.AddDays(1).AddTicks(-1); //Today at 23:59:59
 
@@ -435,7 +444,6 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.Thang, x.firstValue, x.lastValue })
                         .ToList();
-                        Console.WriteLine(startOfWeek);
                         break;
                     case "last_week":
                         DateTime startOfLastWeek = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek)).AddDays(-7);
@@ -813,23 +821,34 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportKwhKenh4(int year, int month, string type)
         {
+            var data = new List<object>();
+            var first_value = new object();
             using (DBModel db = new DBModel())
             {
+                //var result = new List<Result>();
                 switch (type)
                 {
                     case "curr_year":
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year - 1).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new {
+                        .Select(g => new Result() {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                        data.Add(result);
+                        data.Add(first_value);
+                        result = data;
                         break;
                     case "last_year":
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year - 1)
                         .GroupBy(p => p.Thoigian.Month)
@@ -840,8 +859,14 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                        data.Add(result);
+                        data.Add(first_value);
+                        result = data;
                         break;
                     case "curr_month":
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= DateTime.Today.Day && p.Thoigian.Month == month)
                         .GroupBy(p => p.Thoigian.Day)
@@ -852,8 +877,14 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                        data.Add(result);
+                        data.Add(first_value);
+                        result = data;
                         break;
                     case "last_month":
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
                         .GroupBy(p => p.Thoigian.Day)
@@ -864,8 +895,15 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                        data.Add(result);
+                        data.Add(first_value);
+                        result = data;
                         break;
                     case "today":
+
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian >= startYesterdayTime && p.Thoigian <= endYesterdayTime).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian >= startTodayTime && p.Thoigian <= endTodayTime)
                         .GroupBy(p => p.Thoigian.Hour)
@@ -876,8 +914,18 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                        //var data = new List<object>();
+                        data.Add(result);
+                        data.Add(first_value);
+
+                        result = data;
                         break;
                     case "yesterday":
+                        DateTime beforeYesterdayStart = startYesterdayTime.AddDays(-1);
+                        DateTime beforeYesterdayEnd = endYesterdayTime.AddDays(-1);
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian >= beforeYesterdayStart && p.Thoigian <= beforeYesterdayEnd).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+                        
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian >= startYesterdayTime && p.Thoigian <= endYesterdayTime)
                         .GroupBy(p => p.Thoigian.Hour)
@@ -888,9 +936,20 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
+
+                       
+                        data.Add(result);
+                        data.Add(first_value);
+
+                        result = data;
                         break;
                     case "curr_week":
                         DateTime startOfWeek = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek));
+                        DateTime beforeStartOfWeek = startOfWeek.AddDays(-1);
+                        DateTime endBeforeStartOfWeek = startOfWeek.AddTicks(-1);
+
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian >= beforeStartOfWeek && p.Thoigian <= endBeforeStartOfWeek).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
 
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian >= startOfWeek && p.Thoigian <= endTodayTime && (p.Thoigian.Month == startOfWeek.Month || p.Thoigian.Month == endTodayTime.Month))
@@ -903,11 +962,19 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.Thang, x.firstValue, x.lastValue })
                         .ToList();
-                        Console.WriteLine(startOfWeek);
+
+                        data.Add(result);
+                        data.Add(first_value);
+
+                        result = data;
                         break;
                     case "last_week":
                         DateTime startOfLastWeek = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek)).AddDays(-7);
                         DateTime endOfLastWeek = startOfLastWeek.AddDays(7);
+                        DateTime startOfBeforeLastWeek = startOfLastWeek.AddDays(-1);
+                        DateTime endOfBeforeLastWeek = startOfLastWeek.AddTicks(-1);
+                        first_value = db.recoder_kenh4.Where(p => p.Thoigian >= startOfBeforeLastWeek && p.Thoigian <= endOfBeforeLastWeek).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault().Kwh;
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian >= startOfLastWeek && p.Thoigian <= endOfLastWeek && (p.Thoigian.Month == startOfLastWeek.Month || p.Thoigian.Month == endOfLastWeek.Month))
                         .GroupBy(p => new { p.Thoigian.Day, p.Thoigian.Month })
@@ -919,6 +986,12 @@ namespace PowerWebsite.Controllers
                         })
                         .Select(x => new { x.Thoigian, x.Thang, x.firstValue, x.lastValue })
                         .ToList();
+
+                        data.Add(result);
+                        data.Add(first_value);
+
+                        result = data;
+
                         break;
                     default:
                         break;
