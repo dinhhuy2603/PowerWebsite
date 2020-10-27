@@ -9,6 +9,8 @@ namespace PowerWebsite.Controllers
 {
     public class GasController : Controller
     {
+        DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
+        DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
         // GET: Gas
         public ActionResult Index()
         {
@@ -29,7 +31,7 @@ namespace PowerWebsite.Controllers
             {
                 DateTime today = DateTime.Today.Date;
                 var gas = db.gas.FirstOrDefault();
-                var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var gas_view = new GasView();
                 if (gas != null)

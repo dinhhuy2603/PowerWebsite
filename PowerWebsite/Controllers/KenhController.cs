@@ -10,6 +10,8 @@ namespace PowerWebsite.Controllers
     public class KenhController : Controller
     {
         DateTime today = DateTime.Today.Date;
+        DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
+        DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
         // GET: Kenh
         public ActionResult Kenh1Online()
         {
@@ -109,7 +111,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
-                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi1_view = new HienthiView();
                 if (hienthi1 != null)
@@ -149,7 +151,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi2 = db.hienthi.Where(a => a.Kenh.Equals("2")).FirstOrDefault();
-                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi2_view = new HienthiView();
                 if (hienthi2 != null)
@@ -189,7 +191,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi3 = db.hienthi.Where(a => a.Kenh.Equals("3")).FirstOrDefault();
-                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi3_view = new HienthiView();
                 if (hienthi3 != null)
@@ -229,7 +231,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi4 = db.hienthi.Where(a => a.Kenh.Equals("4")).FirstOrDefault();
-                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi4_view = new HienthiView();
                 if (hienthi4 != null)
@@ -268,7 +270,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi5 = db.hienthi.Where(a => a.Kenh.Equals("5")).FirstOrDefault();
-                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi5_view = new HienthiView();
                 if (hienthi5 != null)
@@ -308,7 +310,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi6 = db.hienthi.Where(a => a.Kenh.Equals("6")).FirstOrDefault();
-                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var hienthi6_view = new HienthiView();
                 if (hienthi6 != null)

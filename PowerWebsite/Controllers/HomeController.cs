@@ -11,6 +11,9 @@ namespace PowerWebsite.Controllers
     public class HomeController : Controller
     {
         DateTime today = DateTime.Today.Date;
+        DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
+        DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
+
         float kenh1_2009 = (float)226.72;
         float kenh2_2009 = (float)30813.393;
         float kenh3_2009 = (float)18308.866;
@@ -25,7 +28,7 @@ namespace PowerWebsite.Controllers
                 {
                     //Get Gas table
                     var gas = db.gas.FirstOrDefault();
-                    var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                    var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                              .Take(1).ToList().FirstOrDefault();
                     var gas_view = new GasView();
                     if (gas != null)
@@ -162,7 +165,7 @@ namespace PowerWebsite.Controllers
             {
                 //Get Gas table
                 var gas = db.gas.FirstOrDefault();
-                var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var gas_view = new GasView();
                 if (gas != null)
@@ -175,7 +178,7 @@ namespace PowerWebsite.Controllers
                 }
                 //Get Water table
                 var water = db.water.FirstOrDefault();
-                var water_recoder_begin = db.recoder_water.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var water_recoder_begin = db.recoder_water.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 var water_view = new WaterView();
                 if (water != null)
@@ -189,17 +192,17 @@ namespace PowerWebsite.Controllers
 
                 var hienthi = db.hienthi.Select(i => new HienthiOverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh, KWhDay = "0" }).ToList();
                 //var hienthi = db.hienthi.Select(i => new { i.Kenh, i.Ptotal, i.Kwh }).ToList();
-                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
-                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
-                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
-                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
-                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
-                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                             .Take(1).ToList().FirstOrDefault();
 
                 var kenh1 = new HienthiOverView();
@@ -305,7 +308,7 @@ namespace PowerWebsite.Controllers
                 {
                     //Get Gas table
                     var gas = db.gas.FirstOrDefault();
-                    var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                    var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                              .Take(1).ToList().FirstOrDefault();
                     if (gas != null)
                     {
@@ -319,7 +322,7 @@ namespace PowerWebsite.Controllers
                     }
                     //Get Water table
                     var water = db.water.FirstOrDefault();
-                    var water_recoder_begin = db.recoder_water.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                    var water_recoder_begin = db.recoder_water.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                              .Take(1).ToList().FirstOrDefault();
                     if (water != null)
                     {
@@ -568,7 +571,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
-                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi1 != null)
                 {
@@ -586,7 +589,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi2 = db.hienthi.Where(a => a.Kenh.Equals("2")).FirstOrDefault();
-                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh2_begin = db.recoder_kenh2.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi2 != null)
                 {
@@ -604,7 +607,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi3 = db.hienthi.Where(a => a.Kenh.Equals("3")).FirstOrDefault();
-                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh3_begin = db.recoder_kenh3.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi3 != null)
                 {
@@ -622,7 +625,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi4 = db.hienthi.Where(a => a.Kenh.Equals("4")).FirstOrDefault();
-                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh4_begin = db.recoder_kenh4.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi4 != null)
                 {
@@ -639,7 +642,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi5 = db.hienthi.Where(a => a.Kenh.Equals("5")).FirstOrDefault();
-                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh5_begin = db.recoder_kenh5.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi5 != null)
                 {
@@ -657,7 +660,7 @@ namespace PowerWebsite.Controllers
             using (DBModel db = new DBModel())
             {
                 var hienthi6 = db.hienthi.Where(a => a.Kenh.Equals("6")).FirstOrDefault();
-                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= today).OrderBy(x => x.Thoigian)
+                var recoder_kenh6_begin = db.recoder_kenh6.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
                 if (hienthi6 != null)
                 {
