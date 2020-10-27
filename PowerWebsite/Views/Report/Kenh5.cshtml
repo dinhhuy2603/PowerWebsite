@@ -363,15 +363,30 @@
         seriesOptions[0].data = [];
         seriesOptions[0].categories = [];
         //categories = [];
-        switch(type){
+        switch (type) {
             case 'curr_year':
-                for(i = 0; i < data.length; i++){
-                    if(typeof data[i] !== 'undefined'){
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
+                for (i = 0; i < data_report.length; i++) {
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2)) || 0;
+                    }
+                    else {
+                        if (typeof data_report[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            if (first_value > 0) {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                        }
                     }
                 }
+
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
                     seriesOptions[0].categories.push(monthNames[k])
                     if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
@@ -380,12 +395,25 @@
                 }
                 break;
             case 'last_year':
-
-                for (i = 0; i < data.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
+                for (i = 0; i < data_report.length; i++) {
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2)) || 0;
+                    }
+                    else {
+                        if (typeof data_report[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            if (first_value > 0) {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                        }
                     }
                 }
                 for (k = 0; k < 12; k++) {
@@ -396,11 +424,25 @@
                 }
                 break;
             case 'curr_month':
-                for(i = 0; i < data.length; i++){
-                    if(typeof data[i] !== 'undefined'){
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
+                for (i = 0; i < data_report.length; i++) {
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data_report[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            if (first_value > 0) {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                        }
                     }
                 }
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
@@ -409,18 +451,27 @@
                         seriesOptions[0].data[k] = 0;
                     }
                 }
-                //for (k = 0; k < getDaysInMonth(curr_month, curr_year) ; k++) {
-                //    seriesOptions[0].categories.push(monthNames[curr_month-1]+ ' '+[k + 1])
-                //    if(typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k]))
-                //        seriesOptions[0].data[k] = 0;
-                //}
                 break;
             case 'last_month':
-                for (i = 0; i < data.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian - 1] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
+                for (i = 0; i < data_report.length; i++) {
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data_report[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            if (first_value > 0) {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[data_report[i].Thoigian - 1] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                        }
                     }
                 }
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
@@ -432,31 +483,61 @@
                 break;
             case 'curr_week':
             case 'last_week':
-                for (i = 0; i < data.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[i] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2)) || 0;
-                        seriesOptions[0].categories.push(monthNames[data[i].Thang - 1] + ' ' + [data[i].Thoigian])
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
+                for (i = 0; i < data_report.length; i++) {
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[i] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2)) || 0;
+                        seriesOptions[0].categories.push(monthNames[data_report[i].Thang - 1] + ' ' + [data_report[i].Thoigian])
+                    }
+                    else {
+                        if (typeof data[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            //seriesOptions[0].data[i] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            if (first_value > 0) {
+                                seriesOptions[0].data[i] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[i] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                            seriesOptions[0].categories.push(monthNames[data_report[i].Thang - 1] + ' ' + [data_report[i].Thoigian])
+                        }
                     }
                 }
                 break;
             case 'today':
             case 'yesterday':
+                data_report = data[0];
+                first_value = (data[1] !== null) ? data[1].Kwh : 0;
                 var arr_hours = [];
                 for (var i = 0; i < 24; i++) {
                     arr_hours.push(i + ":00");
                     seriesOptions[0].categories.push(i + ":00");
                 }
                 for (i = 0; i < seriesOptions[0].categories.length; i++) {
-                    if (typeof data[i] !== 'undefined') {
-                        data[i].lastValue = data[i].lastValue ? parseFloat(data[i].lastValue) : 0;
-                        data[i].firstValue = data[i].firstValue ? parseFloat(data[i].firstValue) : 0;
-                        seriesOptions[0].data[data[i].Thoigian] = parseFloat((data[i].lastValue - data[i].firstValue).toFixed(2))
+                    if (typeof data_report[i] !== 'undefined' && typeof data_report[i - 1] !== 'undefined') {
+                        data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                        data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                        seriesOptions[0].data[data_report[i].Thoigian] = parseFloat((data_report[i].lastValue - data_report[i - 1].lastValue).toFixed(2))
+                    }
+                    else {
+                        if (typeof data_report[i] !== 'undefined') {
+                            data_report[i].lastValue = data_report[i].lastValue ? parseFloat(data_report[i].lastValue) : 0;
+                            data_report[i].firstValue = data_report[i].firstValue ? parseFloat(data_report[i].firstValue) : 0;
+                            //seriesOptions[0].data[data_report[i].Thoigian] = parseFloat((data_report[i].lastValue - first_value).toFixed(2))
+                            if (first_value > 0) {
+                                seriesOptions[0].data[data_report[i].Thoigian] = parseFloat((data_report[i].lastValue - first_value).toFixed(2)) || 0;
+                            }
+                            else {
+                                seriesOptions[0].data[data_report[i].Thoigian] = parseFloat((data_report[i].lastValue - data_report[i].firstValue).toFixed(2)) || 0;
+                            }
+                        }
                     }
                 }
-                for (k = 0; k < seriesOptions[0].data.length; k++)
-                {
+                for (k = 0; k < seriesOptions[0].data.length; k++) {
                     if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
                         seriesOptions[0].data[k] = 0;
                     }
