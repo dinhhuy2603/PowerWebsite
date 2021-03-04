@@ -640,7 +640,11 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Home\Overview.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Electric1.cshtml" />
+    <Content Include="Views\Dashboard\Electric2.cshtml" />
+    <Content Include="Views\Dashboard\Gas.cshtml" />
+    <Content Include="Views\Dashboard\Water.cshtml" />
+    <Content Include="Views\Dashboard\Steam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,42 +13,61 @@ namespace PowerWebsite.Controllers
         DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
         DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
         // GET: Dashboard
-        public ActionResult Index()
+        public ActionResult Electric1()
         {
-            using (DBModel db = new DBModel())
+            if (Session["UserID"] != null)
             {
-                //Get Gas table
-                var gas = db.gas.FirstOrDefault();
-                var gas_recoder_begin = db.recoder_gas.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
-                         .Take(1).ToList().FirstOrDefault();
-                if (gas != null)
-                {
-                    var gas_total_last = (gas_recoder_begin != null) ? gas_recoder_begin.luu_luong_tong : "0";
-                    gas.luu_luong_hien_tai = ((float)Math.Round(float.Parse(gas.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                    gas.luu_luong_tong = ((float)Math.Round((float.Parse(gas.luu_luong_tong) - float.Parse(gas_total_last)) * 10f) / 10f).ToString();
-                }
-                else
-                {
-                    gas = new Gas();
-                }
-                //Get Water table
-                var water = db.water.FirstOrDefault();
-                var water_recoder_begin = db.recoder_water.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
-                         .Take(1).ToList().FirstOrDefault();
-                if (water != null)
-                {
-                    var water_total_last = (water_recoder_begin != null) ? water_recoder_begin.luu_luong_tong : "0";
-                    water.luu_luong_hien_tai = ((float)Math.Round(float.Parse(water.luu_luong_hien_tai) * 10f) / 10f).ToString();
-                    water.luu_luong_tong = ((float)Math.Round((float.Parse(water.luu_luong_tong) - float.Parse(water_total_last)) * 10f) / 10f).ToString();
-                }
-                else
-                {
-                    water = new Water();
-                }
-                ViewBag.gas = gas;
-                ViewBag.water = water;
+                return View();
             }
-            return View();
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+
+        public ActionResult Electric2()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        public ActionResult Gas()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        public ActionResult Water()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        public ActionResult Steam()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
     }
 }

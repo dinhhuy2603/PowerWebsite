@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div  class="maximize_height collapse pt-3 show highcharts-figure" dir="ltr">
+                            <div class="maximize_height collapse pt-3 show highcharts-figure" dir="ltr">
                                 <div id="chart2" class="apex-charts" data-colors="#CED4DC,#6658dd"></div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
@@ -188,7 +188,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportLPSNACK3Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id="frm_export" }))
+                            @using (Html.BeginForm("ExportLPSNACK3Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -249,7 +249,7 @@
             success: function (data) {
                 data.forEach(function (item) {
                     chartData.push([
-                        parseInt(item.Thoigian.replace(/\/Date\((-?\d+)\)\//, '$1')), 
+                        parseInt(item.Thoigian.replace(/\/Date\((-?\d+)\)\//, '$1')),
                         parseFloat(parseFloat(item.Ptotal || 0).toFixed(2)),
                     ]);
                 });
@@ -277,15 +277,17 @@
                 type: 'month',
                 count: 1,
                 text: '1m'
-            }, {
-                type: 'month',
-                count: 6,
-                text: '6m'
-            }, {
-                type: 'year',
-                count: 1,
-                text: '1y'
-            }, {
+            },
+            //{
+            //    type: 'month',
+            //    count: 6,
+            //    text: '6m'
+            //}, {
+            //    type: 'year',
+            //    count: 1,
+            //    text: '1y'
+            //},
+            {
                 type: 'all',
                 text: 'All'
             }],
@@ -296,7 +298,7 @@
             plotLines: [{ value: 0, width: 1, color: '#808080' }],
             opposite: false,
             //min: 0,
-            //max: 500, 
+            //max: 500,
         },
         title: {
             text: ''
@@ -325,7 +327,7 @@
         }]
     });
 
-   
+
     function getChartKwhCompare(type) {
         var chartData = [];
         $.ajax({
@@ -476,8 +478,9 @@
                         }
                     }
                 }
+                last_month = curr_month == 1 ? 11 : curr_month - 2;
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
-                    seriesOptions[0].categories.push(monthNames[curr_month - 2] + ' ' + [k + 1])
+                    seriesOptions[0].categories.push(monthNames[last_month] + ' ' + [k + 1])
                     if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
                         seriesOptions[0].data[k] = 0;
                     }
@@ -555,13 +558,13 @@
                 animation: { duration: 500 },
             },
             title: { text: '' },
-            xAxis: { 
+            xAxis: {
                 categories: seriesOptions[0].categories,
             },
-            yAxis: { title: { text: 'Kwh' }, 
-                plotLines: [{ value: 0, width: 1, color: '#808080' }], 
+            yAxis: { title: { text: 'Kwh' },
+                plotLines: [{ value: 0, width: 1, color: '#808080' }],
                 //min: 0,
-                //max: 500, 
+                //max: 500,
             },
             tooltip: {
                 useHTML:true,

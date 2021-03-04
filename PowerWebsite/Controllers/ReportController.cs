@@ -151,9 +151,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataGas(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_gas.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.luu_luong_hien_tai })
+                var data = db.recoder_gas.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.luu_luong_hien_tai })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -162,9 +163,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataWater(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_water.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.luu_luong_hien_tai })
+                var data = db.recoder_water.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.luu_luong_hien_tai })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -173,9 +175,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh1(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh1.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh1.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -184,9 +187,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh2(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh2.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh2.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -195,9 +199,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh3(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh3.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh3.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -205,9 +210,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh4(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh4.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh4.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -215,9 +221,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh5(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh5.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh5.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -225,9 +232,10 @@ namespace PowerWebsite.Controllers
         [HttpGet]
         public JsonResult GetReportDataKenh6(int year, int month)
         {
+            var minDate = DateTime.Now.AddMonths(-3);
             using (DBModel db = new DBModel())
             {
-                var data = db.recoder_kenh6.Where(p => (p.Thoigian.Month >= month && p.Thoigian.Year == year - 1) || (p.Thoigian.Month <= month && p.Thoigian.Year == year)).Select(i => new { i.Thoigian, i.Ptotal })
+                var data = db.recoder_kenh6.Where(p => p.Thoigian > minDate).Select(i => new { i.Thoigian, i.Ptotal })
                              .ToList();
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
@@ -297,19 +305,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_gas.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_Gas> query1 = db.recoder_gas;
+                        IQueryable<Recoder_Gas> query2 = db.recoder_gas;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
 
-                        result = db.recoder_gas
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().luu_luong_tong,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().luu_luong_tong
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().luu_luong_tong,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().luu_luong_tong
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -468,19 +501,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_water.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_Water> query1 = db.recoder_water;
+                        IQueryable<Recoder_Water> query2 = db.recoder_water;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
 
-                        result = db.recoder_water
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().luu_luong_tong,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().luu_luong_tong
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().luu_luong_tong,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().luu_luong_tong
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -641,19 +699,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo1> query1 = db.recoder_kenh1;
+                        IQueryable<Recoder_DongHo1> query2 = db.recoder_kenh1;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh1
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -824,19 +907,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo2> query1 = db.recoder_kenh2;
+                        IQueryable<Recoder_DongHo2> query2 = db.recoder_kenh2;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh2
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -1007,19 +1115,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh3.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo3> query1 = db.recoder_kenh3;
+                        IQueryable<Recoder_DongHo3> query2 = db.recoder_kenh3;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh3
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -1131,7 +1264,6 @@ namespace PowerWebsite.Controllers
             var first_value = new object();
             using (DBModel db = new DBModel())
             {
-                //var result = new List<Result>();
                 switch (type)
                 {
                     case "curr_year":
@@ -1140,7 +1272,8 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result() {
+                        .Select(g => new Result()
+                        {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -1189,19 +1322,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh4.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo4> query1 = db.recoder_kenh4;
+                        IQueryable<Recoder_DongHo4> query2 = db.recoder_kenh4;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh4
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -1231,7 +1389,7 @@ namespace PowerWebsite.Controllers
                         DateTime beforeYesterdayStart = startYesterdayTime.AddDays(-1);
                         DateTime beforeYesterdayEnd = endYesterdayTime.AddDays(-1);
                         first_value = db.recoder_kenh4.Where(p => p.Thoigian >= beforeYesterdayStart && p.Thoigian <= beforeYesterdayEnd).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
-                        
+
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian >= startYesterdayTime && p.Thoigian <= endYesterdayTime)
                         .GroupBy(p => p.Thoigian.Hour)
@@ -1243,7 +1401,7 @@ namespace PowerWebsite.Controllers
                         .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
                         .ToList();
 
-                       
+
                         data.Add(result);
                         data.Add(first_value);
 
@@ -1371,19 +1529,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh5.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo5> query1 = db.recoder_kenh5;
+                        IQueryable<Recoder_DongHo5> query2 = db.recoder_kenh5;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh5
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;
@@ -1553,19 +1736,44 @@ namespace PowerWebsite.Controllers
                         result = data;
                         break;
                     case "last_month":
-                        first_value = db.recoder_kenh6.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2).OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
+                        IQueryable<Recoder_DongHo6> query1 = db.recoder_kenh6;
+                        IQueryable<Recoder_DongHo6> query2 = db.recoder_kenh6;
+                        int last_2_month;
+                        if (month > 2)
+                        {
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 2 && p.Thoigian.Year == year);
+                        }
+                        else
+                        {
+                            if (month == 2)
+                            {
+                                last_2_month = 12;
+                            }
+                            else
+                            {
+                                last_2_month = 11;
+                            }
+                            query1 = query1.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == last_2_month && p.Thoigian.Year == year - 1);
+                        }
+                        first_value = query1.OrderByDescending(p => p.Thoigian).Take(1).ToList().FirstOrDefault();
 
-                        result = db.recoder_kenh6
-                        .Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1)
-                        .GroupBy(p => p.Thoigian.Day)
-                        .Select(g => new {
-                            Thoigian = g.Key,
-                            firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
-                            lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
-                        })
-                        .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
-                        .ToList();
-
+                        if (month == 1)
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == 12 && p.Thoigian.Year == year - 1);
+                        }
+                        else
+                        {
+                            query2 = query2.Where(p => p.Thoigian.Day >= 1 && p.Thoigian.Day <= 31 && p.Thoigian.Month == month - 1 && p.Thoigian.Year == year);
+                        }
+                        result = query2.GroupBy(p => p.Thoigian.Day)
+                            .Select(g => new
+                            {
+                                Thoigian = g.Key,
+                                firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
+                                lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
+                            })
+                            .Select(x => new { x.Thoigian, x.firstValue, x.lastValue })
+                            .ToList();
                         data.Add(result);
                         data.Add(first_value);
                         result = data;

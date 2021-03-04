@@ -40,9 +40,11 @@
     .modal-dialog {
         min-width: 500px;
     }
+
     .apex-charts {
         height: 380px;
     }
+
     .apex-charts {
         height: 380px;
     }
@@ -188,7 +190,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportWaterReport", "ExportExcel", FormMethod.Get, new { @class = "", role = "form" , @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportWaterReport", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -273,14 +275,6 @@
                 count: 1,
                 text: '1m'
             }, {
-                type: 'month',
-                count: 6,
-                text: '6m'
-            }, {
-                type: 'year',
-                count: 1,
-                text: '1y'
-            }, {
                 type: 'all',
                 text: 'All'
             }],
@@ -294,7 +288,7 @@
             plotLines: [{ value: 0, width: 1, color: '#808080' }],
             opposite: false,
             //min: 0,
-            //max: 500, 
+            //max: 500,
         },
         credits: { enabled: false },
         subtitle: {
@@ -471,8 +465,9 @@
                         }
                     }
                 }
+                last_month = curr_month == 1 ? 11 : curr_month - 2;
                 for (k = 0; k < seriesOptions[0].data.length; k++) {
-                    seriesOptions[0].categories.push(monthNames[curr_month - 2] + ' ' + [k + 1])
+                    seriesOptions[0].categories.push(monthNames[last_month] + ' ' + [k + 1])
                     if (typeof seriesOptions[0].data[k] === 'undefined' || isNaN(seriesOptions[0].data[k])) {
                         seriesOptions[0].data[k] = 0;
                     }
@@ -616,7 +611,7 @@
         chart_1.setSize(null)
         chart_2.setSize(null)
     });
-        
+
     $('#btn_export').click(function (event) {
         event.preventDefault();
         $('#fromDate').val('');

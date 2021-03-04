@@ -1,5 +1,6 @@
 ﻿@{
-    ViewBag.Title = "Chart DP-SNACK-1 Report";
+    ViewBag.Title = "Chart LP-SNACK-3 Report";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section Styles
 {
@@ -103,7 +104,7 @@
                                 <li class="breadcrumb-item active"><a href="javascript: void(0);">Charts</a></li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Charts DP-SNACK-1 Report</h4>
+                        <h4 class="page-title">Charts LP-SNACK-3 Report</h4>
                     </div>
                 </div>
             </div>
@@ -141,7 +142,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="header-title mb-0">Kwh</h4>
+                                <h4 class="header-title mb-0"><b>Kwh</b></h4>
                                 <div class="d-flex align-items-center">
                                     <div class="mr-2">
                                         <select class="form-control" id="compare-chart">
@@ -177,6 +178,7 @@
         </div> <!-- container -->
     </div> <!-- content -->
 </div>
+
 <div class="modal fade modal-export" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -188,7 +190,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportDPSNACK1Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportLPSNACK3Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -236,10 +238,10 @@
         $('#centermodal').modal('show');
     });
 
-    function getChartKenh5Data() {
+    function getChartKenh1Data() {
         var chartData = [];
         $.ajax({
-            url: '/Report/GetReportDataKenh5/',
+            url: '/Report/GetReportDataKenh1/',
             data: {
                 year: curr_year,
                 month: curr_month
@@ -293,15 +295,15 @@
             }],
             selected: 2,
         },
-        title: {
-            text: ''
-        },
         yAxis: {
             title: { text: 'Kw' },
             plotLines: [{ value: 0, width: 1, color: '#808080' }],
             opposite: false,
             //min: 0,
             //max: 500,
+        },
+        title: {
+            text: ''
         },
         credits: { enabled: false },
         subtitle: {
@@ -314,7 +316,7 @@
         series: [{
             name: 'Kw',
             color: '#2764C1',
-            data: getChartKenh5Data(),
+            data: getChartKenh1Data(),
             marker: {
                 enabled: null, // auto
                 radius: 3,
@@ -331,7 +333,7 @@
     function getChartKwhCompare(type) {
         var chartData = [];
         $.ajax({
-            url: '/Report/GetReportKwhKenh5/',
+            url: '/Report/GetReportKwhKenh1/',
             data: {
                 year: curr_year,
                 month: curr_month,
@@ -552,7 +554,7 @@
                 break;
         }
 
-       chart_2 = Highcharts.chart('chart2', {
+        chart_2 = Highcharts.chart('chart2', {
             chart: {
                 type: 'column',
                 animation: { duration: 500 },
@@ -577,8 +579,8 @@
             credits: { enabled: false },
             exporting: {
                 enabled: true,
-                filename: 'chart_dp-snack-1',
-                tableCaption: 'Chart DP-SNACK-1 Report',
+                filename: 'chart_lp-snack-3',
+                tableCaption: 'Chart LP-SNACK-3 Report',
                 csv: {
                     dateFormat: '%Y-%m-%d'
                 }
@@ -625,7 +627,7 @@
         event.preventDefault();
         $('#fromDate').val('');
         $('#toDate').val('');
-        $('#frm_export').attr('action', '/ExportExcel/ExportDPSNACK1Report');
+        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK3Report');
         $('#centermodal').modal('show');
     });
 
@@ -641,9 +643,11 @@
 
     $('#btn_export_kw').click(function (event) {
         event.preventDefault();
-        $('#frm_export').attr('action', '/ExportExcel/ExportDPSNACK1KWReport');
+        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK3KWReport');
         $('#fromDate').val(minDate.val());
         $('#toDate').val(maxDate.val());
         $('#centermodal').modal('show');
     });
 </script>
+
+<!-- App js -->
