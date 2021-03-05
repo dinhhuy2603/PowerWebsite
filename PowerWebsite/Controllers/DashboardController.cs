@@ -69,5 +69,29 @@ namespace PowerWebsite.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+
+        public ActionResult SolarSystem()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+
+        public ActionResult Logistic()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
     }
 }
