@@ -148,20 +148,17 @@
 
 </div>
 
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Content/js/vendor.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js" type="text/javascript"></script>
+<script src="~/signalr/hubs" type="text/javascript"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-@*<script src="https://code.highcharts.com/modules/data.js"></script>*@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    var gas_obj = @Html.Raw(Json.Encode(ViewBag.gas));
-    var water_obj = @Html.Raw(Json.Encode(ViewBag.water));
 
     $(document).ready(function () {
         //Perform Ajax request.
@@ -170,25 +167,86 @@
                 useUTC: false
             }
         });
+
+        var chartHub = $.connection.chartHub;
+        //Call InitChartData
+        $.connection.hub.start().done(function () {
+            chartHub.server.initChartGasOnline();
+        });
+
+        chartHub.client.UpdateGasOnline = function(gas_data){
+            updateChartNow(gas_data);
+            updateChartTotal(gas_data);
+            updateChartTotalDay(gas_data);
+        }
+
     });
 
-   
-    function getGasData() {
-        var gasData = gas_obj;
-        $.ajax({
-            url: '/Gas/GetGasData/',
-            type: 'get',
-            async: false,
-            success: function (data) {
-                gasData = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                $('#content').html(errorMsg);
+    function updateChartNow(gas_data){
+        var series = chart.series;
+        var len = series.length;
+        var t = Date.now();
+        for (var j = 0; j < len; j++) {
+            switch (j) {
+                case 0:
+                {
+                    series[j].addPoint([t, parseFloat(gas_data.luu_luong_hien_tai)], false, true);
+                    break;
+                }
             }
-        });
-        return gasData;
+        }
+        chart.redraw();
     }
+
+    function updateChartTotal(gas_data){
+        var series = chart_total.series;
+        var len = series.length;
+        var t = Date.now();
+        for (var j = 0; j < len; j++) {
+            switch (j) {
+                case 0:
+                {
+                    series[j].addPoint([t, parseFloat(gas_data.luu_luong_tong)], false, true);
+                    break;
+                }
+            }
+        }
+        chart_total.redraw();
+    }
+
+    function updateChartTotalDay(gas_data){
+        var series = chart_total_day.series;
+        var len = series.length;
+        var t = Date.now();
+        for (var j = 0; j < len; j++) {
+            switch (j) {
+                case 0:
+                {
+                    series[j].addPoint([t, parseFloat(gas_data.luu_luong_tong_ngay)], false, true);
+                    break;
+                }
+            }
+        }
+        chart_total_day.redraw();
+    }
+
+
+    //function getGasData() {
+    //    var gasData = gas_obj;
+    //    $.ajax({
+    //        url: '/Gas/GetGasData/',
+    //        type: 'get',
+    //        async: false,
+    //        success: function (data) {
+    //            gasData = data;
+    //        },
+    //        error: function (xhr, ajaxOptions, thrownError) {
+    //            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+    //            $('#content').html(errorMsg);
+    //        }
+    //    });
+    //    return gasData;
+    //}
 
     function initData() {
         var data = [];
@@ -203,28 +261,6 @@
         chart: {
             type: 'area',
             animation: { duration: 500 },
-            //height: 500,
-            events: {
-                load: function () {
-                    var series = this.series;
-                    var len = series.length;
-                    setInterval(function (chartData) {
-                        var chartData = getGasData();
-                        //var time = parseInt(chartData.Thoigian.replace("/Date(", "").replace(")/", ""));
-                        var t = Date.now();
-                        for (var j = 0; j < len; j++) {
-                            switch (j) {
-                                case 0:
-                                    {
-                                        series[j].addPoint([t, parseFloat(chartData.luu_luong_hien_tai)], false, true);
-                                        break;
-                                    }
-                            }
-                        }
-                        chart.redraw();
-                    }, 1000);
-                }
-            }
         },
         title: { text: 'Lưu lượng GAS Hiện Tại (m3/h)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },
@@ -276,26 +312,6 @@
             animation: { duration: 500 },
             //zoomType: 'x',
             //height: 500,
-            events: {
-                load: function () {
-                    var series = this.series;
-                    var len = series.length;
-                    setInterval(function (chartData) {
-                        var chartData = getGasData();
-                        var t = Date.now();
-                        for (var j = 0; j < len; j++) {
-                            switch (j) {
-                                case 0:
-                                    {
-                                        series[j].addPoint([t, parseFloat(chartData.luu_luong_tong)], false, true);
-                                        break;
-                                    }
-                            }
-                        }
-                        chart_total.redraw();
-                    }, 1000);
-                }
-            }
         },
         title: { text: 'Lưu lượng GAS Tổng (m3)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },
@@ -344,28 +360,6 @@
         chart: {
             type: 'area',
             animation: { duration: 500 },
-            //zoomType: 'x',
-            //height: 500,
-            events: {
-                load: function () {
-                    var series = this.series;
-                    var len = series.length;
-                    setInterval(function (chartData) {
-                        var chartData = getGasData();
-                        var t = Date.now();
-                        for (var j = 0; j < len; j++) {
-                            switch (j) {
-                                case 0:
-                                    {
-                                        series[j].addPoint([t, parseFloat(chartData.luu_luong_tong_ngay)], false, true);
-                                        break;
-                                    }
-                            }
-                        }
-                        chart_total_day.redraw();
-                    }, 1000);
-                }
-            }
         },
         title: { text: 'Lưu lượng GAS Tổng Ngày (m3 in day)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },

@@ -241,6 +241,8 @@
     </Compile>
     <Compile Include="Hubs\ChartDataUpdate.cs" />
     <Compile Include="Hubs\ChartHub.cs" />
+    <Compile Include="Hubs\ChartOnlineUpdate.cs" />
+    <Compile Include="Hubs\EnergyDatatUpdate.cs" />
     <Compile Include="Models\Gas.cs" />
     <Compile Include="Models\Hienthi.cs" />
     <Compile Include="Models\Recoder_DongHo1.cs" />
@@ -507,6 +509,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\highcharts\accessibility.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -568,6 +571,10 @@
     <Content Include="Content\libs\summernote\font\summernote.woff2" />
     <Content Include="Content\libs\summernote\font\summernoted41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\highcharts\export-data.js" />
+    <Content Include="Scripts\highcharts\exporting.js" />
+    <Content Include="Scripts\highcharts\highcharts-more.js" />
+    <Content Include="Scripts\highcharts\highcharts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -583,6 +590,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\highcharts\solid-gauge.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -645,6 +653,8 @@
     <Content Include="Views\Dashboard\Gas.cshtml" />
     <Content Include="Views\Dashboard\Water.cshtml" />
     <Content Include="Views\Dashboard\Steam.cshtml" />
+    <Content Include="Views\Dashboard\SolarSystem.cshtml" />
+    <Content Include="Views\Dashboard\Logistic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

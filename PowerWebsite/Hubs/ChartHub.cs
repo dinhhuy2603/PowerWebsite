@@ -13,21 +13,19 @@ namespace PowerWebsite.Hubs
     {
         // Create the instance of ChartDataUpdate
         private readonly ChartDataUpdate _ChartInstance;
-        public ChartHub() : this(ChartDataUpdate.Instance) { }
+        private readonly EnergyDatatUpdate _EneryInstance;
+        private readonly ChartOnlineUpdate _ChartOnlineInstance;
+        public ChartHub() : this(ChartDataUpdate.Instance, EnergyDatatUpdate.Instance, ChartOnlineUpdate.Instance) { }
 
-        public ChartHub(ChartDataUpdate ChartInstance)
+        public ChartHub(ChartDataUpdate ChartInstance, EnergyDatatUpdate EneryInstance, ChartOnlineUpdate ChartOnlineInstance)
         {
             _ChartInstance = ChartInstance;
+            _EneryInstance = EneryInstance;
+            _ChartOnlineInstance = ChartOnlineInstance;
         }
 
         public void InitChartDataElectric1()
         {
-            //Show Chart initially when InitChartData called first time
-            //LineChart lineChart = new LineChart();
-            //PieChart pieChart = new PieChart();
-            //lineChart.SetLineChartData();
-            //pieChart.SetPieChartData();
-
             var gasChart = new GasController().GetGasData().Data;
             var waterChart = new WaterController().GetWaterData().Data;
             var kenh1Chart = new HomeController().GetChartKenh1Data().Data;
@@ -41,9 +39,38 @@ namespace PowerWebsite.Hubs
             _ChartInstance.GetChartElectric1Data();
         }
 
+        public void InitEneryOveriew()
+        {
+            var hienthi_enery_overview = new HomeController().GetIndexData().Data;
+            Clients.All.UpdateEneryOverview(hienthi_enery_overview);
+            _EneryInstance.GetEnergyOverviewData();
+        }
+
         public void sendKenh(string kenh)
         {
             _ChartInstance.getKenhValue(kenh);
+            var dataHienthi = new HomeController().GetHienThiData(kenh).Data;
+            Clients.All.UpdatePopupHienThi(dataHienthi);
         }
+
+        public void InitChartGasOnline()
+        {
+            var gas_data = new GasController().GetGasData().Data;
+            Clients.All.UpdateGasOnline(gas_data);
+            _ChartOnlineInstance.GetGasOnlineData();
+        }
+        public void InitChartWaterOnline()
+        {
+            var water_data = new WaterController().GetWaterData().Data;
+            Clients.All.UpdateWaterOnline(water_data);
+            _ChartOnlineInstance.GetWaterOnlineData();
+        }
+        public void InitChartKenh1Online()
+        {
+            var kenh1_data = new KenhController().GetChartKenh1DataOnline().Data;
+            Clients.All.UpdateKenh1Online(kenh1_data);
+            _ChartOnlineInstance.GetKenh1OnlineData();
+        }
+       
     }
 }
