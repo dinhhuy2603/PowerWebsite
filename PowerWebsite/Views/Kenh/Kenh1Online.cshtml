@@ -230,7 +230,6 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    var kenh1 = @Html.Raw(Json.Encode(ViewBag.kenh1));
     $(document).ready(function () {
         //Perform Ajax request.
         Highcharts.setOptions({
@@ -238,35 +237,19 @@
                 useUTC: false
             }
         });
+    });
 
+    $(function () {
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {
-            //chartHub.server.initChartKenh1Online();
+            chartHub.server.initChartKenh1Online();
         });
 
         chartHub.client.UpdateKenh1Online = function (chart_data) {
-            //updateChart(chart_data);
-            //updateChart1(chart_data);
+            updateChart(chart_data);
         }
     });
-
-    function updateChart1(chart_data){
-        var series = chart_1.series;
-        var len = series.length;
-        var t = Date.now();
-        for (var j = 0; j < len; j++) {
-            switch (j) {
-                case 0:
-                    {
-                        series[j].addPoint([t, parseFloat(chart_data.Ptotal)], false, true);
-                        break;
-                    }
-            }
-        }
-        chart_1.redraw();
-    }
-
 
     function initData() {
         var data = [];
@@ -274,7 +257,6 @@
         for (var i = -12; i <= 0; i += 1) {
             data.push({ x: time + i * 1000, y: 0 });
         }
-        console.log(data);
         return data;
     }
 

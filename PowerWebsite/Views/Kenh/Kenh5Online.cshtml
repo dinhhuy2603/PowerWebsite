@@ -220,9 +220,10 @@
 
 </div>
 
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Content/js/vendor.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js" type="text/javascript"></script>
+<script src="~/signalr/hubs" type="text/javascript"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -230,7 +231,6 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    var kenh5 = @Html.Raw(Json.Encode(ViewBag.kenh5));
     $(document).ready(function () {
         //Perform Ajax request.
         Highcharts.setOptions({
@@ -239,22 +239,18 @@
             }
         });
     });
-    function getChartKenh5Data() {
-        var chartData = kenh5;
-        $.ajax({
-            url: '/Kenh/GetChartKenh5DataOnline/',
-            type: 'get',
-            async: false,
-            success: function (data) {
-                chartData = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + responseText.xhrcontent
-                $('#;').html(errorMsg);
-            }
+
+    $(function () {
+        var chartHub = $.connection.chartHub;
+        //Call InitChartData
+        $.connection.hub.start().done(function () {
+            chartHub.server.initChartKenh5Online();
         });
-        return chartData;
-    }
+
+        chartHub.client.UpdateKenh5Online = function (chart_data) {
+            updateChart(chart_data);
+        }
+    });
 
     function initData() {
         var data = [];
@@ -264,7 +260,6 @@
         }
         return data;
     }
-
     let chart_1 = new Highcharts.chart('chart1', {
         chart: {
             type: 'areaspline',
@@ -373,7 +368,6 @@
           { name: 'Kwh in day', data: initData(), color: '#26A9DF' }
         ]
     });
-
     // Chart Gas Total
     let chart_3 = new Highcharts.chart('chart3', {
         chart: {
@@ -435,7 +429,6 @@
           { name: 'VII', data: initData(), color: '#ff8000' },
         ]
     });
-
     // Chart Van, Vbn, Vcn, Vin
     let chart_4 = new Highcharts.chart('chart4', {
         chart: {
@@ -497,7 +490,6 @@
           { name: 'Vin', data: initData(), color: '#ff8000' },
         ]
     });
-
     // Chart Cac, Cab, Caa, Civg
     let chart_5 = new Highcharts.chart('chart5', {
         chart: {
@@ -555,7 +547,6 @@
           { name: 'Civg', data: initData(), color: '#ff8000' },
         ]
     });
-
     // Chart Pa, Pb, Pc, Ptotal
     let chart_6 = new Highcharts.chart('chart6', {
         chart: {
@@ -613,145 +604,141 @@
           { name: 'Ptotal', data: initData(), color: '#ff8000' },
         ]
     });
-    updateChart();
-    function updateChart(){
+    function updateChart(chartData){
         var series1 = $('#chart1').highcharts().series;
         var series2 = $('#chart2').highcharts().series;
         var series3 = $('#chart3').highcharts().series;
         var series4 = $('#chart4').highcharts().series;
         var series5 = $('#chart5').highcharts().series;
         var series6 = $('#chart6').highcharts().series;
-        setInterval(function (chartData) {
-            var chartData = getChartKenh5Data();
-            var t = Date.now();
-            for (var j = 0; j < series1.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series1[j].addPoint([t, parseFloat(chartData.Ptotal)], false, true);
-                            break;
-                        }
-                }
-                chart_1.redraw();
+        var t = Date.now();
+        for (var j = 0; j < series1.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series1[j].addPoint([t, parseFloat(chartData.Ptotal)], false, true);
+                        break;
+                    }
             }
-            for (var j = 0; j < series2.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series2[j].addPoint([t, parseFloat(chartData.Kwh)], false, true);
-                            break;
-                        }
-                    case 1:
-                        {
-                            series2[j].addPoint([t, parseFloat(chartData.KwhDay)], false, true);
-                            break;
-                        }
-                }
+            chart_1.redraw();
+        }
+        for (var j = 0; j < series2.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series2[j].addPoint([t, parseFloat(chartData.Kwh)], false, true);
+                        break;
+                    }
+                case 1:
+                    {
+                        series2[j].addPoint([t, parseFloat(chartData.KwhDay)], false, true);
+                        break;
+                    }
             }
-            chart_2.redraw();
-            for (var j = 0; j < series3.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series3[j].addPoint([t, parseFloat(chartData.Vca)], false, true);
-                            break;
-                        }
-                    case 1:
-                        {
-                            series3[j].addPoint([t, parseFloat(chartData.Vbc)], false, true);
-                            break;
-                        }
-                    case 2:
-                        {
-                            series3[j].addPoint([t, parseFloat(chartData.Vab)], false, true);
-                            break;
-                        }
-                    case 3:
-                        {
-                            series3[j].addPoint([t, parseFloat(chartData.VII)], false, true);
-                            break;
-                        }
-                }
+        }
+        chart_2.redraw();
+        for (var j = 0; j < series3.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series3[j].addPoint([t, parseFloat(chartData.Vca)], false, true);
+                        break;
+                    }
+                case 1:
+                    {
+                        series3[j].addPoint([t, parseFloat(chartData.Vbc)], false, true);
+                        break;
+                    }
+                case 2:
+                    {
+                        series3[j].addPoint([t, parseFloat(chartData.Vab)], false, true);
+                        break;
+                    }
+                case 3:
+                    {
+                        series3[j].addPoint([t, parseFloat(chartData.VII)], false, true);
+                        break;
+                    }
             }
-            chart_3.redraw();
-            for (var j = 0; j < series4.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series4[j].addPoint([t, parseFloat(chartData.Van)], false, true);
-                            break;
-                        }
-                    case 1:
-                        {
-                            series4[j].addPoint([t, parseFloat(chartData.Vbn)], false, true);
-                            break;
-                        }
-                    case 2:
-                        {
-                            series4[j].addPoint([t, parseFloat(chartData.Vcn)], false, true);
-                            break;
-                        }
-                    case 3:
-                        {
-                            series4[j].addPoint([t, parseFloat(chartData.Vin)], false, true);
-                            break;
-                        }
-                }
+        }
+        chart_3.redraw();
+        for (var j = 0; j < series4.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series4[j].addPoint([t, parseFloat(chartData.Van)], false, true);
+                        break;
+                    }
+                case 1:
+                    {
+                        series4[j].addPoint([t, parseFloat(chartData.Vbn)], false, true);
+                        break;
+                    }
+                case 2:
+                    {
+                        series4[j].addPoint([t, parseFloat(chartData.Vcn)], false, true);
+                        break;
+                    }
+                case 3:
+                    {
+                        series4[j].addPoint([t, parseFloat(chartData.Vin)], false, true);
+                        break;
+                    }
             }
-            chart_4.redraw();
+        }
+        chart_4.redraw();
 
-            for (var j = 0; j < series5.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series5[j].addPoint([t, parseFloat(chartData.Cac)], false, true);
-                            break;
-                        }
-                    case 1:
-                        {
-                            series5[j].addPoint([t, parseFloat(chartData.Cab)], false, true);
-                            break;
-                        }
-                    case 2:
-                        {
-                            series5[j].addPoint([t, parseFloat(chartData.Caa)], false, true);
-                            break;
-                        }
-                    case 3:
-                        {
-                            series5[j].addPoint([t, parseFloat(chartData.Civg)], false, true);
-                            break;
-                        }
-                }
+        for (var j = 0; j < series5.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series5[j].addPoint([t, parseFloat(chartData.Cac)], false, true);
+                        break;
+                    }
+                case 1:
+                    {
+                        series5[j].addPoint([t, parseFloat(chartData.Cab)], false, true);
+                        break;
+                    }
+                case 2:
+                    {
+                        series5[j].addPoint([t, parseFloat(chartData.Caa)], false, true);
+                        break;
+                    }
+                case 3:
+                    {
+                        series5[j].addPoint([t, parseFloat(chartData.Civg)], false, true);
+                        break;
+                    }
             }
-            chart_5.redraw();
+        }
+        chart_5.redraw();
 
-            for (var j = 0; j < series6.length; j++) {
-                switch (j) {
-                    case 0:
-                        {
-                            series6[j].addPoint([t, parseFloat(chartData.Pa)], false, true);
-                            break;
-                        }
-                    case 1:
-                        {
-                            series6[j].addPoint([t, parseFloat(chartData.Pb)], false, true);
-                            break;
-                        }
-                    case 2:
-                        {
-                            series6[j].addPoint([t, parseFloat(chartData.Pc)], false, true);
-                            break;
-                        }
-                    case 3:
-                        {
-                            series6[j].addPoint([t, parseFloat(chartData.Ptotal)], false, true);
-                            break;
-                        }
-                }
+        for (var j = 0; j < series6.length; j++) {
+            switch (j) {
+                case 0:
+                    {
+                        series6[j].addPoint([t, parseFloat(chartData.Pa)], false, true);
+                        break;
+                    }
+                case 1:
+                    {
+                        series6[j].addPoint([t, parseFloat(chartData.Pb)], false, true);
+                        break;
+                    }
+                case 2:
+                    {
+                        series6[j].addPoint([t, parseFloat(chartData.Pc)], false, true);
+                        break;
+                    }
+                case 3:
+                    {
+                        series6[j].addPoint([t, parseFloat(chartData.Ptotal)], false, true);
+                        break;
+                    }
             }
-            chart_6.redraw();
-        }, 1000);
+        }
+        chart_6.redraw();
     }
 
     $('.button-menu-mobile').click(function(event){

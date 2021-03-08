@@ -171,6 +171,7 @@
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {
+            console.log('start');
             chartHub.server.initChartGasOnline();
         });
 
@@ -178,6 +179,7 @@
             updateChartNow(gas_data);
             updateChartTotal(gas_data);
             updateChartTotalDay(gas_data);
+            console.log('1');
         }
 
     });
@@ -196,6 +198,20 @@
             }
         }
         chart.redraw();
+
+        //var series_total = chart_total.series;
+        //var len_total = series_total.length;
+        ////var t = Date.now();
+        //for (var k = 0; k < len_total; k++) {
+        //    switch (k) {
+        //        case 0:
+        //            {
+        //                series_total[k].addPoint([t, parseFloat(gas_data.luu_luong_tong)], false, true);
+        //                break;
+        //            }
+        //    }
+        //}
+        //chart_total.redraw();
     }
 
     function updateChartTotal(gas_data){

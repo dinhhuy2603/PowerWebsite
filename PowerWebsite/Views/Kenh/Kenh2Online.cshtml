@@ -239,17 +239,21 @@
                 useUTC: false
             }
         });
+    });
 
+    $(function () {
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {
-            chartHub.server.initChartWaterOnline();
+            chartHub.server.initChartKenh2Online();
         });
 
-        chartHub.client.UpdateWaterOnline = function (chart_data) {
+        chartHub.client.UpdateKenh2Online = function (chart_data) {
             updateChart(chart_data);
         }
     });
+
+
     function getChartKenh2Data() {
         var chartData = kenh2;
         $.ajax({
