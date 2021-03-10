@@ -4,7 +4,6 @@
 @section Styles
 {
     <link rel="shortcut icon" href="~/Content/images/favicon.ico">
-
     <!-- App css -->
     <link href="~/Content/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -18,17 +17,106 @@
     .modal-header {
         border-bottom: 1px solid #e6e6e6;
     }
-</style>
+    .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+    }
+    .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+        animation: loader-inner 2s infinite ease-in;
+    }
+    @@-webkit-keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(180deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        75% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 
+    @@-webkit-keyframes loader-inner {
+        0% {
+            height: 0%;
+        }
+        25% {
+            height: 0%;
+        }
+        50% {
+            height: 100%;
+        }
+        75% {
+            height: 100%;
+        }
+        100% {
+            height: 0%;
+        }
+    }
+</style>
 <div class="content-page pd-0-mobile">
     <div class="content">
+        <!-- Start Content-->
         <div class="container-fluid pd-0-mobile">
             <div class="row mt-5">
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20"><span class="chart_color" id="gas_status" style="background:red"></span>LƯU LƯỢNG GAS</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase23" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartGas1" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartGas2" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20"><span class="chart_color" id="gas_cng_status" style="background:red"></span>CNG PC 15</h5>
+                        <div class="card-body">
+                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
+                                <div id="chartGasCNG1" class="chart-container" data-colors="#f1556c"></div>
+                                <div id="chartGasCNG2" class="chart-container" data-colors="#f1556c"></div>
+                            </div> <!-- collapsed end -->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
 
             </div>
         </div>
     </div>
 </div>
+
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -37,10 +125,8 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-<script src="~/Content/js/vendor.min.js"></script>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
-<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="~/Content/js/vendor.min.js"></script>
 <script src="~/Scripts/jquery.signalR-2.4.1.min.js" type="text/javascript"></script>
 <script src="~/signalr/hubs" type="text/javascript"></script>
 
@@ -52,3 +138,276 @@
 <script src="~/Content/js/pages/dashboard-2.init.js"></script>
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
+<script type="text/javascript">
+    $(window).on("load", function () {
+        $(".loader-wrapper").fadeOut("slow");
+    });
+
+    function getGasData() {
+        var gasData = {};
+        $.ajax({
+            url: '/Gas/GetGasData/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                gasData = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return gasData;
+    }
+
+    function getGasCNGData() {
+        var gasCNGData = {};
+        $.ajax({
+            url: '/Gas/GetGasCNGData/',
+            type: 'get',
+            async: false,
+            success: function (data) {
+                gasCNGData = data;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                $('#content').html(errorMsg);
+            }
+        });
+        return gasCNGData;
+    }
+    
+    var gas = getGasData();
+    var gas_cng = getGasCNGData();
+    console.log(gas)
+    console.log(gas_cng)
+    $(function () {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+
+        //Create the Hub
+        var chartHub = $.connection.chartHub;
+        //Call InitChartData
+        $.connection.hub.start().done(function () {
+            chartHub.server.initChartGasDashboard();
+        });
+
+        //Call to Update LineChart from Server
+        chartHub.client.UpdateChartGas = function (gas_data, gas_cng_data) {
+            UpdateGasChart(gas_data);
+            UpdateGasCNGChart(gas_cng_data)
+        };
+    });
+
+    function UpdateGasChart(data) {
+        if (chartGas1) {
+            point = chartGas1.series[0].points[0];
+            newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
+            if (newVal < 0 || newVal > 200) {
+                newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartGas2) {
+            point = chartGas2.series[0].points[0];
+            newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
+            if (newVal < 0 || newVal > 200) {
+                newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
+            }
+            point.update(newVal);
+        }
+        // Update button xanh/đỏ
+        if(data.status == 0){
+            $('#gas_status').css('background', 'green');
+        }
+        else{
+            $('#gas_status').css('background', 'red');
+        }
+    }
+
+    function UpdateGasCNGChart(data) {
+        if (chartGasCNG1) {
+            point = chartGasCNG1.series[0].points[0];
+            newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
+            if (newVal < 0 || newVal > 200) {
+                newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
+            }
+            point.update(newVal);
+        }
+        if (chartGasCNG2) {
+            point = chartGasCNG2.series[0].points[0];
+            newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
+            if (newVal < 0 || newVal > 200) {
+                newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
+            }
+            point.update(newVal);
+        }
+        // Update button xanh/đỏ
+        if (data.status == 0) {
+            $('#gas_cng_status').css('background', 'green');
+        }
+        else {
+            $('#gas_cng_status').css('background', 'red');
+        }
+    }
+
+    var gaugeOptions = {
+        chart: {
+            type: 'solidgauge',
+            backgroundColor: '#1c2a47',
+            colors: ['#ffff']
+        },
+        title: null,
+        pane: {
+            center: ['50%', '85%'],
+            size: '140%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+        tooltip: {
+            enabled: false
+        },
+        exporting: { enabled: false },
+        // the value axis
+        yAxis: {
+            stops: [
+                [0.1, '#55bf3b'], // green
+                [0.5, '#dddf0d'], // yellow
+                [0.9, '#df5353'] // red
+            ],
+            lineWidth: 0,
+            tickWidth: 0,
+            minorTickInterval: null,
+            tickAmount: 2,
+            title: {
+                y: -75,
+                fontWeight: 'bold',
+                fontSize: '25px'
+            },
+            labels: {
+                y: 16
+            }
+        },
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true,
+                    color: '#fff'
+                }
+            }
+        }
+    };
+
+    var chartGas1 = Highcharts.chart('chartGas1', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'm3/h'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas.luu_luong_hien_tai],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' '
+            }
+        }]
+    }));
+
+    var chartGas2 = Highcharts.chart('chartGas2', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 3000,
+            title: {
+                text: 'm3 in day'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas.luu_luong_tong_ngay],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+
+    var chartGasCNG1 = Highcharts.chart('chartGasCNG1', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 200,
+            title: {
+                text: 'm3/h'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas_cng.luu_luong_hien_tai],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' '
+            }
+        }]
+    }));
+
+    var chartGasCNG2 = Highcharts.chart('chartGasCNG2', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 3000,
+            title: {
+                text: 'm3 in day'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Speed',
+            data: [gas_cng.luu_luong_tong_ngay],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    '#fff' + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver"></span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+    }));
+
+
+</script>

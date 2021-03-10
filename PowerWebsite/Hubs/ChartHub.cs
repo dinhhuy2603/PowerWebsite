@@ -12,18 +12,22 @@ namespace PowerWebsite.Hubs
     public class ChartHub : Hub
     {
         // Create the instance of ChartDataUpdate
-        private readonly ChartDataUpdate _ChartInstance;
+        private readonly ChartElectric1Update _Electric1;
+        private readonly ChartElectric2Update _Electric2;
         private readonly EnergyDatatUpdate _EneryInstance;
         private readonly ChartOnlineUpdate _ChartOnlineInstance;
-        public ChartHub() : this(ChartDataUpdate.Instance, EnergyDatatUpdate.Instance, ChartOnlineUpdate.Instance) { }
+        private readonly ChartGasUpdate _GasSnackInstance;
+        public ChartHub() : this(ChartElectric1Update.Instance, ChartElectric2Update.Instance, EnergyDatatUpdate.Instance, ChartOnlineUpdate.Instance, ChartGasUpdate.Instance) { }
 
-        public ChartHub(ChartDataUpdate ChartInstance, EnergyDatatUpdate EneryInstance, ChartOnlineUpdate ChartOnlineInstance)
+        public ChartHub(ChartElectric1Update Electric1Instance, ChartElectric2Update Electric2Instance, EnergyDatatUpdate EneryInstance, ChartOnlineUpdate ChartOnlineInstance, ChartGasUpdate GasSnackInstance)
         {
-            _ChartInstance = ChartInstance;
+            _Electric1 = Electric1Instance;
+            _Electric2 = Electric2Instance;
             _EneryInstance = EneryInstance;
             _ChartOnlineInstance = ChartOnlineInstance;
+            _GasSnackInstance = GasSnackInstance;
         }
-
+        // Dashboard Electric 1-2
         public void InitChartDataElectric1()
         {
             var gasChart = new GasController().GetGasData().Data;
@@ -36,7 +40,43 @@ namespace PowerWebsite.Hubs
             var kenh6Chart = new HomeController().GetChartKenh6Data().Data;
             Clients.All.UpdateChartElectric1(gasChart, waterChart, kenh1Chart, kenh2Chart, kenh3Chart, kenh4Chart, kenh5Chart, kenh6Chart);
             //Call GetChartData to send Chart data every 5 seconds
-            _ChartInstance.GetChartElectric1Data();
+            _Electric1.GetChartElectric1Data();
+        }
+        public void sendKenhElectric1(string kenh)
+        {
+            _Electric1.getKenhValue(kenh);
+            var dataHienthi = new HomeController().GetHienThiData(kenh).Data;
+            Clients.All.UpdatePopupHienThi(dataHienthi);
+        }
+
+        // Dashboard Electric 2-2
+        public void InitChartDataElectric2()
+        {
+            var kenh4Chart = new SnackController().GetChartKenh4Data().Data;
+            var kenh5Chart = new SnackController().GetChartKenh5Data().Data;
+            var kenh6Chart = new SnackController().GetChartKenh6Data().Data;
+            var kenh7Chart = new SnackController().GetChartKenh7Data().Data;
+            var kenh8Chart = new SnackController().GetChartKenh8Data().Data;
+            var kenh9Chart = new SnackController().GetChartKenh9Data().Data;
+            var kenh10Chart = new SnackController().GetChartKenh10Data().Data;
+            var kenh11Chart = new SnackController().GetChartKenh11Data().Data;
+            Clients.All.UpdateChartElectric2(kenh4Chart, kenh5Chart, kenh6Chart, kenh7Chart, kenh8Chart, kenh9Chart, kenh10Chart, kenh11Chart);
+            //Call GetChartData to send Chart data every 5 seconds
+            _Electric2.GetChartElectric2Data();
+        }
+        public void sendKenhElectric2(string kenh)
+        {
+            _Electric2.getKenhValue(kenh);
+            var dataHienthi1 = new SnackController().GetHienThi1Data(kenh).Data;
+            Clients.All.UpdatePopupHienThi(dataHienthi1);
+        }
+        // Dashboard Gas
+        public void InitChartGasDashboard()
+        {
+            var gasChart = new GasController().GetGasData().Data;
+            var gasCngChart = new GasController().GetGasCNGData().Data;
+            Clients.All.UpdateChartGas(gasChart, gasCngChart);
+            _GasSnackInstance.GetChartGasData();
         }
 
         public void InitEneryOveriew()
@@ -46,13 +86,7 @@ namespace PowerWebsite.Hubs
             _EneryInstance.GetEnergyOverviewData();
         }
 
-        public void sendKenh(string kenh)
-        {
-            _ChartInstance.getKenhValue(kenh);
-            var dataHienthi = new HomeController().GetHienThiData(kenh).Data;
-            Clients.All.UpdatePopupHienThi(dataHienthi);
-        }
-
+        // Chart Online Electric 1-2
         public void InitChartGasOnline()
         {
             var gas_data = new GasController().GetGasData().Data;
@@ -102,6 +136,6 @@ namespace PowerWebsite.Hubs
             Clients.All.UpdateKenh6Online(kenh6_data);
             _ChartOnlineInstance.GetKenh6OnlineData();
         }
-
+        // Chart Online Electric 2-2
     }
 }

@@ -13,10 +13,10 @@ using System.Web;
 namespace PowerWebsite.Hubs
 {
     
-    public class ChartDataUpdate
+    public class ChartElectric1Update
     {
         // Singleton instance
-        private readonly static Lazy<ChartDataUpdate> _instance = new Lazy<ChartDataUpdate>(() => new ChartDataUpdate());
+        private readonly static Lazy<ChartElectric1Update> _instance = new Lazy<ChartElectric1Update>(() => new ChartElectric1Update());
         // Send Data every 1 seconds
         readonly int _updateInterval = 1000;
         //Timer Class
@@ -24,18 +24,14 @@ namespace PowerWebsite.Hubs
         private volatile bool _sendingChartData = false;
         private readonly object _chartUpateLock = new object();
 
-        DateTime today = DateTime.Today.Date;
-        static DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
-        static DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
+        private static string kenh = "1";
 
-        private static string kenh = "";
-
-        private ChartDataUpdate()
+        private ChartElectric1Update()
         {
 
         }
 
-        public static ChartDataUpdate Instance
+        public static ChartElectric1Update Instance
         {
             get
             {

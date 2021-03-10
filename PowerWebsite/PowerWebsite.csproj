@@ -235,16 +235,30 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KenhController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SnackController.cs" />
     <Compile Include="Controllers\WaterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Hubs\ChartDataUpdate.cs" />
+    <Compile Include="Hubs\ChartElectric1Update.cs" />
+    <Compile Include="Hubs\ChartElectric2Update.cs" />
+    <Compile Include="Hubs\ChartGasUpdate.cs" />
     <Compile Include="Hubs\ChartHub.cs" />
     <Compile Include="Hubs\ChartOnlineUpdate.cs" />
     <Compile Include="Hubs\EnergyDatatUpdate.cs" />
+    <Compile Include="Models\GasCNG_PC15.cs" />
+    <Compile Include="Models\Hienthi1.cs" />
     <Compile Include="Models\Gas.cs" />
     <Compile Include="Models\Hienthi.cs" />
+    <Compile Include="Models\Recoder1_CNG_PC15.cs" />
+    <Compile Include="Models\Recoder1_DB_PC10.cs" />
+    <Compile Include="Models\Recoder1_DB_PC15.cs" />
+    <Compile Include="Models\Recoder1_DB_Snack1.cs" />
+    <Compile Include="Models\Recoder1_DB_Snack2.cs" />
+    <Compile Include="Models\Recoder1_DB_Snack3.cs" />
+    <Compile Include="Models\Recoder1_DB_Snack4.cs" />
+    <Compile Include="Models\Recoder1_LP_PC15.cs" />
+    <Compile Include="Models\Recoder1_LP_Snack1.cs" />
     <Compile Include="Models\Recoder_DongHo1.cs" />
     <Compile Include="Models\Recoder_DongHo2.cs" />
     <Compile Include="Models\Recoder_DongHo3.cs" />
@@ -658,7 +672,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Electric2\" />
     <Folder Include="Views\ExportExcel\" />
+    <Folder Include="Views\Snack\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
