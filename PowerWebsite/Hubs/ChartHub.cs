@@ -17,15 +17,23 @@ namespace PowerWebsite.Hubs
         private readonly EnergyDatatUpdate _EneryInstance;
         private readonly ChartOnlineUpdate _ChartOnlineInstance;
         private readonly ChartGasUpdate _GasSnackInstance;
-        public ChartHub() : this(ChartElectric1Update.Instance, ChartElectric2Update.Instance, EnergyDatatUpdate.Instance, ChartOnlineUpdate.Instance, ChartGasUpdate.Instance) { }
+        private readonly ChartWaterUpdate _WaterSnackInstance;
+        private readonly ChartSteamUpdate _SteamSnackInstance;
+        private readonly ChartSolar_LogisticUpdate _SolarLogisInstance;
+        public ChartHub() : this(ChartElectric1Update.Instance, ChartElectric2Update.Instance, EnergyDatatUpdate.Instance, ChartOnlineUpdate.Instance, 
+            ChartGasUpdate.Instance, ChartWaterUpdate.Instance, ChartSteamUpdate.Instance, ChartSolar_LogisticUpdate.Instance) { }
 
-        public ChartHub(ChartElectric1Update Electric1Instance, ChartElectric2Update Electric2Instance, EnergyDatatUpdate EneryInstance, ChartOnlineUpdate ChartOnlineInstance, ChartGasUpdate GasSnackInstance)
+        public ChartHub(ChartElectric1Update Electric1Instance, ChartElectric2Update Electric2Instance, EnergyDatatUpdate EneryInstance, ChartOnlineUpdate ChartOnlineInstance, 
+            ChartGasUpdate GasSnackInstance, ChartWaterUpdate WaterSnackInstance, ChartSteamUpdate SteamSnackInstance, ChartSolar_LogisticUpdate SolarLogisInstance)
         {
             _Electric1 = Electric1Instance;
             _Electric2 = Electric2Instance;
             _EneryInstance = EneryInstance;
             _ChartOnlineInstance = ChartOnlineInstance;
             _GasSnackInstance = GasSnackInstance;
+            _WaterSnackInstance = WaterSnackInstance;
+            _SteamSnackInstance = SteamSnackInstance;
+            _SolarLogisInstance = SolarLogisInstance;
         }
         // Dashboard Electric 1-2
         public void InitChartDataElectric1()
@@ -70,6 +78,7 @@ namespace PowerWebsite.Hubs
             var dataHienthi1 = new SnackController().GetHienThi1Data(kenh).Data;
             Clients.All.UpdatePopupHienThi(dataHienthi1);
         }
+
         // Dashboard Gas
         public void InitChartGasDashboard()
         {
@@ -79,6 +88,56 @@ namespace PowerWebsite.Hubs
             _GasSnackInstance.GetChartGasData();
         }
 
+        //Dashboard Water
+        public void InitChartWaterDashboard()
+        {
+            var waterChart = new WaterController().GetWaterData().Data;
+            var waterPc15Chart = new WaterController().GetWaterPc15Data().Data;
+            Clients.All.UpdateChartWater(waterChart, waterPc15Chart);
+            _WaterSnackInstance.GetChartWaterData();
+        }
+        
+        // Dashboard Steam
+        public void InitChartSteamDashboard()
+        {
+            var steamPc10Chart = new SteamController().GetSteamPc10Data().Data;
+            var steamPc15Chart = new SteamController().GetSteamPc15Data().Data;
+            Clients.All.UpdateChartSteam(steamPc10Chart, steamPc15Chart);
+            _SteamSnackInstance.GetChartSteamData();
+        }
+
+        // Dashboard Năng lượng mặt trời
+        public void InitChartDataSolar()
+        {
+            var solar1Chart = new SnackController().GetChartSolar1Data().Data;
+            var solar2Chart = new SnackController().GetChartSolar2Data().Data;
+            Clients.All.UpdateChartSolar(solar1Chart, solar2Chart);
+            //Call GetChartData to send Chart data every 5 seconds
+            _SolarLogisInstance.GetChartSolarData();
+        }
+        public void sendKenhSolar(string kenh)
+        {
+            _SolarLogisInstance.getKenhValue(kenh);
+            var dataHienthi1 = new SnackController().GetHienThi1Data(kenh).Data;
+            Clients.All.UpdatePopupSolar(dataHienthi1);
+        }
+        // Dashboard Kho Logistic
+        public void InitChartDataLogistic()
+        {
+            var logisticChart = new SnackController().GetChartLogisticsData().Data;
+            Clients.All.UpdateChartLogistic(logisticChart);
+            //Call GetChartData to send Chart data every 5 seconds
+            _SolarLogisInstance.GetChartLogisticsData();
+        }
+        public void sendKenhLogistic(string kenh)
+        {
+            _SolarLogisInstance.getKenhLogisticValue(kenh);
+            var dataHienthi1 = new SnackController().GetHienThi1Data(kenh).Data;
+            Clients.All.UpdatePopupLogistic(dataHienthi1);
+        }
+
+
+        // Energy Overview
         public void InitEneryOveriew()
         {
             var hienthi_enery_overview = new HomeController().GetIndexData().Data;

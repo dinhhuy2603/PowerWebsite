@@ -192,6 +192,59 @@ namespace PowerWebsite.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResult GetChartSolar1Data()
+        {
+            using (DBModel db = new DBModel())
+            {
+                var solar1 = db.hienthi1.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
+                var recoder_solar1_begin = db.recoder1_db_solar1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                if (solar1 != null)
+                {
+                    var solar1_Kwh_last = (recoder_solar1_begin != null) ? recoder_solar1_begin.Kwh : "0";
+                    solar1.Ptotal = ((float)Math.Round(float.Parse(solar1.Ptotal) * 10f) / 10f).ToString();
+                    solar1.Kwh = ((float)Math.Round((float.Parse(solar1.Kwh) - float.Parse(solar1_Kwh_last)) * 10f) / 10f).ToString();
+                }
+                return Json(solar1, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public JsonResult GetChartSolar2Data()
+        {
+            using (DBModel db = new DBModel())
+            {
+                var solar2 = db.hienthi1.Where(a => a.Kenh.Equals("2")).FirstOrDefault();
+                var recoder_solar2_begin = db.recoder1_db_solar2.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                if (solar2 != null)
+                {
+                    var solar2_Kwh_last = (recoder_solar2_begin != null) ? recoder_solar2_begin.Kwh : "0";
+                    solar2.Ptotal = ((float)Math.Round(float.Parse(solar2.Ptotal) * 10f) / 10f).ToString();
+                    solar2.Kwh = ((float)Math.Round((float.Parse(solar2.Kwh) - float.Parse(solar2_Kwh_last)) * 10f) / 10f).ToString();
+                }
+                return Json(solar2, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public JsonResult GetChartLogisticsData()
+        {
+            using (DBModel db = new DBModel())
+            {
+                var logistic = db.hienthi1.Where(a => a.Kenh.Equals("3")).FirstOrDefault();
+                var recoder_logistic_begin = db.recoder1_db_logistics.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                if (logistic != null)
+                {
+                    var logistic_Kwh_last = (recoder_logistic_begin != null) ? recoder_logistic_begin.Kwh : "0";
+                    logistic.Ptotal = ((float)Math.Round(float.Parse(logistic.Ptotal) * 10f) / 10f).ToString();
+                    logistic.Kwh = ((float)Math.Round((float.Parse(logistic.Kwh) - float.Parse(logistic_Kwh_last)) * 10f) / 10f).ToString();
+                }
+                return Json(logistic, JsonRequestBehavior.AllowGet);
+            }
+        }
 
     }
 }

@@ -362,24 +362,6 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    function getHienThi1Data(kenh) {
-        var hienthi = {};
-        $.ajax({
-            url: '/Snack/GetHienThi1Data/',
-            type: 'get',
-            data: { kenh: kenh },
-            async: false,
-            success: function (data) {
-                hienthi = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                $('#content').html(errorMsg);
-            }
-        });
-        return hienthi;
-    }
-
     function GetChartKenh4Data() {
         var chartKenh4 = {};
         $.ajax({

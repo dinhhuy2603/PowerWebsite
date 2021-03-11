@@ -42,6 +42,19 @@ namespace PowerWebsite.Models
         public DbSet<GasCNG_PC15> gas_cng { get; set; }
         public DbSet<GasCNGView> gas_cng_view { get; set; }
         public DbSet<Recoder1_CNG_PC15> recoder1_gas_cng { get; set; }
+        public DbSet<Water_PC15> water_pc15 { get; set; }
+        public DbSet<WaterPC15View> water_pc15_view { get; set; }
+        public DbSet<Recoder1_Water_PC15> recoder1_water_pc15 { get; set; }
+        public DbSet<Steam_PC10> steam_pc10 { get; set; }
+        public DbSet<SteamPC10View> steam_pc10_view { get; set; }
+        public DbSet<Recoder1_Steam_PC10> recoder1_steam_pc10 { get; set; }
+        public DbSet<Steam_PC15> steam_pc15 { get; set; }
+        public DbSet<SteamPC15View> steam_pc15_view { get; set; }
+        public DbSet<Recoder1_Steam_PC15> recoder1_steam_pc15 { get; set; }
+        public DbSet<Recoder1_DB_Solar1> recoder1_db_solar1 { get; set; }
+        public DbSet<Recoder1_DB_Solar2> recoder1_db_solar2 { get; set; }
+        public DbSet<Recoder1_DB_Logistics> recoder1_db_logistics { get; set; }
+
 
 
     }

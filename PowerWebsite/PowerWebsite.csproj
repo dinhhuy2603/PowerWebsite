@@ -236,6 +236,7 @@
     <Compile Include="Controllers\KenhController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SnackController.cs" />
+    <Compile Include="Controllers\SteamController.cs" />
     <Compile Include="Controllers\WaterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,7 +246,11 @@
     <Compile Include="Hubs\ChartGasUpdate.cs" />
     <Compile Include="Hubs\ChartHub.cs" />
     <Compile Include="Hubs\ChartOnlineUpdate.cs" />
+    <Compile Include="Hubs\ChartSolar_LogisticUpdate.cs" />
+    <Compile Include="Hubs\ChartSteamUpdate.cs" />
+    <Compile Include="Hubs\ChartWaterUpdate.cs" />
     <Compile Include="Hubs\EnergyDatatUpdate.cs" />
+    <Compile Include="Models\Recoder1_DB_Logistics.cs" />
     <Compile Include="Models\GasCNG_PC15.cs" />
     <Compile Include="Models\Hienthi1.cs" />
     <Compile Include="Models\Gas.cs" />
@@ -259,6 +264,9 @@
     <Compile Include="Models\Recoder1_DB_Snack4.cs" />
     <Compile Include="Models\Recoder1_LP_PC15.cs" />
     <Compile Include="Models\Recoder1_LP_Snack1.cs" />
+    <Compile Include="Models\Recoder1_Steam_PC10.cs" />
+    <Compile Include="Models\Recoder1_Steam_PC15.cs" />
+    <Compile Include="Models\Recoder1_Water_PC15.cs" />
     <Compile Include="Models\Recoder_DongHo1.cs" />
     <Compile Include="Models\Recoder_DongHo2.cs" />
     <Compile Include="Models\Recoder_DongHo3.cs" />
@@ -267,9 +275,14 @@
     <Compile Include="Models\Recoder_DongHo6.cs" />
     <Compile Include="Models\Recoder_Gas.cs" />
     <Compile Include="Models\Recoder_Water.cs" />
+    <Compile Include="Models\Recoder1_DB_Solar1.cs" />
+    <Compile Include="Models\Recoder1_DB_Solar2.cs" />
+    <Compile Include="Models\Steam_PC10.cs" />
+    <Compile Include="Models\Steam_PC15.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Models\DBModel.cs" />
     <Compile Include="Models\Water.cs" />
+    <Compile Include="Models\Water_PC15.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -675,6 +688,7 @@
     <Folder Include="Views\Electric2\" />
     <Folder Include="Views\ExportExcel\" />
     <Folder Include="Views\Snack\" />
+    <Folder Include="Views\Steam\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
