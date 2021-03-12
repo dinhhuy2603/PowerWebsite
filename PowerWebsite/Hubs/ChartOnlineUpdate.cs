@@ -204,32 +204,32 @@ namespace PowerWebsite.Hubs
         }
         private void SendKenh1Data()
         {
-            var kenh1_data = new KenhController().GetChartKenh1DataOnline().Data;
+            var kenh1_data = new Electric1Controller().GetChartKenh1DataOnline().Data;
             GetAllClients().All.UpdateKenh1Online(kenh1_data);
         }
         private void SendKenh2Data()
         {
-            var kenh2_data = new KenhController().GetChartKenh2DataOnline().Data;
+            var kenh2_data = new Electric1Controller().GetChartKenh2DataOnline().Data;
             GetAllClients().All.UpdateKenh2Online(kenh2_data);
         }
         private void SendKenh3Data()
         {
-            var kenh3_data = new KenhController().GetChartKenh3DataOnline().Data;
+            var kenh3_data = new Electric1Controller().GetChartKenh3DataOnline().Data;
             GetAllClients().All.UpdateKenh3Online(kenh3_data);
         }
         private void SendKenh4Data()
         {
-            var kenh4_data = new KenhController().GetChartKenh4DataOnline().Data;
+            var kenh4_data = new Electric1Controller().GetChartKenh4DataOnline().Data;
             GetAllClients().All.UpdateKenh4Online(kenh4_data);
         }
         private void SendKenh5Data()
         {
-            var kenh5_data = new KenhController().GetChartKenh5DataOnline().Data;
+            var kenh5_data = new Electric1Controller().GetChartKenh5DataOnline().Data;
             GetAllClients().All.UpdateKenh5Online(kenh5_data);
         }
         private void SendKenh6Data()
         {
-            var kenh6_data = new KenhController().GetChartKenh6DataOnline().Data;
+            var kenh6_data = new Electric1Controller().GetChartKenh6DataOnline().Data;
             GetAllClients().All.UpdateKenh6Online(kenh6_data);
         }
 

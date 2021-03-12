@@ -7,12 +7,43 @@ using System.Web.Mvc;
 
 namespace PowerWebsite.Controllers
 {
-    public class KenhController : Controller
+    public class Electric1Controller : Controller
     {
         DateTime today = DateTime.Today.Date;
         DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
         DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
         // GET: Kenh
+        public ActionResult Gas()
+        {
+            if (Session["UserID"] != null)
+            {
+                using (DBModel db = new DBModel())
+                {
+                    ViewBag.gas = new GasView();
+                }
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        public ActionResult Water()
+        {
+            if (Session["UserID"] != null)
+            {
+                using (DBModel db = new DBModel())
+                {
+                    ViewBag.water = new GasView();
+                }
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+
         public ActionResult Kenh1Online()
         {
             if (Session["UserID"] != null)

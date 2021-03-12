@@ -160,38 +160,38 @@ namespace PowerWebsite.Hubs
         }
         public void InitChartKenh1Online()
         {
-            var kenh1_data = new KenhController().GetChartKenh1DataOnline().Data;
+            var kenh1_data = new Electric1Controller().GetChartKenh1DataOnline().Data;
             Clients.All.UpdateKenh1Online(kenh1_data);
             _ChartOnlineInstance.GetKenh1OnlineData();
         }
 
         public void InitChartKenh2Online()
         {
-            var kenh2_data = new KenhController().GetChartKenh2DataOnline().Data;
+            var kenh2_data = new Electric1Controller().GetChartKenh2DataOnline().Data;
             Clients.All.UpdateKenh2Online(kenh2_data);
             _ChartOnlineInstance.GetKenh2OnlineData();
         }
         public void InitChartKenh3Online()
         {
-            var kenh3_data = new KenhController().GetChartKenh3DataOnline().Data;
+            var kenh3_data = new Electric1Controller().GetChartKenh3DataOnline().Data;
             Clients.All.UpdateKenh3Online(kenh3_data);
             _ChartOnlineInstance.GetKenh3OnlineData();
         }
         public void InitChartKenh4Online()
         {
-            var kenh4_data = new KenhController().GetChartKenh4DataOnline().Data;
+            var kenh4_data = new Electric1Controller().GetChartKenh4DataOnline().Data;
             Clients.All.UpdateKenh4Online(kenh4_data);
             _ChartOnlineInstance.GetKenh4OnlineData();
         }
         public void InitChartKenh5Online()
         {
-            var kenh5_data = new KenhController().GetChartKenh5DataOnline().Data;
+            var kenh5_data = new Electric1Controller().GetChartKenh5DataOnline().Data;
             Clients.All.UpdateKenh5Online(kenh5_data);
             _ChartOnlineInstance.GetKenh5OnlineData();
         }
         public void InitChartKenh6Online()
         {
-            var kenh6_data = new KenhController().GetChartKenh6DataOnline().Data;
+            var kenh6_data = new Electric1Controller().GetChartKenh6DataOnline().Data;
             Clients.All.UpdateKenh6Online(kenh6_data);
             _ChartOnlineInstance.GetKenh6OnlineData();
         }

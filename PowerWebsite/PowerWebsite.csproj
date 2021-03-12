@@ -229,11 +229,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChartOnlineController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ExportExcelController.cs" />
     <Compile Include="Controllers\GasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KenhController.cs" />
+    <Compile Include="Controllers\Electric1Controller.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SnackController.cs" />
     <Compile Include="Controllers\SteamController.cs" />
@@ -656,14 +657,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Trang2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Water\Index.cshtml" />
-    <Content Include="Views\Kenh\Kenh1Online.cshtml" />
-    <Content Include="Views\Gas\Index.cshtml" />
-    <Content Include="Views\Kenh\Kenh2Online.cshtml" />
-    <Content Include="Views\Kenh\Kenh3Online.cshtml" />
-    <Content Include="Views\Kenh\Kenh4Online.cshtml" />
-    <Content Include="Views\Kenh\Kenh5Online.cshtml" />
-    <Content Include="Views\Kenh\Kenh6Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh1Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh2Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh3Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh4Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh5Online.cshtml" />
+    <Content Include="Views\Electric1\Kenh6Online.cshtml" />
     <Content Include="Views\Report\Gas.cshtml" />
     <Content Include="Views\Report\Kenh1.cshtml" />
     <Content Include="Views\Report\Kenh2.cshtml" />
@@ -682,13 +681,18 @@
     <Content Include="Views\Dashboard\Steam.cshtml" />
     <Content Include="Views\Dashboard\SolarSystem.cshtml" />
     <Content Include="Views\Dashboard\Logistic.cshtml" />
+    <Content Include="Views\Electric1\Gas.cshtml" />
+    <Content Include="Views\Electric1\Water.cshtml" />
+    <Content Include="Views\Gas\Index.cshtml" />
+    <Content Include="Views\Water\Index.cshtml" />
+    <Content Include="Views\Water\WaterPc15.cshtml" />
+    <Content Include="Views\Gas\CngPc15.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ChartOnline\" />
     <Folder Include="Views\Electric2\" />
     <Folder Include="Views\ExportExcel\" />
-    <Folder Include="Views\Snack\" />
-    <Folder Include="Views\Steam\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

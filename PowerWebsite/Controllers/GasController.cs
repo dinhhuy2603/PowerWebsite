@@ -23,6 +23,17 @@ namespace PowerWebsite.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+        public ActionResult CngPc15()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
 
         [HttpGet]
         public JsonResult GetGasData()
