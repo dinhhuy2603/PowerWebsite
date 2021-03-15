@@ -231,6 +231,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChartOnlineController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\Electric2Controller.cs" />
     <Compile Include="Controllers\ExportExcelController.cs" />
     <Compile Include="Controllers\GasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -246,7 +247,8 @@
     <Compile Include="Hubs\ChartElectric2Update.cs" />
     <Compile Include="Hubs\ChartGasUpdate.cs" />
     <Compile Include="Hubs\ChartHub.cs" />
-    <Compile Include="Hubs\ChartOnlineUpdate.cs" />
+    <Compile Include="Hubs\ChartOnline2Update.cs" />
+    <Compile Include="Hubs\ChartOnline1Update.cs" />
     <Compile Include="Hubs\ChartSolar_LogisticUpdate.cs" />
     <Compile Include="Hubs\ChartSteamUpdate.cs" />
     <Compile Include="Hubs\ChartWaterUpdate.cs" />
@@ -687,11 +689,18 @@
     <Content Include="Views\Water\Index.cshtml" />
     <Content Include="Views\Water\WaterPc15.cshtml" />
     <Content Include="Views\Gas\CngPc15.cshtml" />
+    <Content Include="Views\Electric2\Kenh4Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh5Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh6Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh7Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh8Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh9Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh10Online.cshtml" />
+    <Content Include="Views\Electric2\Kenh11Online.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ChartOnline\" />
-    <Folder Include="Views\Electric2\" />
     <Folder Include="Views\ExportExcel\" />
   </ItemGroup>
   <ItemGroup>

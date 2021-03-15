@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="chartTwo" class="maximize_height pt-3 show highcharts-figure" dir="ltr">
+                            <div id="chartThree" class="maximize_height pt-3 show highcharts-figure" dir="ltr">
                                 <div id="chartGasTotalDay" class="apex-charts" data-colors="#6658dd"></div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
@@ -171,7 +171,6 @@
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {
-            console.log('start');
             chartHub.server.initChartGasOnline();
         });
 
@@ -179,7 +178,6 @@
             updateChartNow(gas_data);
             updateChartTotal(gas_data);
             updateChartTotalDay(gas_data);
-            console.log('1');
         }
 
     });

@@ -66,30 +66,6 @@
             <div class="row mt-5">
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20"><span class="chart_color" id="gas_status" style="background:red"></span>LƯU LƯỢNG GAS</h5>
-                        <div class="card-body">
-                            <div id="cardCollpase23" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
-                                <div id="chartGas1" class="chart-container" data-colors="#f1556c"></div>
-                                <div id="chartGas2" class="chart-container" data-colors="#f1556c"></div>
-                            </div> <!-- collapsed end -->
-                        </div> <!-- end card-body -->
-                    </div> <!-- end card-->
-                </div> <!-- end col-->
-
-                <div class="col-xl-6 col-md-6">
-                    <div class="card bg-card">
-                        <h5 class="card-header text-center font-20"><span class="chart_color" id="water_status" style="background:red"></span>LƯU LƯỢNG NƯỚC</h5>
-                        <div class="card-body">
-                            <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
-                                <div id="chartWater1" class="chart-container" data-colors="#f1556c"></div>
-                                <div id="chartWater2" class="chart-container" data-colors="#f1556c"></div>
-                            </div> <!-- collapsed end -->
-                        </div> <!-- end card-body -->
-                    </div> <!-- end card-->
-                </div> <!-- end col-->
-
-                <div class="col-xl-6 col-md-6">
-                    <div class="card bg-card">
                         <h5 class="card-header text-center font-20 show-kenh" data-value="2"><span class="chart_color" id="kenh2_status" style="background:red"></span>LP-SNACK-1</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
@@ -402,39 +378,6 @@
     $(window).on("load", function () {
         $(".loader-wrapper").fadeOut("slow");        
     });
-    function getGasData() {
-        var gasData = {};
-        $.ajax({
-            url: '/Gas/GetGasData/',
-            type: 'get',
-            async: false,
-            success: function (data) {
-                gasData = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                $('#content').html(errorMsg);
-            }
-        });
-        return gasData;
-    }
-
-    function getWaterData() {
-        var waterData = {};
-        $.ajax({
-            url: '/Water/GetWaterData/',
-            type: 'get',
-            async: false,
-            success: function (data) {
-                waterData = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                $('#content').html(errorMsg);
-            }
-        });
-        return waterData;
-    }
 
     function getHienThiData(kenh) {
         var hienthi = {};
@@ -556,8 +499,6 @@
         return chartKenh6;
     }
 
-    var gas = getGasData();
-    var water = getWaterData();
     var kenh1 = GetChartKenh1Data();
     var kenh2 = GetChartKenh2Data();
     var kenh3 = GetChartKenh3Data();
@@ -581,9 +522,7 @@
         });
 
         //Call to Update LineChart from Server
-        chartHub.client.UpdateChartElectric1 = function (gas_data, water_data, kenh1_data, kenh2_data, kenh3_data, kenh4_data, kenh5_data, kenh6_data) {
-            UpdateGasChart(gas_data);
-            UpdateWaterChart(water_data);
+        chartHub.client.UpdateChartElectric1 = function (kenh1_data, kenh2_data, kenh3_data, kenh4_data, kenh5_data, kenh6_data) {
             UpdateKenh1Chart(kenh1_data);
             UpdateKenh2Chart(kenh2_data);
             UpdateKenh3Chart(kenh3_data);
@@ -624,62 +563,6 @@
         });
 
     });
-
-    function UpdateGasChart(data) {
-        if (chartGas1) {
-            point = chartGas1.series[0].points[0];
-            newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
-            }
-            point.update(newVal);
-        }
-        if (chartGas2) {
-
-            point = chartGas2.series[0].points[0];
-            newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
-
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
-            }
-            point.update(newVal);
-        }
-        // Update button xanh/đỏ
-        if(data.status == 0){
-            $('#gas_status').css('background', 'green');
-        }
-        else{
-            $('#gas_status').css('background', 'red');
-        }
-    }
-    // Update Chart Water
-    function UpdateWaterChart(data) {
-        if (chartWater1) {
-            point = chartWater1.series[0].points[0];
-            newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.luu_luong_hien_tai ? parseFloat(data.luu_luong_hien_tai) : 0;
-            }
-            point.update(newVal);
-        }
-        if (chartWater2) {
-
-            point = chartWater2.series[0].points[0];
-            newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
-
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.luu_luong_tong_ngay ? parseFloat(data.luu_luong_tong_ngay) : 0;
-            }
-            point.update(newVal);
-        }
-        // Update button xanh/đỏ
-        if(data.status == 0){
-            $('#water_status').css('background', 'green');
-        }
-        else{
-            $('#water_status').css('background', 'red');
-        }
-    }
     // Update Chart Kenh1
     function UpdateKenh1Chart(data) {
         if (chartKenh1A) {
@@ -899,107 +782,6 @@
             }
         }
     };
-
-    var chartGas1 = Highcharts.chart('chartGas1', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 200,
-            title: {
-                text: 'm3/h'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [gas.luu_luong_hien_tai],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' '
-            }
-        }]
-    }));
-
-    var chartGas2 = Highcharts.chart('chartGas2', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 3000,
-            title: {
-                text: 'm3 in day'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [gas.luu_luong_tong_ngay],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' km/h'
-            }
-        }]
-    }));
-
-    var chartWater1 = Highcharts.chart('chartWater1', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 50,
-            title: {
-                text: 'm3/h'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [water.luu_luong_hien_tai],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' '
-            }
-        }]
-    }));
-
-    var chartWater2 = Highcharts.chart('chartWater2', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 200,
-            title: {
-                text: 'm3 in day'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [water.luu_luong_tong_ngay],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' km/h'
-            }
-        }]
-    }));
-
     var chartKenh1A = Highcharts.chart('chartKenh1A', Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,

@@ -26,7 +26,6 @@ namespace PowerWebsite.Hubs
 
         private ChartGasUpdate()
         {
-
         }
 
         public static ChartGasUpdate Instance
@@ -41,6 +40,14 @@ namespace PowerWebsite.Hubs
         public void GetChartGasData()
         {
             _timer = new Timer(ChartTimerCallBack, null, _updateInterval, _updateInterval);
+        }
+        public void GetGasOnlineData()
+        {
+            _timer = new Timer(ChartTimerGasCallBack, null, _updateInterval, _updateInterval);
+        }
+        public void GetGasCNGOnlineData()
+        {
+            _timer = new Timer(ChartTimerGasCNGCallBack, null, _updateInterval, _updateInterval);
         }
         private void ChartTimerCallBack(object state)
         {
@@ -58,12 +65,54 @@ namespace PowerWebsite.Hubs
                 }
             }
         }
+        private void ChartTimerGasCallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendGasOnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
+        private void ChartTimerGasCNGCallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendGasCNGOnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
 
         private void SendChartGasData()
         {
             var gasChart = new GasController().GetGasData().Data;
             var gasCngChart = new GasController().GetGasCNGData().Data;
             GetAllClients().All.UpdateChartGas(gasChart, gasCngChart);
+        }
+        private void SendGasOnlineData()
+        {
+            var gas_data = new GasController().GetGasData().Data;
+            GetAllClients().All.UpdateGasOnline(gas_data);
+        }
+        private void SendGasCNGOnlineData()
+        {
+            var gas_cng_data = new GasController().GetGasCNGData().Data;
+            GetAllClients().All.UpdateGasCNGOnline(gas_cng_data);
         }
 
         private static dynamic GetAllClients()

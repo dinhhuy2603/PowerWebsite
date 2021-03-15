@@ -8,30 +8,25 @@ using System.Web;
 
 namespace PowerWebsite.Hubs
 {
-    public class ChartOnlineUpdate
+    public class ChartOnline1Update
     {
-        private readonly static Lazy<ChartOnlineUpdate> _instance = new Lazy<ChartOnlineUpdate>(() => new ChartOnlineUpdate());
+        private readonly static Lazy<ChartOnline1Update> _instance = new Lazy<ChartOnline1Update>(() => new ChartOnline1Update());
         readonly int _updateInterval = 1000;
         private Timer _timer;
         private volatile bool _sendingData = false;
         private readonly object _dataUpdateLock = new object();
 
-        private ChartOnlineUpdate()
+        private ChartOnline1Update()
         {
 
         }
 
-        public static ChartOnlineUpdate Instance
+        public static ChartOnline1Update Instance
         {
             get
             {
                 return _instance.Value;
             }
-        }
-
-        public void GetGasOnlineData()
-        {
-            _timer = new Timer(ChartTimerGasCallBack, null, _updateInterval, _updateInterval);
         }
 
         public void GetWaterOnlineData()
