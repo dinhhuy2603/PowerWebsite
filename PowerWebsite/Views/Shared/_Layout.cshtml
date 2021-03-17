@@ -303,10 +303,27 @@
                                                     <div class="collapse" id="water-online">
                                                         <ul class="nav-second-level">
                                                             <li>
-                                                                <a href="@Url.Action("Index","Water")">Gas</a>
+                                                                <a href="@Url.Action("Index","Water")">Water</a>
                                                             </li>
                                                             <li>
                                                                 <a href="@Url.Action("WaterPc15","Water")">Water-PC 15</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#steam-online" data-toggle="collapse">
+                                                        <i class="fas fa-circle fa-xs"></i>
+                                                        <span>Steam</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </a>
+                                                    <div class="collapse" id="steam-online">
+                                                        <ul class="nav-second-level">
+                                                            <li>
+                                                                <a href="@Url.Action("PC10","Steam")">Steam PC 10</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="@Url.Action("PC15","Steam")">Steam PC 15</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -315,13 +332,30 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="javascrip:void(0)">
+                                        <a href="#solar_online" data-toggle="collapse">
                                             <i class="fas fa-caret-down"></i>
                                             <span>Hệ năng lượng mặt trời</span>
+                                            <span class="menu-arrow"></span>
                                         </a>
+                                        <div class="collapse" id="solar_online">
+                                            <ul class="nav-second-level">
+                                                <li>
+                                                    <a href="@Url.Action("Solar1","Solar_Logistic")">
+                                                        <i class="fas fa-circle fa-xs"></i>
+                                                        <span>DB-Solar 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("Solar2","Solar_Logistic")">
+                                                        <i class="fas fa-circle fa-xs"></i>
+                                                        <span>DB-Solar 2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="javascrip:void(0)">
+                                        <a href="@Url.Action("Logistic","Solar_Logistic")">
                                             <i class="fas fa-caret-down"></i>
                                             <span>Kho Logistic</span>
                                         </a>

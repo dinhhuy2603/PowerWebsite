@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Chart Water PC 15 Online";
+    ViewBag.Title = "Chart Steam PC 15 Online";
 }
 @section Styles
 {
@@ -18,7 +18,7 @@
     <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
 }
 <style>
-    #chartWaterNow, #chartWaterTotal, #chartWaterTotalDay {
+    #chartSteamNow, #chartSteamTotal, #chartSteamTotalDay {
         height: 380px;
     }
 
@@ -70,7 +70,7 @@
                                 <li class="breadcrumb-item active"><a href="javascript: void(0);">Charts</a></li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Charts WATER PC 15 Online</h4>
+                        <h4 class="page-title">Charts STEAM PC 15 Online</h4>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
                         <div class="card-body">
                             <div id="chartOne" class="maximize_height pt-3 show highcharts-figure" dir="ltr">
-                                <div id="chartWaterNow" class="apex-charts" data-colors="#f672a7"></div>
+                                <div id="chartSteamNow" class="apex-charts" data-colors="#f672a7"></div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
@@ -112,7 +112,7 @@
                         </div>
                         <div class="card-body">
                             <div id="chartTwo" class="maximize_height pt-3 show highcharts-figure" dir="ltr">
-                                <div id="chartWaterTotal" class="apex-charts" data-colors="#6658dd"></div>
+                                <div id="chartSteamTotal" class="apex-charts" data-colors="#6658dd"></div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
@@ -134,7 +134,7 @@
                         </div>
                         <div class="card-body">
                             <div id="chartTwo" class="maximize_height pt-3 show highcharts-figure" dir="ltr">
-                                <div id="chartWaterTotalDay" class="apex-charts" data-colors="#6658dd"></div>
+                                <div id="chartSteamTotalDay" class="apex-charts" data-colors="#6658dd"></div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
@@ -169,17 +169,17 @@
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {
-            chartHub.server.initChartWaterPc15Online();
+            chartHub.server.initChartSteamPc15Online();
         });
 
-        chartHub.client.UpdateWaterPc15Online = function (water_data) {
-            updateChartNow(water_data);
-            updateChartTotal(water_data);
-            updateChartTotalDay(water_data);
+        chartHub.client.UpdateSteamPc15Online = function (steam_data) {
+            updateChartNow(steam_data);
+            updateChartTotal(steam_data);
+            updateChartTotalDay(steam_data);
         }
     });
 
-    function updateChartNow(water_data) {
+    function updateChartNow(steam_data) {
         var series = chart.series;
         var len = series.length;
         var t = Date.now();
@@ -187,7 +187,7 @@
             switch (j) {
                 case 0:
                 {
-                    series[j].addPoint([t, parseFloat(water_data.luu_luong_hien_tai)], false, true);
+                    series[j].addPoint([t, parseFloat(steam_data.luu_luong_hien_tai)], false, true);
                     break;
                 }
             }
@@ -195,7 +195,7 @@
         chart.redraw();
     }
 
-    function updateChartTotal(water_data) {
+    function updateChartTotal(steam_data) {
         var series = chart_total.series;
         var len = series.length;
         var t = Date.now();
@@ -203,7 +203,7 @@
             switch (j) {
                 case 0:
                 {
-                    series[j].addPoint([t, parseFloat(water_data.luu_luong_tong)], false, true);
+                    series[j].addPoint([t, parseFloat(steam_data.luu_luong_tong)], false, true);
                     break;
                 }
         }
@@ -211,7 +211,7 @@
         chart_total.redraw();
     }
 
-    function updateChartTotalDay(water_data) {
+    function updateChartTotalDay(steam_data) {
         var series = chart_total_day.series;
         var len = series.length;
         var t = Date.now();
@@ -219,7 +219,7 @@
             switch (j) {
                 case 0:
                     {
-                        series[j].addPoint([t, parseFloat(water_data.luu_luong_tong_ngay)], false, true);
+                        series[j].addPoint([t, parseFloat(steam_data.luu_luong_tong_ngay)], false, true);
                         break;
                     }
             }
@@ -227,10 +227,10 @@
         chart_total_day.redraw();
     }
 
-    //function getWaterData() {
+    //function getSteamData() {
     //    var waterData = water_obj;
     //    $.ajax({
-    //        url: '/Water/GetWaterData/',
+    //        url: '/Steam/GetSteamData/',
     //        type: 'get',
     //        async: false,
     //        success: function (data) {
@@ -253,12 +253,12 @@
         return data;
     }
 
-    let chart = new Highcharts.chart('chartWaterNow', {
+    let chart = new Highcharts.chart('chartSteamNow', {
         chart: {
             type: 'area',
             animation: { duration: 500 },
         },
-        title: { text: 'Lưu lượng Nước Hiện Tại (m3/h)' },
+        title: { text: 'Lưu lượng Hiện Tại (m3/h)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },
         yAxis: { title: { text: 'Value' }, plotLines: [{ value: 0, width: 1, color: '#808080' }] },
         legend: { enabled: true },
@@ -300,13 +300,13 @@
         ]
     });
 
-    // Chart Water Total
-    let chart_total = new Highcharts.chart('chartWaterTotal', {
+    // Chart Steam Total
+    let chart_total = new Highcharts.chart('chartSteamTotal', {
         chart: {
             type: 'area',
             animation: { duration: 500 },
         },
-        title: { text: 'Lưu lượng Nước Tổng (m3)' },
+        title: { text: 'Lưu lượng Tổng (m3)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },
         yAxis: { title: { text: 'Value' }, plotLines: [{ value: 0, width: 1, color: '#808080' }] },
         legend: { enabled: true },
@@ -348,8 +348,8 @@
         ]
     });
 
-    // Chart Water Total
-    let chart_total_day = new Highcharts.chart('chartWaterTotalDay', {
+    // Chart Steam Total
+    let chart_total_day = new Highcharts.chart('chartSteamTotalDay', {
         chart: {
             type: 'area',
             animation: { duration: 500 },
@@ -360,7 +360,7 @@
             //        var series = this.series;
             //        var len = series.length;
             //        setInterval(function (chartData) {
-            //            var chartData = getWaterData();
+            //            var chartData = getSteamData();
             //            var t = Date.now();
             //            for (var j = 0; j < len; j++) {
             //                switch (j) {
@@ -376,7 +376,7 @@
             //    }
             //}
         },
-        title: { text: 'Lưu lượng Nước Tổng Ngày (m3 in day)' },
+        title: { text: 'Lưu lượng Tổng Ngày (m3 in day)' },
         xAxis: { type: 'datetime', tickPixelInterval: 150 },
         yAxis: { title: { text: 'Value' }, plotLines: [{ value: 0, width: 1, color: '#808080' }] },
         legend: { enabled: true },

@@ -255,5 +255,43 @@ namespace PowerWebsite.Hubs
             Clients.All.UpdateWaterOnline(water_data);
             _WaterSnackInstance.GetWaterOnlineData();
         }
+        public void InitChartWaterPc15Online()
+        {
+            var water_pc15_data = new WaterController().GetWaterPc15Data().Data;
+            Clients.All.UpdateWaterPc15Online(water_pc15_data);
+            _WaterSnackInstance.GetWaterPc15OnlineData();
+        }
+        // Chart Steam Online
+        public void InitChartSteamPc10Online()
+        {
+            var steam_pc10_data = new SteamController().GetSteamPc10Data().Data;
+            Clients.All.UpdateSteamPc10Online(steam_pc10_data);
+            _SteamSnackInstance.GetSteamPc10OnlineData();
+        }
+        public void InitChartSteamPc15Online()
+        {
+            var steam_pc15_data = new SteamController().GetSteamPc15Data().Data;
+            Clients.All.UpdateSteamPc15Online(steam_pc15_data);
+            _SteamSnackInstance.GetSteamPc15OnlineData();
+        }
+        // Chart Solar Online 
+        public void InitChartSolar1Online()
+        {
+            var solar1_data = new Solar_LogisticController().GetChartSolar1DataOnline().Data;
+            Clients.All.UpdateSolar1Online(solar1_data);
+            _SolarLogisInstance.GetSolar1OnlineData();
+        }
+        public void InitChartSolar2Online()
+        {
+            var solar2_data = new Solar_LogisticController().GetChartSolar2DataOnline().Data;
+            Clients.All.UpdateSolar2Online(solar2_data);
+            _SolarLogisInstance.GetSolar2OnlineData();
+        }
+        public void InitChartLogisticOnline()
+        {
+            var logistic_data = new Solar_LogisticController().GetChartLogisticDataOnline().Data;
+            Clients.All.UpdateLogisticOnline(logistic_data);
+            _SolarLogisInstance.GetLogisticOnlineData();
+        }
     }
 }

@@ -77,6 +77,26 @@ namespace PowerWebsite
                     id = UrlParameter.Optional
                 }
             );
+            routes.MapRoute(
+                name: "Steam",
+                url: "ChartOnline/Steam/{action}",
+                defaults: new
+                {
+                    controller = "Steam",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+            );
+            routes.MapRoute(
+                name: "Solar",
+                url: "ChartOnline/{action}",
+                defaults: new
+                {
+                    controller = "Solar_Logistic",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+            );
 
             routes.MapRoute(
                 name: "Default",

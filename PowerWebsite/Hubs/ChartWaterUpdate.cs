@@ -46,6 +46,10 @@ namespace PowerWebsite.Hubs
         {
             _timer = new Timer(ChartTimerWaterCallBack, null, _updateInterval, _updateInterval);
         }
+        public void GetWaterPc15OnlineData()
+        {
+            _timer = new Timer(ChartTimerWaterPc15CallBack, null, _updateInterval, _updateInterval);
+        }
         private void ChartTimerCallBack(object state)
         {
             if (_sendingChartData)
@@ -78,6 +82,22 @@ namespace PowerWebsite.Hubs
                 }
             }
         }
+        private void ChartTimerWaterPc15CallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendWaterPc15OnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
 
         private void SendChartWaterData()
         {
@@ -89,6 +109,11 @@ namespace PowerWebsite.Hubs
         {
             var water_data = new WaterController().GetWaterData().Data;
             GetAllClients().All.UpdateWaterOnline(water_data);
+        }
+        private void SendWaterPc15OnlineData()
+        {
+            var water_pc15_data = new WaterController().GetWaterPc15Data().Data;
+            GetAllClients().All.UpdateWaterPc15Online(water_pc15_data);
         }
 
         private static dynamic GetAllClients()

@@ -23,6 +23,28 @@ namespace PowerWebsite.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+        public ActionResult PC10()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        public ActionResult PC15()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
 
         [HttpGet]
         public JsonResult GetSteamPc10Data()

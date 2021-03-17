@@ -237,7 +237,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Electric1Controller.cs" />
     <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ReportGasController.cs" />
     <Compile Include="Controllers\SnackController.cs" />
+    <Compile Include="Controllers\Solar_LogisticController.cs" />
     <Compile Include="Controllers\SteamController.cs" />
     <Compile Include="Controllers\WaterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -697,11 +699,18 @@
     <Content Include="Views\Electric2\Kenh9Online.cshtml" />
     <Content Include="Views\Electric2\Kenh10Online.cshtml" />
     <Content Include="Views\Electric2\Kenh11Online.cshtml" />
+    <Content Include="Views\Steam\Index.cshtml" />
+    <Content Include="Views\Steam\PC10.cshtml" />
+    <Content Include="Views\Steam\PC15.cshtml" />
+    <Content Include="Views\Solar_Logistic\Solar1.cshtml" />
+    <Content Include="Views\Solar_Logistic\Solar2.cshtml" />
+    <Content Include="Views\Solar_Logistic\Logistic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ChartOnline\" />
     <Folder Include="Views\ExportExcel\" />
+    <Folder Include="Views\ReportGas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

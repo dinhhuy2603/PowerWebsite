@@ -5,6 +5,7 @@ using PowerWebsite.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Threading;
@@ -22,7 +23,7 @@ namespace PowerWebsite.Hubs
         private volatile bool _sendingChartData = false;
         private readonly object _chartUpateLock = new object();
         private static string kenh = "1";
-        private static string kenhLogic = "1";
+        private static string kenhLogic = "3";
 
         private ChartSolar_LogisticUpdate()
         {
@@ -44,6 +45,18 @@ namespace PowerWebsite.Hubs
         public void GetChartLogisticsData()
         {
             _timer = new Timer(ChartTimerLogisticsCallBack, null, _updateInterval, _updateInterval);
+        }
+        public void GetSolar1OnlineData()
+        {
+            _timer = new Timer(ChartTimerSolar1OnlineCallBack, null, _updateInterval, _updateInterval);
+        }
+        public void GetSolar2OnlineData()
+        {
+            _timer = new Timer(ChartTimerSolar2OnlineCallBack, null, _updateInterval, _updateInterval);
+        }
+        public void GetLogisticOnlineData()
+        {
+            _timer = new Timer(ChartTimerLogisticOnlineCallBack, null, _updateInterval, _updateInterval);
         }
         private void ChartTimerSolarCallBack(object state)
         {
@@ -79,6 +92,56 @@ namespace PowerWebsite.Hubs
                 }
             }
         }
+        private void ChartTimerSolar1OnlineCallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendChartSolar1OnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
+        private void ChartTimerSolar2OnlineCallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendChartSolar2OnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
+        private void ChartTimerLogisticOnlineCallBack(object state)
+        {
+            if (_sendingChartData)
+            {
+                return;
+            }
+            lock (_chartUpateLock)
+            {
+                if (!_sendingChartData)
+                {
+                    _sendingChartData = true;
+                    SendChartLogisticOnlineData();
+                    _sendingChartData = false;
+                }
+            }
+        }
+        
+        // Send data chart Dashboard
         private void SendChartSolarData()
         {
             var solar1Chart = new SnackController().GetChartSolar1Data().Data;
@@ -100,8 +163,27 @@ namespace PowerWebsite.Hubs
             var dataLogistic = new SnackController().GetHienThi1Data(kenhLogic).Data;
             GetAllClients().All.UpdatePopupLogistic(dataLogistic);
         }
+        
+        // Send data chart Online
+        private void SendChartSolar1OnlineData()
+        {
+            var solar1_data = new Solar_LogisticController().GetChartSolar1DataOnline().Data;
+            GetAllClients().All.UpdateSolar1Online(solar1_data);
+        }
+        private void SendChartSolar2OnlineData()
+        {
+            var solar2_data = new Solar_LogisticController().GetChartSolar2DataOnline().Data;
+            Debug.Write(1);
+            GetAllClients().All.UpdateSolar2Online(solar2_data);
+        }
+        private void SendChartLogisticOnlineData()
+        {
+            var logistic_data = new Solar_LogisticController().GetChartLogisticDataOnline().Data;
+            Debug.Write(2);
+            GetAllClients().All.UpdateLogisticOnline(logistic_data);
+        }
 
-
+        // Get Client Functions
         private static dynamic GetAllClients()
         {
             return GlobalHost.ConnectionManager.GetHubContext<ChartHub>().Clients;
