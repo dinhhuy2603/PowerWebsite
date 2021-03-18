@@ -97,6 +97,27 @@ namespace PowerWebsite
                     id = UrlParameter.Optional
                 }
             );
+            // Report Electric 2
+            routes.MapRoute(
+                name: "ReportElectric1",
+                url: "Report/Electric1/{action}",
+                defaults: new
+                {
+                    controller = "Report",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+            );
+            routes.MapRoute(
+                name: "ReportElectric2",
+                url: "Report/Electric2/{action}",
+                defaults: new
+                {
+                    controller = "ReportElectric2",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+            );
 
             routes.MapRoute(
                 name: "Default",

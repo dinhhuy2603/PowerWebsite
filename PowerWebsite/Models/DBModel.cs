@@ -54,8 +54,6 @@ namespace PowerWebsite.Models
         public DbSet<Recoder1_DB_Solar1> recoder1_db_solar1 { get; set; }
         public DbSet<Recoder1_DB_Solar2> recoder1_db_solar2 { get; set; }
         public DbSet<Recoder1_DB_Logistics> recoder1_db_logistics { get; set; }
-
-
-
+        public DbSet<Result> result { get; set; }
     }
 }
