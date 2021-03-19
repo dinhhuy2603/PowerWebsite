@@ -85,6 +85,11 @@
     .highcharts-data-table tr:hover {
         background: #f1f7ff;
     }
+
+    img{
+      display: block;
+      margin: auto;
+    }
 </style>
 <div class="content-page">
     <div class="content">
@@ -163,7 +168,10 @@
                         </div>
                         <div class="card-body">
                             <div class="maximize_height collapse pt-3 show highcharts-figure" dir="ltr">
-                                <div id="chart2" class="apex-charts" data-colors="#CED4DC,#6658dd"></div>
+                                <div class="text-center my-4" id="loader"></div>
+                                <div id="chart2" class="apex-charts" data-colors="#CED4DC,#6658dd">
+                                    
+                                </div>
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
@@ -322,6 +330,9 @@
             },
             type: 'get',
             async: false,
+            //beforeSend: function(){
+                
+            //},
             success: function (data) {
                 chartData = data;
             },
@@ -333,7 +344,8 @@
         return chartData;
     }
 
-    $('#compare-chart').change(function(){
+    $('#compare-chart').change(function () {
+        $('#loader').html('<img src="https://i.imgur.com/fXUIBfi.gif" alt="Chart will Render Here..." width="40" height="40"/>');
         showChartTotalCompare($(this).val());
     });
 
@@ -534,7 +546,7 @@
             default:
                 break;
         }
-
+        
      chart_2 = Highcharts.chart('chart2', {
             chart: {
                 type: 'column',
@@ -597,7 +609,8 @@
                 }]
             },
             series: seriesOptions,
-        });
+     });
+     $('#loader').html('');
     }
 
     $('.button-menu-mobile').click(function (event) {
