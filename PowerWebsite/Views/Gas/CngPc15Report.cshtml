@@ -186,7 +186,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportGasReport", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportCngPc15Report", "ExportGas", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -229,10 +229,10 @@
         showChartTotalCompare('today');
     });
 
-    function getChartGasData() {
+    function getChartCngPc15Data() {
         var chartData = [];
         $.ajax({
-            url: '/Gas/GetReportDataCNGPC15/',
+            url: '/Gas/GetReportDataCngPc15/',
             data: {
                 year: curr_year,
                 month: curr_month
@@ -298,7 +298,7 @@
         series: [{
             name: 'm3/h',
             color: '#2764C1',
-            data: getChartGasData(),
+            data: getChartCngPc15Data(),
             marker: {
                 enabled: null, // auto
                 radius: 3,
@@ -314,7 +314,7 @@
     function getChartTotalCompare(type) {
         var chartData = [];
         $.ajax({
-            url: '/Gas/GetReportTotalCNGPC15/',
+            url: '/Gas/GetReportTotalCngPc15/',
             data: {
                 year: curr_year,
                 month: curr_month,
@@ -561,7 +561,7 @@
             exporting: {
                 enabled: true,
                 filename: 'chart_gas',
-                tableCaption: 'Chart Gas Report',
+                tableCaption: 'Chart CNG PC 15 Report',
                 csv: {
                     dateFormat: '%Y-%m-%d'
                 }
@@ -612,7 +612,7 @@
         event.preventDefault();
         $('#fromDate').val('');
         $('#toDate').val('');
-        $('#frm_export').attr('action', '/ExportExcel/ExportGasReport');
+        $('#frm_export').attr('action', '/ExportGas/ExportCngPc15Report');
         $('#centermodal').modal('show');
     });
 
@@ -628,7 +628,7 @@
 
     $('#btn_export_now').click(function (event) {
         event.preventDefault();
-        $('#frm_export').attr('action', '/ExportExcel/ExportGasNowReport');
+        $('#frm_export').attr('action', '/ExportGas/ExportCngPc15NowReport');
         $('#fromDate').val(minDate.val());
         $('#toDate').val(maxDate.val());
         $('#centermodal').modal('show');

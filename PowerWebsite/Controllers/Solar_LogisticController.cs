@@ -70,6 +70,7 @@ namespace PowerWebsite.Controllers
         }
 
         // REPORT VIEW
+        [Route("Report/Solar1")]
         public ActionResult Solar1Report()
         {
             if (Session["UserID"] != null)
@@ -84,6 +85,8 @@ namespace PowerWebsite.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+
+        [Route("Report/Solar2")]
         public ActionResult Solar2Report()
         {
             if (Session["UserID"] != null)
@@ -98,6 +101,8 @@ namespace PowerWebsite.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+
+        [Route("Report/Logistics")]
         public ActionResult LogisticReport()
         {
             if (Session["UserID"] != null)

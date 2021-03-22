@@ -194,7 +194,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportGasReport", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportGasReport", "ExportGas", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -625,7 +625,7 @@
         event.preventDefault();
         $('#fromDate').val('');
         $('#toDate').val('');
-        $('#frm_export').attr('action', '/ExportExcel/ExportGasReport');
+        $('#frm_export').attr('action', '/ExportGas/ExportGasReport');
         $('#centermodal').modal('show');
     });
 
@@ -641,7 +641,7 @@
 
     $('#btn_export_now').click(function (event) {
         event.preventDefault();
-        $('#frm_export').attr('action', '/ExportExcel/ExportGasNowReport');
+        $('#frm_export').attr('action', '/ExportGas/ExportGasNowReport');
         $('#fromDate').val(minDate.val());
         $('#toDate').val(maxDate.val());
         $('#centermodal').modal('show');

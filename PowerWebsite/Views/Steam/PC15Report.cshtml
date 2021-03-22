@@ -190,7 +190,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportWaterReport", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportSteamPc15Report", "ExportSteam", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -233,7 +233,7 @@
         showChartTotalCompare('today');
     });
 
-    function getChartWaterData() {
+    function getChartSteamPc15Data() {
         var chartData = [];
         $.ajax({
             url: '/Steam/GetReportDataSteamPC15/',
@@ -302,7 +302,7 @@
         series: [{
             name: 'm3/h',
             color: '#2764C1',
-            data: getChartWaterData(),
+            data: getChartSteamPc15Data(),
             marker: {
                 enabled: null, // auto
                 radius: 3,
@@ -569,7 +569,7 @@
             exporting: {
                 enabled: true,
                 filename: 'chart_water',
-                tableCaption: 'Chart Water Report',
+                tableCaption: 'Chart Steam PC 15 Report',
                 csv: {
                     dateFormat: '%Y-%m-%d'
                 }
@@ -616,7 +616,7 @@
         event.preventDefault();
         $('#fromDate').val('');
         $('#toDate').val('');
-        $('#frm_export').attr('action', '/ExportExcel/ExportWaterReport');
+        $('#frm_export').attr('action', '/ExportSteam/ExportSteamPc15Report');
         $('#centermodal').modal('show');
     });
 
@@ -632,7 +632,7 @@
 
     $('#btn_export_now').click(function (event) {
         event.preventDefault();
-        $('#frm_export').attr('action', '/ExportExcel/ExportWaterNowReport');
+        $('#frm_export').attr('action', '/ExportSteam/ExportSteamPc15NowReport');
         $('#fromDate').val(minDate.val());
         $('#toDate').val(maxDate.val());
         $('#centermodal').modal('show');

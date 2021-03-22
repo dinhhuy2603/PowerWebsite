@@ -190,7 +190,7 @@
                 <div class="main-container">
                     <div class="container">
                         <div class="container_box">
-                            @using (Html.BeginForm("ExportLPSNACK3Report", "ExportExcel", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
+                            @using (Html.BeginForm("ExportSolar1Report", "ExportSolarLogistic", FormMethod.Get, new { @class = "", role = "form", @id = "frm_export" }))
                             {
                                 <label>
                                     From: @Html.TextBox("fromDate", "{0:yyyy-MM-dd}", new { placeholder = "dd/mm/yyyy", @class = "form-control", type = "date", id = "fromDate", autocomplete = "off" })
@@ -238,7 +238,7 @@
         $('#centermodal').modal('show');
     });
 
-    function getChartKenh1Data() {
+    function getChartSolar1Data() {
         var chartData = [];
         $.ajax({
             url: '/Solar_Logistic/GetReportDataSolar1/',
@@ -316,7 +316,7 @@
         series: [{
             name: 'Kw',
             color: '#2764C1',
-            data: getChartKenh1Data(),
+            data: getChartSolar1Data(),
             marker: {
                 enabled: null, // auto
                 radius: 3,
@@ -579,8 +579,8 @@
             credits: { enabled: false },
             exporting: {
                 enabled: true,
-                filename: 'chart_lp-snack-3',
-                tableCaption: 'Chart LP-SNACK-3 Report',
+                filename: 'chart_db_solar_1',
+                tableCaption: 'Chart DB-Solar 1 Report',
                 csv: {
                     dateFormat: '%Y-%m-%d'
                 }
@@ -627,7 +627,7 @@
         event.preventDefault();
         $('#fromDate').val('');
         $('#toDate').val('');
-        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK3Report');
+        $('#frm_export').attr('action', '/ExportSolarLogistic/ExportSolar1Report');
         $('#centermodal').modal('show');
     });
 
@@ -643,7 +643,7 @@
 
     $('#btn_export_kw').click(function (event) {
         event.preventDefault();
-        $('#frm_export').attr('action', '/ExportExcel/ExportLPSNACK3KWReport');
+        $('#frm_export').attr('action', '/ExportSolarLogistic/ExportSolar1KWReport');
         $('#fromDate').val(minDate.val());
         $('#toDate').val(maxDate.val());
         $('#centermodal').modal('show');

@@ -232,8 +232,12 @@
     <Compile Include="Controllers\ChartOnlineController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\Electric2Controller.cs" />
+    <Compile Include="Controllers\ExportElectric2Controller.cs" />
     <Compile Include="Controllers\ExportExcelController.cs" />
     <Compile Include="Controllers\ExportGasController.cs" />
+    <Compile Include="Controllers\ExportSolarLogisticController.cs" />
+    <Compile Include="Controllers\ExportSteamController.cs" />
+    <Compile Include="Controllers\ExportWaterController.cs" />
     <Compile Include="Controllers\GasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Electric1Controller.cs" />
@@ -687,8 +691,6 @@
     <Content Include="Views\Dashboard\Steam.cshtml" />
     <Content Include="Views\Dashboard\SolarSystem.cshtml" />
     <Content Include="Views\Dashboard\Logistic.cshtml" />
-    <Content Include="Views\Electric1\Gas.cshtml" />
-    <Content Include="Views\Electric1\Water.cshtml" />
     <Content Include="Views\Gas\Index.cshtml" />
     <Content Include="Views\Water\Index.cshtml" />
     <Content Include="Views\Water\WaterPc15.cshtml" />
@@ -730,8 +732,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ChartOnline\" />
+    <Folder Include="Views\ExportElectric2\" />
     <Folder Include="Views\ExportExcel\" />
     <Folder Include="Views\ExportGas\" />
+    <Folder Include="Views\ExportSolarLogistic\" />
+    <Folder Include="Views\ExportSteam\" />
+    <Folder Include="Views\ExportWater\" />
     <Folder Include="Views\ReportGas\" />
     <Folder Include="Views\ReportWater\" />
   </ItemGroup>
