@@ -350,7 +350,7 @@
         return chartData;
     }
 
-    $('#compare-chart').change(function(){
+    $('#compare-chart').change(function () {
         showChartKwhCompare($(this).val());
     });
 
@@ -551,11 +551,21 @@
             default:
                 break;
         }
-
+        console.log(seriesOptions[0]['data'])
         chart_2 = Highcharts.chart('chart2', {
             chart: {
                 type: 'column',
                 animation: { duration: 500 },
+                events: {
+                    load() {
+                        const chart = this;
+                        chart.showLoading('Simulating Ajax ...');
+                        setTimeout(function () {
+                            chart.hideLoading();
+                            chart.series[0].setData(seriesOptions[0]['data'])
+                        }, 1000);
+                    }
+                }
             },
             title: { text: '' },
             xAxis: {
@@ -613,7 +623,10 @@
                     }
                 }]
             },
-            series: seriesOptions,
+            series: [{
+                data: []
+            }]
+            //series: seriesOptions,
         });
     }
     $('.button-menu-mobile').click(function (event) {
