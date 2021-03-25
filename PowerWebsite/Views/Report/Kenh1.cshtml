@@ -551,7 +551,6 @@
             default:
                 break;
         }
-        console.log(seriesOptions[0]['data'])
         chart_2 = Highcharts.chart('chart2', {
             chart: {
                 type: 'column',
@@ -559,7 +558,7 @@
                 events: {
                     load() {
                         const chart = this;
-                        chart.showLoading('Simulating Ajax ...');
+                        chart.showLoading('<img src="/Content/images/loader.svg" height="40" width="40">');
                         setTimeout(function () {
                             chart.hideLoading();
                             chart.series[0].setData(seriesOptions[0]['data'])
@@ -624,7 +623,9 @@
                 }]
             },
             series: [{
-                data: []
+                data: [],
+                color: '#2764C1',
+                name: 'Kwh'
             }]
             //series: seriesOptions,
         });

@@ -556,6 +556,16 @@
             chart: {
                 type: 'column',
                 animation: { duration: 500 },
+                events: {
+                    load() {
+                        const chart = this;
+                        chart.showLoading('<img src="/Content/images/loader.svg" height="40" width="40">');
+                        setTimeout(function () {
+                            chart.hideLoading();
+                            chart.series[0].setData(seriesOptions[0]['data'])
+                        }, 1000);
+                    }
+                }
             },
             title: { text: '' },
             xAxis: {
@@ -613,7 +623,11 @@
                     }
                 }]
             },
-            series: seriesOptions,
+            series: [{
+                data: [],
+                color: '#2764C1',
+                name: 'Kwh'
+            }]
         });
     }
     $('.button-menu-mobile').click(function (event) {
