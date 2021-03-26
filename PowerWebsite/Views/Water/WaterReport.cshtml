@@ -548,18 +548,15 @@
                         const chart = this;
                         chart.showLoading('<img src="/Content/images/loader.svg" height="40" width="40">');
                         setTimeout(function () {
-                            chart.hideLoading();
+                            
                             chart.series[0].setData(seriesOptions[0]['data'])
+                            chart.hideLoading();
                         }, 1000);
                     }
                 }
             },
             title: { text: '' },
             xAxis: {
-                type: 'text',
-                title: {
-                    text: 'Time'
-                },
                 categories: seriesOptions[0].categories,
             },
             yAxis: { title: { text: 'm3' },

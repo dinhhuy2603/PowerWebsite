@@ -731,15 +731,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ChartOnline\" />
-    <Folder Include="Views\ExportElectric2\" />
-    <Folder Include="Views\ExportExcel\" />
-    <Folder Include="Views\ExportGas\" />
-    <Folder Include="Views\ExportSolarLogistic\" />
-    <Folder Include="Views\ExportSteam\" />
-    <Folder Include="Views\ExportWater\" />
-    <Folder Include="Views\ReportGas\" />
-    <Folder Include="Views\ReportWater\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
