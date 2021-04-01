@@ -292,13 +292,39 @@ namespace PowerWebsite.Controllers
                 hienthi_overview.Kwh = ((float)Math.Round((sum_kwh/1000) * 10f) / 10f).ToString();
 
                 var data = new List<object>();
-                data.Add(gas_view);
-                data.Add(water_view);
-                data.Add(hienthi_overview);
-
-
                 var hienthi1_overview = GetHienThi1Data();
-                data.Add(hienthi1_overview);
+                var cng_pc15 = GetCngPc15Data();
+                var water_pc15 = GetWaterPC15Data();
+                //Sum snack energy
+                var sum_snack = new HienthiOverView();
+
+                float kwhday1 = ((float)Math.Round(float.Parse(hienthi_overview.KWhDay) * 10f) / 10f);
+                float kwhday2 = ((float)Math.Round(float.Parse(hienthi1_overview.KWhDay) * 10f) / 10f);
+                sum_snack.Ptotal = (((float)Math.Round(float.Parse(hienthi_overview.Ptotal) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Ptotal) * 10f) / 10f)).ToString();
+                sum_snack.KWhDay = Math.Round(kwhday1 + kwhday2, 1).ToString();
+                sum_snack.Kwh = (((float)Math.Round(float.Parse(hienthi_overview.Kwh) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Kwh) * 10f) / 10f)).ToString();
+
+                // Sum Gas
+                var sum_gas = new GasView();
+                sum_gas.luu_luong_hien_tai = (((float)Math.Round(float.Parse(gas_view.luu_luong_hien_tai) * 10f) / 10f) + ((float)Math.Round(float.Parse(cng_pc15.luu_luong_hien_tai) * 10f) / 10f)).ToString();
+                sum_gas.luu_luong_tong = (((float)Math.Round(float.Parse(gas_view.luu_luong_tong) * 10f) / 10f) + ((float)Math.Round(float.Parse(cng_pc15.luu_luong_tong) * 10f) / 10f)).ToString();
+                sum_gas.luu_luong_tong_ngay = (((float)Math.Round(float.Parse(gas_view.luu_luong_tong_ngay) * 10f) / 10f) + ((float)Math.Round(float.Parse(cng_pc15.luu_luong_tong_ngay) * 10f) / 10f)).ToString();
+                // Sum Water
+                var sum_water = new WaterView();
+                sum_water.luu_luong_hien_tai = (((float)Math.Round(float.Parse(water_view.luu_luong_hien_tai) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_hien_tai) * 10f) / 10f)).ToString();
+                sum_water.luu_luong_tong = (((float)Math.Round(float.Parse(water_view.luu_luong_tong) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong) * 10f) / 10f)).ToString();
+                sum_water.luu_luong_tong_ngay = (((float)Math.Round(float.Parse(water_view.luu_luong_tong_ngay) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong_ngay) * 10f) / 10f)).ToString();
+
+                data.Add(gas_view); // 0
+                data.Add(water_view); // 1
+                data.Add(hienthi_overview); // 2
+                data.Add(hienthi1_overview); // 3
+                data.Add(cng_pc15); // 4
+                data.Add(water_pc15); // 5
+                data.Add(sum_snack); // 6
+                data.Add(sum_gas); // 7
+                data.Add(sum_water); // 8
+
 
                 var result = data;
                 
@@ -420,6 +446,50 @@ namespace PowerWebsite.Controllers
 
                 return hienthi1_overview;
                 //return Json(hienthi1_overview, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        // Get CngPC15 Data
+        public GasCNGView GetCngPc15Data()
+        {
+            using (DBModel db = new DBModel())
+            {
+                //Get Gas table
+                var cng_pc15 = db.gas_cng.FirstOrDefault();
+                var cng_pc15_recoder1_begin = db.recoder1_gas_cng.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                var cng_pc15_view = new GasCNGView();
+                if (cng_pc15 != null)
+                {
+                    var cng_pc15_total_last = (cng_pc15_recoder1_begin != null) ? cng_pc15_recoder1_begin.luu_luong_tong : "0";
+                    cng_pc15_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(cng_pc15.luu_luong_hien_tai) * 10f) / 10f).ToString();
+                    cng_pc15_view.luu_luong_tong = ((float)Math.Round(float.Parse(cng_pc15.luu_luong_tong) * 10f) / 10f).ToString();
+                    cng_pc15_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(cng_pc15.luu_luong_tong) - float.Parse(cng_pc15_total_last)) * 10f) / 10f).ToString();
+                    cng_pc15_view.status = cng_pc15.status;
+                }
+                return cng_pc15_view;
+            }
+        }
+
+        // Get WaterPC15 Data
+        public WaterPC15View GetWaterPC15Data()
+        {
+            using (DBModel db = new DBModel())
+            {
+                //Get Gas table
+                var water_pc15 = db.water_pc15.FirstOrDefault();
+                var water_pc15_recoder_begin = db.recoder1_water_pc15.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                var water_pc15_view = new WaterPC15View();
+                if (water_pc15 != null)
+                {
+                    var water_pc15_total_last = (water_pc15_recoder_begin != null) ? water_pc15_recoder_begin.luu_luong_tong : "0";
+                    water_pc15_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(water_pc15.luu_luong_hien_tai) * 10f) / 10f).ToString();
+                    water_pc15_view.luu_luong_tong = ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong) * 10f) / 10f).ToString();
+                    water_pc15_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(water_pc15.luu_luong_tong) - float.Parse(water_pc15_total_last)) * 10f) / 10f).ToString();
+                    water_pc15_view.status = water_pc15.status;
+                }
+                return water_pc15_view;
             }
         }
 
