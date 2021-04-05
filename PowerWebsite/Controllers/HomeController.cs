@@ -314,7 +314,10 @@ namespace PowerWebsite.Controllers
                 sum_water.luu_luong_hien_tai = (((float)Math.Round(float.Parse(water_view.luu_luong_hien_tai) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_hien_tai) * 10f) / 10f)).ToString();
                 sum_water.luu_luong_tong = (((float)Math.Round(float.Parse(water_view.luu_luong_tong) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong) * 10f) / 10f)).ToString();
                 sum_water.luu_luong_tong_ngay = (((float)Math.Round(float.Parse(water_view.luu_luong_tong_ngay) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong_ngay) * 10f) / 10f)).ToString();
-
+                // Sum Pc15 (Kenh 4+10))
+                var sum_pc15 = GetTotalPc15Data();
+                // Sum Solar
+                var sum_solar = GetTotalSolarData();
                 data.Add(gas_view); // 0
                 data.Add(water_view); // 1
                 data.Add(hienthi_overview); // 2
@@ -324,6 +327,10 @@ namespace PowerWebsite.Controllers
                 data.Add(sum_snack); // 6
                 data.Add(sum_gas); // 7
                 data.Add(sum_water); // 8
+                data.Add(sum_pc15); // 9
+                data.Add(sum_solar); // 10
+
+                
 
 
                 var result = data;
@@ -493,10 +500,133 @@ namespace PowerWebsite.Controllers
             }
         }
 
+        // Get PC15 Sum
+        public Hienthi1OverView GetTotalPc15Data()
+        {
+            float kenh4_2009 = (float)226.72;
+            float kenh10_2009 = (float)30813.393;
+            using (DBModel db = new DBModel())
+            {
+                var kenhList = new string[] { "4", "10" };
+                var hienthi1 = db.hienthi1.Where(c => kenhList.Contains(c.Kenh)).Select(i => new Hienthi1OverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh, KWhDay = "0" }).ToList();
+                //var hienthi = db.hienthi.Select(i => new { i.Kenh, i.Ptotal, i.Kwh }).ToList();
+                var recoder1_kenh4_begin = db.recoder1_kenh4.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                            .Take(1).ToList().FirstOrDefault();
+                var recoder1_kenh10_begin = db.recoder1_kenh10.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                            .Take(1).ToList().FirstOrDefault();
+
+                var kenh4 = new Hienthi1OverView();
+                var kenh10 = new Hienthi1OverView();
+                float sum_ptotal = 0;
+                float sum_kwh = 0;
+                float sum_kwh_inday = 0;
+                var hienthi1_overview = new Hienthi1OverView();
+                if (hienthi1 != null)
+                {
+                    var kenh4_Kwh_last = (recoder1_kenh4_begin != null) ? recoder1_kenh4_begin.Kwh : "0";
+                    var kenh10_Kwh_last = (recoder1_kenh10_begin != null) ? recoder1_kenh10_begin.Kwh : "0";
+                    for (var i = 0; i < hienthi1.Count; i++)
+                    {
+                        switch (hienthi1[i].Kenh)
+                        {
+                            case "4":
+                                kenh4.Kenh = hienthi1[i].Kenh;
+                                kenh4.Ptotal = ((float)Math.Round(float.Parse(hienthi1[i].Ptotal) * 10f) / 10f).ToString();
+                                kenh4.Kwh = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
+                                kenh4.KWhDay = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - float.Parse(kenh4_Kwh_last)) * 10f) / 10f).ToString();
+                                sum_ptotal += float.Parse(kenh4.Ptotal);
+                                sum_kwh_inday += float.Parse(kenh4.KWhDay);
+                                sum_kwh += float.Parse(kenh4.Kwh);
+                                break;
+                            case "10":
+                                kenh10.Kenh = hienthi1[i].Kenh;
+                                kenh10.Ptotal = ((float)Math.Round(float.Parse(hienthi1[i].Ptotal) * 10f) / 10f).ToString();
+                                kenh10.Kwh = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - kenh10_2009) * 10f) / 10f).ToString();
+                                kenh10.KWhDay = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - float.Parse(kenh10_Kwh_last)) * 10f) / 10f).ToString();
+                                sum_ptotal += float.Parse(kenh10.Ptotal);
+                                sum_kwh_inday += float.Parse(kenh10.KWhDay);
+                                sum_kwh += float.Parse(kenh10.Kwh);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                hienthi1_overview.Ptotal = ((float)Math.Round(sum_ptotal * 10f) / 10f).ToString();
+                hienthi1_overview.KWhDay = ((float)Math.Round(sum_kwh_inday * 10f) / 10f).ToString();
+                hienthi1_overview.Kwh = ((float)Math.Round((sum_kwh / 1000) * 10f) / 10f).ToString();
+
+                return hienthi1_overview;
+                //return Json(hienthi1_overview, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        //GET TOTAL SOLAR
+        // Get PC15 Sum
+        public Hienthi1OverView GetTotalSolarData()
+        {
+            float solar1_2009 = (float)226.72;
+            float solar2_2009 = (float)30813.393;
+            using (DBModel db = new DBModel())
+            {
+                var kenhList = new string[] { "1", "2" };
+                var hienthi1 = db.hienthi1.Where(c => kenhList.Contains(c.Kenh)).Select(i => new Hienthi1OverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh, KWhDay = "0" }).ToList();
+                //var hienthi = db.hienthi.Select(i => new { i.Kenh, i.Ptotal, i.Kwh }).ToList();
+                var recoder1_solar1_begin = db.recoder1_db_solar1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                            .Take(1).ToList().FirstOrDefault();
+                var recoder1_solar2_begin = db.recoder1_db_solar2.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                            .Take(1).ToList().FirstOrDefault();
+
+                var solar1 = new Hienthi1OverView();
+                var solar2 = new Hienthi1OverView();
+                float sum_ptotal = 0;
+                float sum_kwh = 0;
+                float sum_kwh_inday = 0;
+                var hienthi1_overview = new Hienthi1OverView();
+                if (hienthi1 != null)
+                {
+                    var solar1_Kwh_last = (recoder1_solar1_begin != null) ? recoder1_solar1_begin.Kwh : "0";
+                    var solar2_Kwh_last = (recoder1_solar2_begin != null) ? recoder1_solar2_begin.Kwh : "0";
+                    for (var i = 0; i < hienthi1.Count; i++)
+                    {
+                        switch (hienthi1[i].Kenh)
+                        {
+                            case "1":
+                                solar1.Kenh = hienthi1[i].Kenh;
+                                solar1.Ptotal = ((float)Math.Round(float.Parse(hienthi1[i].Ptotal) * 10f) / 10f).ToString();
+                                solar1.Kwh = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - solar1_2009) * 10f) / 10f).ToString();
+                                solar1.KWhDay = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - float.Parse(solar1_Kwh_last)) * 10f) / 10f).ToString();
+                                sum_ptotal += float.Parse(solar1.Ptotal);
+                                sum_kwh_inday += float.Parse(solar1.KWhDay);
+                                sum_kwh += float.Parse(solar1.Kwh);
+                                break;
+                            case "2":
+                                solar2.Kenh = hienthi1[i].Kenh;
+                                solar2.Ptotal = ((float)Math.Round(float.Parse(hienthi1[i].Ptotal) * 10f) / 10f).ToString();
+                                solar2.Kwh = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - solar2_2009) * 10f) / 10f).ToString();
+                                solar2.KWhDay = ((float)Math.Round((float.Parse(hienthi1[i].Kwh) - float.Parse(solar2_Kwh_last)) * 10f) / 10f).ToString();
+                                sum_ptotal += float.Parse(solar2.Ptotal);
+                                sum_kwh_inday += float.Parse(solar2.KWhDay);
+                                sum_kwh += float.Parse(solar2.Kwh);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                hienthi1_overview.Ptotal = ((float)Math.Round(sum_ptotal * 10f) / 10f).ToString();
+                hienthi1_overview.KWhDay = ((float)Math.Round(sum_kwh_inday * 10f) / 10f).ToString();
+                hienthi1_overview.Kwh = ((float)Math.Round((sum_kwh / 1000) * 10f) / 10f).ToString();
+
+                return hienthi1_overview;
+                //return Json(hienthi1_overview, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public ActionResult Overview()
         {
             if (Session["UserID"] != null)
-            {
+            {  
                 using (DBModel db = new DBModel())
                 {
                     //Get Gas table
