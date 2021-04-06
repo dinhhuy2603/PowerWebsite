@@ -13,6 +13,7 @@ namespace PowerWebsite.Controllers
         DateTime today = DateTime.Today.Date;
         DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
         DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
+        DateTime thu2 = new DateTime(2021, 4, 6).AddDays(-1);
 
         float kenh1_2009 = (float)226.72;
         float kenh2_2009 = (float)30813.393;
@@ -318,6 +319,9 @@ namespace PowerWebsite.Controllers
                 var sum_pc15 = GetTotalPc15Data();
                 // Sum Solar
                 var sum_solar = GetTotalSolarData();
+                //Sum Steam
+                var sum_steam = GetTotalSteamData();
+                var logistic = GetLogisticData();
                 data.Add(gas_view); // 0
                 data.Add(water_view); // 1
                 data.Add(hienthi_overview); // 2
@@ -329,10 +333,8 @@ namespace PowerWebsite.Controllers
                 data.Add(sum_water); // 8
                 data.Add(sum_pc15); // 9
                 data.Add(sum_solar); // 10
-
-                
-
-
+                data.Add(sum_steam); // 11
+                data.Add(logistic); //12
                 var result = data;
                 
                 return Json(result, JsonRequestBehavior.AllowGet);
@@ -562,7 +564,6 @@ namespace PowerWebsite.Controllers
         }
 
         //GET TOTAL SOLAR
-        // Get PC15 Sum
         public Hienthi1OverView GetTotalSolarData()
         {
             float solar1_2009 = (float)226.72;
@@ -620,6 +621,69 @@ namespace PowerWebsite.Controllers
 
                 return hienthi1_overview;
                 //return Json(hienthi1_overview, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        // Get Total Steam
+        public SteamPC10View GetTotalSteamData()
+        {
+            using (DBModel db = new DBModel())
+            {
+                //Get Steam PC10 table
+                var steam_pc10 = db.steam_pc10.FirstOrDefault();
+                var steam_pc10_recoder1_begin = db.recoder1_steam_pc10.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                var steam_pc10_view = new SteamPC10View();
+                if (steam_pc10 != null)
+                {
+                    var steam_pc10_total_last = (steam_pc10_recoder1_begin != null) ? steam_pc10_recoder1_begin.luu_luong_tong : "0";
+                    steam_pc10_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(steam_pc10.luu_luong_hien_tai) * 10f) / 10f).ToString();
+                    steam_pc10_view.luu_luong_tong = ((float)Math.Round(float.Parse(steam_pc10.luu_luong_tong) * 10f) / 10f).ToString();
+                    steam_pc10_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(steam_pc10.luu_luong_tong) - float.Parse(steam_pc10_total_last)) * 10f) / 10f).ToString();
+                    steam_pc10_view.status = steam_pc10.status;
+                }
+
+                //Get Steam PC15 table
+                var steam_pc15 = db.steam_pc15.FirstOrDefault();
+                var steam_pc15_recoder1_begin = db.recoder1_steam_pc15.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                         .Take(1).ToList().FirstOrDefault();
+                var steam_pc15_view = new SteamPC15View();
+                if (steam_pc15 != null)
+                {
+                    var steam_pc15_total_last = (steam_pc15_recoder1_begin != null) ? steam_pc15_recoder1_begin.luu_luong_tong : "0";
+                    steam_pc15_view.luu_luong_hien_tai = ((float)Math.Round(float.Parse(steam_pc15.luu_luong_hien_tai) * 10f) / 10f).ToString();
+                    steam_pc15_view.luu_luong_tong = ((float)Math.Round(float.Parse(steam_pc15.luu_luong_tong) * 10f) / 10f).ToString();
+                    steam_pc15_view.luu_luong_tong_ngay = ((float)Math.Round((float.Parse(steam_pc15.luu_luong_tong) - float.Parse(steam_pc15_total_last)) * 10f) / 10f).ToString();
+                    steam_pc15_view.status = steam_pc10.status;
+                }
+
+                var sum_steam = new SteamPC10View();
+                sum_steam.luu_luong_hien_tai = (((float)Math.Round(float.Parse(steam_pc10_view.luu_luong_hien_tai) * 10f) / 10f) + ((float)Math.Round(float.Parse(steam_pc15_view.luu_luong_hien_tai) * 10f) / 10f)).ToString();
+                sum_steam.luu_luong_tong = (((float)Math.Round(float.Parse(steam_pc10_view.luu_luong_tong) * 10f) / 10f) + ((float)Math.Round(float.Parse(steam_pc15_view.luu_luong_tong) * 10f) / 10f)).ToString();
+                sum_steam.luu_luong_tong_ngay = (((float)Math.Round(float.Parse(steam_pc10_view.luu_luong_tong_ngay) * 10f) / 10f) + ((float)Math.Round(float.Parse(steam_pc15_view.luu_luong_tong_ngay) * 10f) / 10f)).ToString();
+                return sum_steam;
+            }
+        }
+
+        // Get Logistic Data
+        public Hienthi1OverView GetLogisticData()
+        {
+            float logistic_2009 = (float)226.72;
+            using (DBModel db = new DBModel())
+            {
+                var hienthi1 = db.hienthi1.Where(c => c.Kenh.Equals("3")).Select(i => new Hienthi1OverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh, KWhDay = "0" }).FirstOrDefault();
+                var recoder1_logistic_begin = db.recoder1_db_logistics.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+                            .Take(1).ToList().FirstOrDefault();
+                var logistic_view = new Hienthi1OverView(); 
+                if (hienthi1 != null)
+                {
+                    var logistic_Kwh_last = (recoder1_logistic_begin != null) ? recoder1_logistic_begin.Kwh : "0";
+
+                    logistic_view.Ptotal = ((float)Math.Round(float.Parse(hienthi1.Ptotal) * 10f) / 10f).ToString();
+                    logistic_view.Kwh = ((float)Math.Round((float.Parse(hienthi1.Kwh) - logistic_2009) * 10f) / 10f).ToString();
+                    logistic_view.KWhDay = ((float)Math.Round((float.Parse(hienthi1.Kwh) - float.Parse(logistic_Kwh_last)) * 10f) / 10f).ToString();
+                 }
+                return logistic_view;
             }
         }
 

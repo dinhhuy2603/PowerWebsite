@@ -259,6 +259,7 @@
     <Compile Include="Hubs\ChartSolar_LogisticUpdate.cs" />
     <Compile Include="Hubs\ChartSteamUpdate.cs" />
     <Compile Include="Hubs\ChartWaterUpdate.cs" />
+    <Compile Include="Hubs\OverviewDataUpdate.cs" />
     <Compile Include="Hubs\EnergyDatatUpdate.cs" />
     <Compile Include="Models\Recoder1_DB_Logistics.cs" />
     <Compile Include="Models\GasCNG_PC15.cs" />

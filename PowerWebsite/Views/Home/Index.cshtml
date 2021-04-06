@@ -313,7 +313,7 @@
                 </div> <!-- end col-->
                 <div class="col-xl-4 col-md-4">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20" style="background-color: #4181CB; color: #FFFFFF">Total PC15 Energy</h5>
+                        <h5 class="card-header text-center font-20" style="background-color: #4181CB; color: #FFFFFF">Total Solar Energy</h5>
                         <div class="card-body bg-white">
                             <h3 class="text-center font-24">Current PV Power</h3>
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
@@ -339,13 +339,13 @@
 
                 <div class="col-xl-4 col-md-4">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20" style="background-color: #4181CB; color: #FFFFFF">Total WATER</h5>
+                        <h5 class="card-header text-center font-20" style="background-color: #4181CB; color: #FFFFFF">Total Steam</h5>
                         <div class="card-body bg-white">
                             <h3 class="text-center font-24">Current PV Power</h3>
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture4-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_sum_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="steam_sum_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -354,16 +354,47 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture5-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_sum_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="steam_sum_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="water_sum_total">@ViewBag.water.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="steam_sum_total">@ViewBag.water.luu_luong_tong m3</span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
             </div>
         <!-- end row 4-->
+            <!--Start row 4-->
+            <div class="row mt-5">
+                <div class="col-xl-4 col-md-4">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20" style="background-color: #4181CB; color: #FFFFFF">Logistics Energy</h5>
+                        <div class="card-body bg-white">
+                            <h3 class="text-center font-24">Current PV Power</h3>
+                            <div class="flex-wrap d-flex align-items-center justify-content-center">
+                                <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
+                                <div class="text-total">
+                                    <span id="logistic_ptotal">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                </div>
+                            </div>
+                        </div> <!-- end card-body -->
+                        <div class="card-body bg-white border-top">
+                            <h3 class="text-center font-24">PV Entry</h3>
+                            <div class="flex-wrap d-flex align-items-center justify-content-center">
+                                <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
+                                <div class="text-total">
+                                    <span id="logistic_kwh_inday">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <p class="d-block font-16">Today</p>
+                                </div>
+                            </div>
+                            <p class="text-center font-16 mt-3">Total: <span id="logistic_kwh">@ViewBag.sumKwh MWh</span></p>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+
+                </div> <!-- end col-->
+            </div>
+        <!-- end row 5-->
+
 
         </div> <!-- container -->
 
@@ -452,6 +483,22 @@
             $('#water_sum_now').html(addCommas(data_hienthi[8].luu_luong_hien_tai));
             $('#water_sum_inday').html(addCommas(data_hienthi[8].luu_luong_tong_ngay));
             $('#water_sum_total').html(addCommas(data_hienthi[8].luu_luong_tong) + " m3");
+            // Sum PC15
+            $('#sum_ptotal_pc15').html(addCommas(data_hienthi[9].Ptotal));
+            $('#sum_kwh_inday_pc15').html(addCommas(data_hienthi[9].KWhDay));
+            $('#sum_kwh_pc15').html(addCommas(data_hienthi[9].Kwh) + " MWh");
+            // Sum Solar
+            $('#sum_ptotal_solar').html(addCommas(data_hienthi[10].Ptotal));
+            $('#sum_kwh_inday_solar').html(addCommas(data_hienthi[10].KWhDay));
+            $('#sum_kwh_solar').html(addCommas(data_hienthi[10].Kwh) + " MWh");
+            // Sum Water
+            $('#steam_sum_now').html(addCommas(data_hienthi[11].luu_luong_hien_tai));
+            $('#steam_sum_inday').html(addCommas(data_hienthi[11].luu_luong_tong_ngay));
+            $('#steam_sum_total').html(addCommas(data_hienthi[11].luu_luong_tong) + " m3");
+            // Sum Logistic
+            $('#logistic_ptotal').html(addCommas(data_hienthi[12].Ptotal));
+            $('#logistic_kwh_inday').html(addCommas(data_hienthi[12].KWhDay));
+            $('#logistic_kwh').html(addCommas(data_hienthi[12].Kwh) + " MWh");
         };
 
         myVar = setInterval(function () {

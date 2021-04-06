@@ -112,11 +112,6 @@
                                             <td id="kenh3_kwh">@ViewBag.kenh3.Kwh</td>
                                         </tr>
                                         <tr>
-                                            <td>LP-SNACK-3</td>
-                                            <td id="kenh1_ptotal">@ViewBag.kenh1.Ptotal</td>
-                                            <td id="kenh1_kwh">@ViewBag.kenh1.Kwh</td>
-                                        </tr>
-                                        <tr>
                                             <td>DP-SNACK-1</td>
                                             <td id="kenh5_ptotal">@ViewBag.kenh5.Ptotal</td>
                                             <td id="kenh5_kwh">@ViewBag.kenh5.Kwh</td>
@@ -135,6 +130,58 @@
                                             <td>Total</td>
                                             <td id="total_kw">@ViewBag.count_Ptotal</td>
                                             <td id="total_kwh">@ViewBag.count_Kwh</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">WATER</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Hiện tại (m3/h)</th>
+                                            <th>Tổng (m3)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Water</td>
+                                            <td id="water_now">@ViewBag.water.luu_luong_hien_tai</td>
+                                            <td id="water_total">@ViewBag.water.luu_luong_tong</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">WATER</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Hiện tại (m3/h)</th>
+                                            <th>Tổng (m3)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Water</td>
+                                            <td id="water_now">@ViewBag.water.luu_luong_hien_tai</td>
+                                            <td id="water_total">@ViewBag.water.luu_luong_tong</td>
                                         </tr>
                                     </tbody>
                                 </table>
