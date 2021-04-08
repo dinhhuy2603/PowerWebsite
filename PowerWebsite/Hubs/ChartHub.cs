@@ -15,21 +15,23 @@ namespace PowerWebsite.Hubs
         private readonly ChartElectric1Update _Electric1;
         private readonly ChartElectric2Update _Electric2;
         private readonly EnergyDatatUpdate _EneryInstance;
+        private readonly OverviewDatatUpdate _OverviewInstance;
         private readonly ChartOnline1Update _ChartOnline1Instance;
         private readonly ChartOnline2Update _ChartOnline2Instance;
         private readonly ChartGasUpdate _GasSnackInstance;
         private readonly ChartWaterUpdate _WaterSnackInstance;
         private readonly ChartSteamUpdate _SteamSnackInstance;
         private readonly ChartSolar_LogisticUpdate _SolarLogisInstance;
-        public ChartHub() : this(ChartElectric1Update.Instance, ChartElectric2Update.Instance, EnergyDatatUpdate.Instance, ChartOnline1Update.Instance, ChartOnline2Update.Instance,
+        public ChartHub() : this(ChartElectric1Update.Instance, ChartElectric2Update.Instance, EnergyDatatUpdate.Instance, OverviewDatatUpdate.Instance, ChartOnline1Update.Instance, ChartOnline2Update.Instance,
             ChartGasUpdate.Instance, ChartWaterUpdate.Instance, ChartSteamUpdate.Instance, ChartSolar_LogisticUpdate.Instance) { }
 
-        public ChartHub(ChartElectric1Update Electric1Instance, ChartElectric2Update Electric2Instance, EnergyDatatUpdate EneryInstance, ChartOnline1Update ChartOnline1Instance, ChartOnline2Update ChartOnline2Instance, 
+        public ChartHub(ChartElectric1Update Electric1Instance, ChartElectric2Update Electric2Instance, EnergyDatatUpdate EneryInstance, OverviewDatatUpdate OverviewInstance, ChartOnline1Update ChartOnline1Instance, ChartOnline2Update ChartOnline2Instance, 
             ChartGasUpdate GasSnackInstance, ChartWaterUpdate WaterSnackInstance, ChartSteamUpdate SteamSnackInstance, ChartSolar_LogisticUpdate SolarLogisInstance)
         {
             _Electric1 = Electric1Instance;
             _Electric2 = Electric2Instance;
             _EneryInstance = EneryInstance;
+            _OverviewInstance = OverviewInstance;
             _ChartOnline1Instance = ChartOnline1Instance;
             _ChartOnline2Instance = ChartOnline2Instance;
             _GasSnackInstance = GasSnackInstance;
@@ -146,6 +148,14 @@ namespace PowerWebsite.Hubs
             Clients.All.UpdateEneryOverview(hienthi_enery_overview);
             _EneryInstance.GetEnergyOverviewData();
         }
+        // Overview
+        public void InitOveriew()
+        {
+            var hienthi_overview = new OverviewController().GetOverViewData().Data;
+            Clients.All.UpdateOverview(hienthi_overview);
+            _OverviewInstance.GetOverviewData();
+        }
+
 
         // Chart Online Electric 1-2
         public void InitChartKenh1Online()

@@ -241,6 +241,7 @@
     <Compile Include="Controllers\GasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Electric1Controller.cs" />
+    <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReportElectric2Controller.cs" />
     <Compile Include="Controllers\SnackController.cs" />
@@ -732,6 +733,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Overview\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

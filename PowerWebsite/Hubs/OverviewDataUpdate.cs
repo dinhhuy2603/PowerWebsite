@@ -53,7 +53,7 @@ namespace PowerWebsite.Hubs
 
         private void SendOverViewData()
         {
-            var hienthi_overview = new HomeController().GetOverViewData().Data;
+            var hienthi_overview = new OverviewController().GetOverViewData().Data;
             GetAllClients().All.UpdateOverview(hienthi_overview);
         }
 
