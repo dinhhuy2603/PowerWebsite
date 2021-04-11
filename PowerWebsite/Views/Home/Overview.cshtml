@@ -51,8 +51,8 @@
                                     <tbody>
                                         <tr>
                                             <td>Gas</td>
-                                            <td id="gas_now">@ViewBag.gas.luu_luong_hien_tai</td>
-                                            <td id="gas_total">@ViewBag.gas.luu_luong_tong</td>
+                                            <td id="gas_now"></td>
+                                            <td id="gas_total"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -77,8 +77,8 @@
                                     <tbody>
                                         <tr>
                                             <td>Water</td>
-                                            <td id="water_now">@ViewBag.water.luu_luong_hien_tai</td>
-                                            <td id="water_total">@ViewBag.water.luu_luong_tong</td>
+                                            <td id="water_now"></td>
+                                            <td id="water_total"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -103,33 +103,33 @@
                                     <tbody>
                                         <tr>
                                             <td>LP-SNACK-1</td>
-                                            <td id="kenh2_ptotal">@ViewBag.kenh2.Ptotal</td>
-                                            <td id="kenh2_kwh">@ViewBag.kenh2.Kwh</td>
+                                            <td id="kenh2_ptotal"></td>
+                                            <td id="kenh2_kwh"></td>
                                         </tr>
                                         <tr>
                                             <td>LP-SNACK-2</td>
-                                            <td id="kenh3_ptotal">@ViewBag.kenh3.Ptotal</td>
-                                            <td id="kenh3_kwh">@ViewBag.kenh3.Kwh</td>
+                                            <td id="kenh3_ptotal"></td>
+                                            <td id="kenh3_kwh"></td>
                                         </tr>
                                         <tr>
                                             <td>DP-SNACK-1</td>
-                                            <td id="kenh5_ptotal">@ViewBag.kenh5.Ptotal</td>
-                                            <td id="kenh5_kwh">@ViewBag.kenh5.Kwh</td>
+                                            <td id="kenh5_ptotal"></td>
+                                            <td id="kenh5_kwh"></td>
                                         </tr>
                                         <tr>
                                             <td>DP-SNACK-2</td>
-                                            <td id="kenh4_ptotal">@ViewBag.kenh4.Ptotal</td>
-                                            <td id="kenh4_kwh">@ViewBag.kenh4.Kwh</td>
+                                            <td id="kenh4_ptotal"></td>
+                                            <td id="kenh4_kwh"></td>
                                         </tr>
                                         <tr>
                                             <td>DP-SNACK-3</td>
-                                            <td id="kenh6_ptotal">@ViewBag.kenh6.Ptotal</td>
-                                            <td id="kenh6_kwh">@ViewBag.kenh6.Kwh</td>
+                                            <td id="kenh6_ptotal"></td>
+                                            <td id="kenh6_kwh"></td>
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td id="total_kw">@ViewBag.count_Ptotal</td>
-                                            <td id="total_kwh">@ViewBag.count_Kwh</td>
+                                            <td id="total_kw"></td>
+                                            <td id="total_kwh"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -196,7 +196,7 @@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20">Snack Line Energy</h5>
+                       <h5 class="card-header text-center font-20">Total PC15 Energy</h5>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered mb-0 table-total">
@@ -231,6 +231,156 @@
                     </div> <!-- end card-->
                 </div> <!-- end col-->
 
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">Solar Energy</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Total KW</th>
+                                            <th>Total KWh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DB-Solar 1</td>
+                                            <td id="solar1_ptotal"></td>
+                                            <td id="solar1_kwh"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB-Solar 2</td>
+                                            <td id="solar2_ptotal"></td>
+                                            <td id="solar2_kwh"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Total</td>
+                                            <td id="total_solar_kw"></td>
+                                            <td id="total_solar_kwh"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">Logistics Energy</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Total KW</th>
+                                            <th>Total KWh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DB-Logistics</td>
+                                            <td id="logistic_ptotal"></td>
+                                            <td id="logistic_kwh"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">WATER-PC15</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Hiện tại (m3/h)</th>
+                                            <th>Tổng (m3)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Water-PC15</td>
+                                            <td id="water_pc15_now"></td>
+                                            <td id="water_pc15_total"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">STEAM</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Hiện tại (m3/h)</th>
+                                            <th>Tổng (m3)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Steam PC10</td>
+                                            <td id="steam_pc10_now"></td>
+                                            <td id="steam_pc10_total"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steam PC15</td>
+                                            <td id="steam_pc15_now"></td>
+                                            <td id="steam_pc15_total"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td id="sum_steam_now"></td>
+                                            <td id="sum_steam_total"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+
+                <div class="col-xl-6 col-md-6">
+                    <div class="card bg-card">
+                        <h5 class="card-header text-center font-20">GAS-PC15</h5>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0 table-total">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Hiện tại (m3/h)</th>
+                                            <th>Tổng (m3)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Gas-PC15</td>
+                                            <td id="gas_pc15_now"></td>
+                                            <td id="gas_pc15_total"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
                 
             </div>
         </div> <!-- container -->
@@ -300,6 +450,8 @@
                 var total_snack_kwh = data_hienthi[7] || 0;
                 var total_pc15_kw = data_hienthi[8] || 0;
                 var total_pc15_kwh = data_hienthi[9] || 0;
+                var total_solar_kw = data_hienthi[10] || 0;
+                var total_solar_kwh = data_hienthi[11] || 0;
                 if (data_kenh) {
                     for (i = 0; i < data_kenh.length; i++) {
                         switch (data_kenh[i].Kenh) {
@@ -341,6 +493,18 @@
                 if (data_snack) {
                     for (i = 0; i < data_snack.length; i++) {
                         switch (data_snack[i].Kenh) {
+                            case "1":
+                                $('#solar1_ptotal').html(addCommas(data_snack[i].Ptotal));
+                                $('#solar1_kwh').html(addCommas(data_snack[i].Kwh));
+                                break;
+                            case "2":
+                                $('#solar2_ptotal').html(addCommas(data_snack[i].Ptotal));
+                                $('#solar2_kwh').html(addCommas(data_snack[i].Kwh));
+                                break;
+                            case "3":
+                                $('#logistic_ptotal').html(addCommas(data_snack[i].Ptotal));
+                                $('#logistic_ kwh').html(addCommas(data_snack[i].Kwh));
+                                break;
                             case "4":
                                 $('#snack4_ptotal').html(addCommas(data_snack[i].Ptotal));
                                 $('#snack4_kwh').html(addCommas(data_snack[i].Kwh));
@@ -380,12 +544,29 @@
                     }
                     $('#total_snack_kw').html(addCommas(total_snack_kw));
                     total_snack_kwh = Math.round((total_snack_kwh / 1000) * 10) / 10;
-                    $('#total_snack_kwh').html(addCommas(total_snack_kwh) + " MWh")
+                    $('#total_snack_kwh').html(addCommas(total_snack_kwh) + " MWh");
 
                     $('#total_pc15_kw').html(addCommas(total_pc15_kw));
                     total_pc15_kwh = Math.round((total_pc15_kwh / 1000) * 10) / 10;
-                    $('#total_pc15_kwh').html(addCommas(total_pc15_kwh) + " MWh")
+                    $('#total_pc15_kwh').html(addCommas(total_pc15_kwh) + " MWh");
+
+                    $('#total_solar_kw').html(addCommas(total_solar_kw));
+                    total_solar_kwh = Math.round((total_solar_kwh / 1000) * 10) / 10;
+                    $('#total_solar_kwh').html(addCommas(total_solar_kwh) + " MWh");
                 }
+                $('#water_pc15_now').html(addCommas(data_hienthi[12].luu_luong_hien_tai));
+                $('#water_pc15_total').html(addCommas(data_hienthi[12].luu_luong_tong));
+                $('#steam_pc10_now').html(addCommas(data_hienthi[13].luu_luong_hien_tai));
+                $('#steam_pc10_total').html(addCommas(data_hienthi[13].luu_luong_tong));
+                $('#steam_pc15_now').html(addCommas(data_hienthi[14].luu_luong_hien_tai));
+                $('#steam_pc15_total').html(addCommas(data_hienthi[14].luu_luong_tong));
+                var sum_steam_now = data_hienthi[15] || 0;
+                var sum_steam_total = data_hienthi[16] || 0;
+                $('#sum_steam_now').html(addCommas(sum_steam_now));
+                $('#sum_steam_total').html(addCommas(sum_steam_total));
+                $('#gas_pc15_now').html(addCommas(data_hienthi[17].luu_luong_hien_tai));
+                $('#gas_pc15_total').html(addCommas(data_hienthi[17].luu_luong_tong));
+
 
 
             }

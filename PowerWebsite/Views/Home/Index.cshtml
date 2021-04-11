@@ -47,7 +47,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_ptotal_hienthi">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="sum_ptotal_hienthi">@*@ViewBag.sumPtotal*@</span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -56,11 +56,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_kwh_inday_hienthi">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="sum_kwh_inday_hienthi">@*@ViewBag.sumKwhInday*@</span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_hienthi">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_hienthi">@*@ViewBag.sumKwh*@ MWh</span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
 
@@ -73,7 +73,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture3-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="gas_now">@ViewBag.gas.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="gas_now">@*@ViewBag.gas.luu_luong_hien_tai*@</span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -82,11 +82,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture1-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="gas_inday">@ViewBag.gas.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="gas_inday">@*@ViewBag.gas.luu_luong_tong_ngay*@</span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="gas_total">@ViewBag.gas.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="gas_total">@*@ViewBag.gas.luu_luong_tong*@ m3</span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -99,7 +99,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture4-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="water_now"></span><span class="font-24"></span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -108,11 +108,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture5-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="water_inday"></span><span class="font-24"></span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="water_total">@ViewBag.water.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="water_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -129,7 +129,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_ptotal_hienthi1">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="sum_ptotal_hienthi1"></span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -138,11 +138,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_kwh_inday_hienthi1">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="sum_kwh_inday_hienthi1"></span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_hienthi1">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_hienthi1"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
 
@@ -155,7 +155,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture3-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="cng_pc15_now">@ViewBag.gas.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="cng_pc15_now"></span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -164,11 +164,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture1-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="cng_pc15_inday">@ViewBag.gas.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="cng_pc15_inday"></span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="cng_pc15_total">@ViewBag.gas.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="cng_pc15_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -181,7 +181,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture4-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_pc15_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="water_pc15_now"></span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -190,11 +190,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture5-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_pc15_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="water_pc15_inday"></span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="water_pc15_total">@ViewBag.water.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="water_pc15_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -211,7 +211,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_ptotal_snack">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="sum_ptotal_snack"></span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -220,11 +220,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_kwh_inday_snack">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="sum_kwh_inday_snack"></span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_snack">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_snack"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
 
@@ -237,7 +237,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture3-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="gas_sum_now">@ViewBag.gas.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="gas_sum_now"></span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -246,11 +246,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture1-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="gas_sum_inday">@ViewBag.gas.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="gas_sum_inday"></span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="gas_sum_total">@ViewBag.gas.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="gas_sum_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -263,7 +263,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture4-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_sum_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="water_sum_now"></span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -272,11 +272,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture5-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="water_sum_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="water_sum_inday"></span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="water_sum_total">@ViewBag.water.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="water_sum_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -293,7 +293,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_ptotal_pc15">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="sum_ptotal_pc15"></span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -302,11 +302,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_kwh_inday_pc15">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="sum_kwh_inday_pc15"></span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_pc15">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_pc15"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
 
@@ -319,7 +319,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_ptotal_solar">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="sum_ptotal_solar"></span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -328,11 +328,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="sum_kwh_inday_solar">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="sum_kwh_inday_solar"></span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_solar">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="sum_kwh_solar"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -345,7 +345,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture4-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="steam_sum_now">@ViewBag.water.luu_luong_hien_tai</span><span class="font-24"> m3/h</span>
+                                    <span id="steam_sum_now"></span><span class="font-24"> m3/h</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -354,11 +354,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture5-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="steam_sum_inday">@ViewBag.water.luu_luong_tong_ngay</span><span class="font-24"> m3</span>
+                                    <span id="steam_sum_inday"></span><span class="font-24"> m3</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="steam_sum_total">@ViewBag.water.luu_luong_tong m3</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="steam_sum_total"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -374,7 +374,7 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Layer 1.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="logistic_ptotal">@ViewBag.sumPtotal</span><span class="font-24"> kW</span>
+                                    <span id="logistic_ptotal"></span><span class="font-24"> kW</span>
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -383,11 +383,11 @@
                             <div class="flex-wrap d-flex align-items-center justify-content-center">
                                 <img src="~/Content/images/energy-overview/Picture2-removebg-preview.png" height="60" class="mr-3" alt="">
                                 <div class="text-total">
-                                    <span id="logistic_kwh_inday">@ViewBag.sumKwhInday</span><span class="font-24"> kWh</span>
+                                    <span id="logistic_kwh_inday"></span><span class="font-24"> kWh</span>
                                     <p class="d-block font-16">Today</p>
                                 </div>
                             </div>
-                            <p class="text-center font-16 mt-3">Total: <span id="logistic_kwh">@ViewBag.sumKwh MWh</span></p>
+                            <p class="text-center font-16 mt-3">Total: <span id="logistic_kwh"></span></p>
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
 
@@ -446,7 +446,6 @@
         });
 
         chartHub.client.updateEneryOverview = function (data_hienthi) {
-            console.log(data_hienthi)
             //Gas
             $('#gas_now').html(addCommas(data_hienthi[0].luu_luong_hien_tai));
             $('#gas_inday').html(addCommas(data_hienthi[0].luu_luong_tong_ngay));

@@ -112,7 +112,7 @@
                     </div> <!-- end card-->
                 </div> <!-- end col-->
 
-                <div class="col-xl-6 col-md-6">
+                @*<div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
                         <h5 class="card-header text-center font-20 show-kenh" data-value="1"><span class="chart_color" id="kenh1_status" style="background:red"></span>LP-SNACK-3</h5>
                         <div class="card-body">
@@ -122,7 +122,7 @@
                             </div> <!-- collapsed end -->
                         </div> <!-- end card-body -->
                     </div> <!-- end card-->
-                </div> <!-- end col-->
+                </div> <!-- end col-->*@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
@@ -507,7 +507,7 @@
     var kenh6 = GetChartKenh6Data();
 
     
-    $(function () {
+    $(document).ready(function () {
         Highcharts.setOptions({
             global: {
                 useUTC: false
@@ -522,8 +522,8 @@
         });
 
         //Call to Update LineChart from Server
-        chartHub.client.UpdateChartElectric1 = function (kenh1_data, kenh2_data, kenh3_data, kenh4_data, kenh5_data, kenh6_data) {
-            UpdateKenh1Chart(kenh1_data);
+        chartHub.client.UpdateChartElectric1 = function (kenh2_data, kenh3_data, kenh4_data, kenh5_data, kenh6_data) {
+            //UpdateKenh1Chart(kenh1_data);
             UpdateKenh2Chart(kenh2_data);
             UpdateKenh3Chart(kenh3_data);
             UpdateKenh4Chart(kenh4_data);
@@ -564,32 +564,32 @@
 
     });
     // Update Chart Kenh1
-    function UpdateKenh1Chart(data) {
-        if (chartKenh1A) {
-            point = chartKenh1A.series[0].points[0];
-            newVal = data.Ptotal ? parseFloat(data.Ptotal) : 0;
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.Ptotal ? parseFloat(data.Ptotal) : 0;
-            }
-            point.update(newVal);
-        }
-        if (chartKenh1B) {
-            point = chartKenh1B.series[0].points[0];
-            newVal = data.Kwh ? parseFloat(data.Kwh) : 0;
+    //function UpdateKenh1Chart(data) {
+    //    if (chartKenh1A) {
+    //        point = chartKenh1A.series[0].points[0];
+    //        newVal = data.Ptotal ? parseFloat(data.Ptotal) : 0;
+    //        if (newVal < 0 || newVal > 200) {
+    //            newVal = data.Ptotal ? parseFloat(data.Ptotal) : 0;
+    //        }
+    //        point.update(newVal);
+    //    }
+    //    if (chartKenh1B) {
+    //        point = chartKenh1B.series[0].points[0];
+    //        newVal = data.Kwh ? parseFloat(data.Kwh) : 0;
 
-            if (newVal < 0 || newVal > 200) {
-                newVal = data.Kwh ? parseFloat(data.Kwh) : 0;
-            }
-            point.update(newVal);
-        }
-        // Update button xanh/đỏ
-        if (data.status == 0) {
-            $('#kenh1_status').css('background', 'green');
-        }
-        else {
-            $('#kenh1_status').css('background', 'red');
-        }
-    }
+    //        if (newVal < 0 || newVal > 200) {
+    //            newVal = data.Kwh ? parseFloat(data.Kwh) : 0;
+    //        }
+    //        point.update(newVal);
+    //    }
+    //    // Update button xanh/đỏ
+    //    if (data.status == 0) {
+    //        $('#kenh1_status').css('background', 'green');
+    //    }
+    //    else {
+    //        $('#kenh1_status').css('background', 'red');
+    //    }
+    //}
     // Update Chart Kenh2
     function UpdateKenh2Chart(data) {
         if (chartKenh2A) {
@@ -782,54 +782,7 @@
             }
         }
     };
-    var chartKenh1A = Highcharts.chart('chartKenh1A', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 50,
-            title: {
-                text: 'kw'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [kenh1.Ptotal],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' km/h'
-            }
-        }]
-    }));
-    var chartKenh1B = Highcharts.chart('chartKenh1B', Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 100,
-            title: {
-                text: 'kwh in day'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Speed',
-            data: [kenh1.Kwh],
-            dataLabels: {
-                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                    '#fff' + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver"></span></div>'
-            },
-            tooltip: {
-                valueSuffix: ' km/h'
-            }
-        }]
-    }));
+
     var chartKenh2A = Highcharts.chart('chartKenh2A', Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
