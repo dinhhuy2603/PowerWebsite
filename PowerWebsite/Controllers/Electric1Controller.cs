@@ -13,52 +13,23 @@ namespace PowerWebsite.Controllers
         DateTime startYesterdayTime = DateTime.Today.AddDays(-1); //Today at 00:00:00
         DateTime endYesterdayTime = DateTime.Today.AddTicks(-1); //Today at 23:59:59
         // GET: Kenh
-        //public ActionResult Gas()
-        //{
-        //    if (Session["UserID"] != null)
-        //    {
-        //        using (DBModel db = new DBModel())
-        //        {
-        //            ViewBag.gas = new GasView();
-        //        }
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login", "Account");
-        //    }
-        //}
-        //public ActionResult Water()
-        //{
-        //    if (Session["UserID"] != null)
-        //    {
-        //        using (DBModel db = new DBModel())
-        //        {
-        //            ViewBag.water = new GasView();
-        //        }
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login", "Account");
-        //    }
-        //}
 
-        public ActionResult Kenh1Online()
-        {
-            if (Session["UserID"] != null)
-            {
-                using (DBModel db = new DBModel())
-                {
-                    ViewBag.kenh1 = new HienthiView();
-                }
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Account");
-            }
-        }
+
+        //public ActionResult Kenh1Online()
+        //{
+        //    if (Session["UserID"] != null)
+        //    {
+        //        using (DBModel db = new DBModel())
+        //        {
+        //            ViewBag.kenh1 = new HienthiView();
+        //        }
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Login", "Account");
+        //    }
+        //}
 
         public ActionResult Kenh2Online()
         {
@@ -136,45 +107,45 @@ namespace PowerWebsite.Controllers
             }
         }
 
-        [HttpGet]
-        public JsonResult GetChartKenh1DataOnline()
-        {
-            using (DBModel db = new DBModel())
-            {
-                var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
-                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
-                         .Take(1).ToList().FirstOrDefault();
-                var hienthi1_view = new HienthiView();
-                if (hienthi1 != null)
-                {
-                    var kenh1_Kwh_last = (recoder_kenh1_begin != null) ? recoder_kenh1_begin.Kwh : "0";
-                    hienthi1_view.Vca = ((float)Math.Round(float.Parse(hienthi1.Vca) * 10f) / 10f).ToString();
-                    hienthi1_view.Vbc = ((float)Math.Round(float.Parse(hienthi1.Vbc) * 10f) / 10f).ToString();
-                    hienthi1_view.Vab = ((float)Math.Round(float.Parse(hienthi1.Vab) * 10f) / 10f).ToString();
-                    hienthi1_view.Vun = ((float)Math.Round(float.Parse(hienthi1.Vun) * 10f) / 10f).ToString();
-                    hienthi1_view.VII = ((float)Math.Round(float.Parse(hienthi1.VII) * 10f) / 10f).ToString();
-                    hienthi1_view.Cac = ((float)Math.Round(float.Parse(hienthi1.Cac) * 10f) / 10f).ToString();
-                    hienthi1_view.Cab = ((float)Math.Round(float.Parse(hienthi1.Cab) * 10f) / 10f).ToString();
-                    hienthi1_view.Caa = ((float)Math.Round(float.Parse(hienthi1.Caa) * 10f) / 10f).ToString();
-                    hienthi1_view.Civg = ((float)Math.Round(float.Parse(hienthi1.Civg) * 10f) / 10f).ToString();
-                    hienthi1_view.Pc = ((float)Math.Round(float.Parse(hienthi1.Pc) * 10f) / 10f).ToString();
-                    hienthi1_view.Pb = ((float)Math.Round(float.Parse(hienthi1.Pb) * 10f) / 10f).ToString();
-                    hienthi1_view.Pa = ((float)Math.Round(float.Parse(hienthi1.Pa) * 10f) / 10f).ToString();
-                    hienthi1_view.Pkvar = ((float)Math.Round(float.Parse(hienthi1.Pkvar) * 10f) / 10f).ToString();
-                    hienthi1_view.Pkva = ((float)Math.Round(float.Parse(hienthi1.Pkva) * 10f) / 10f).ToString();
-                    hienthi1_view.Van = ((float)Math.Round(float.Parse(hienthi1.Van) * 10f) / 10f).ToString();
-                    hienthi1_view.Vbn = ((float)Math.Round(float.Parse(hienthi1.Vbn) * 10f) / 10f).ToString();
-                    hienthi1_view.Vcn = ((float)Math.Round(float.Parse(hienthi1.Vcn) * 10f) / 10f).ToString();
-                    hienthi1_view.F = ((float)Math.Round(float.Parse(hienthi1.F) * 10f) / 10f).ToString();
-                    hienthi1_view.PF = ((float)Math.Round(float.Parse(hienthi1.PF) * 10f) / 10f).ToString();
-                    hienthi1_view.Vin = ((float)Math.Round(float.Parse(hienthi1.Vin) * 10f) / 10f).ToString();
-                    hienthi1_view.Ptotal = ((float)Math.Round(float.Parse(hienthi1.Ptotal) * 10f) / 10f).ToString();
-                    hienthi1_view.Kwh = ((float)Math.Round(float.Parse(hienthi1.Kwh) * 10f) / 10f).ToString();
-                    hienthi1_view.KwhDay = ((float)Math.Round((float.Parse(hienthi1.Kwh) - float.Parse(kenh1_Kwh_last)) * 10f) / 10f).ToString();
-                }
-                return Json(hienthi1_view, JsonRequestBehavior.AllowGet);
-            }
-        }
+        //[HttpGet]
+        //public JsonResult GetChartKenh1DataOnline()
+        //{
+        //    using (DBModel db = new DBModel())
+        //    {
+        //        var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
+        //        var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+        //                 .Take(1).ToList().FirstOrDefault();
+        //        var hienthi1_view = new HienthiView();
+        //        if (hienthi1 != null)
+        //        {
+        //            var kenh1_Kwh_last = (recoder_kenh1_begin != null) ? recoder_kenh1_begin.Kwh : "0";
+        //            hienthi1_view.Vca = ((float)Math.Round(float.Parse(hienthi1.Vca) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vbc = ((float)Math.Round(float.Parse(hienthi1.Vbc) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vab = ((float)Math.Round(float.Parse(hienthi1.Vab) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vun = ((float)Math.Round(float.Parse(hienthi1.Vun) * 10f) / 10f).ToString();
+        //            hienthi1_view.VII = ((float)Math.Round(float.Parse(hienthi1.VII) * 10f) / 10f).ToString();
+        //            hienthi1_view.Cac = ((float)Math.Round(float.Parse(hienthi1.Cac) * 10f) / 10f).ToString();
+        //            hienthi1_view.Cab = ((float)Math.Round(float.Parse(hienthi1.Cab) * 10f) / 10f).ToString();
+        //            hienthi1_view.Caa = ((float)Math.Round(float.Parse(hienthi1.Caa) * 10f) / 10f).ToString();
+        //            hienthi1_view.Civg = ((float)Math.Round(float.Parse(hienthi1.Civg) * 10f) / 10f).ToString();
+        //            hienthi1_view.Pc = ((float)Math.Round(float.Parse(hienthi1.Pc) * 10f) / 10f).ToString();
+        //            hienthi1_view.Pb = ((float)Math.Round(float.Parse(hienthi1.Pb) * 10f) / 10f).ToString();
+        //            hienthi1_view.Pa = ((float)Math.Round(float.Parse(hienthi1.Pa) * 10f) / 10f).ToString();
+        //            hienthi1_view.Pkvar = ((float)Math.Round(float.Parse(hienthi1.Pkvar) * 10f) / 10f).ToString();
+        //            hienthi1_view.Pkva = ((float)Math.Round(float.Parse(hienthi1.Pkva) * 10f) / 10f).ToString();
+        //            hienthi1_view.Van = ((float)Math.Round(float.Parse(hienthi1.Van) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vbn = ((float)Math.Round(float.Parse(hienthi1.Vbn) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vcn = ((float)Math.Round(float.Parse(hienthi1.Vcn) * 10f) / 10f).ToString();
+        //            hienthi1_view.F = ((float)Math.Round(float.Parse(hienthi1.F) * 10f) / 10f).ToString();
+        //            hienthi1_view.PF = ((float)Math.Round(float.Parse(hienthi1.PF) * 10f) / 10f).ToString();
+        //            hienthi1_view.Vin = ((float)Math.Round(float.Parse(hienthi1.Vin) * 10f) / 10f).ToString();
+        //            hienthi1_view.Ptotal = ((float)Math.Round(float.Parse(hienthi1.Ptotal) * 10f) / 10f).ToString();
+        //            hienthi1_view.Kwh = ((float)Math.Round(float.Parse(hienthi1.Kwh) * 10f) / 10f).ToString();
+        //            hienthi1_view.KwhDay = ((float)Math.Round((float.Parse(hienthi1.Kwh) - float.Parse(kenh1_Kwh_last)) * 10f) / 10f).ToString();
+        //        }
+        //        return Json(hienthi1_view, JsonRequestBehavior.AllowGet);
+        //    }
+        //}
 
         [HttpGet]
         public JsonResult GetChartKenh2DataOnline()

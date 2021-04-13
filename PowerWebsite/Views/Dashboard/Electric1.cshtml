@@ -66,7 +66,7 @@
             <div class="row mt-5">
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20 show-kenh" data-value="2"><span class="chart_color" id="kenh2_status" style="background:red"></span>LP-SNACK-1</h5>
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="2"><span class="chart_color" id="kenh2_status" style="background:red"></span>LP-Rice Cracker 1</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartKenh2A" class="chart-container" data-colors="#f1556c"></div>
@@ -78,7 +78,7 @@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20 show-kenh" data-value="5"><span class="chart_color" id="kenh5_status" style="background:red"></span>DP-SNACK-1</h5>
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="5"><span class="chart_color" id="kenh5_status" style="background:red"></span>DP-Rice Cracker 1</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartKenh5A" class="chart-container" data-colors="#f1556c"></div>
@@ -90,7 +90,7 @@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20 show-kenh" data-value="3"><span class="chart_color" id="kenh3_status" style="background:red"></span>LP-SNACK-2</h5>
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="3"><span class="chart_color" id="kenh3_status" style="background:red"></span>LP-Rice Cracker 2</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartKenh3A" class="chart-container" data-colors="#f1556c"></div>
@@ -102,7 +102,7 @@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20 show-kenh" data-value="4"><span class="chart_color" id="kenh4_status" style="background:red"></span>DP-SNACK-2</h5>
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="4"><span class="chart_color" id="kenh4_status" style="background:red"></span>DP-Rice Cracker 2</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartKenh4A" class="chart-container" data-colors="#f1556c"></div>
@@ -126,7 +126,7 @@
 
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20 show-kenh" data-value="6"><span class="chart_color" id="kenh6_status" style="background:red"></span>DP-SNACK-3</h5>
+                        <h5 class="card-header text-center font-20 show-kenh" data-value="6"><span class="chart_color" id="kenh6_status" style="background:red"></span>DP-Rice Cracker 3</h5>
                         <div class="card-body">
                             <div id="cardCollpase24" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartKenh6A" class="chart-container" data-colors="#f1556c"></div>
@@ -136,14 +136,14 @@
                     </div> <!-- end card-->
                 </div> <!-- end col-->
 
-            </div>
+            </div>                       
         </div>
     </div>
 </div>
 
-<div class="loader-wrapper">
+@*<div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
-</div>
+</div>*@
 
 <!-- Modal popup click -->
 <!-- Center modal content -->
@@ -375,13 +375,13 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    $(window).on("load", function () {
-        $(".loader-wrapper").fadeOut("slow");        
-    });
+    //$(window).on("load", function () {
+    //    $(".loader-wrapper").fadeOut("slow");        
+    //});
 
     function getHienThiData(kenh) {
         var hienthi = {};
-        $.ajax({
+        $.ajax({ 
             url: '/Home/GetHienThiData/',
             type: 'get',
             data: { kenh: kenh },
@@ -397,22 +397,22 @@
         return hienthi;
     }
 
-    function GetChartKenh1Data() {
-        var chartKenh1 = {};
-        $.ajax({
-            url: '/Home/GetChartKenh1Data/',
-            type: 'get',
-            async: false,
-            success: function (data) {
-                chartKenh1 = data;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                $('#content').html(errorMsg);
-            }
-        });
-        return chartKenh1;
-    }
+    //function GetChartKenh1Data() {
+    //    var chartKenh1 = {};
+    //    $.ajax({
+    //        url: '/Home/GetChartKenh1Data/',
+    //        type: 'get',
+    //        async: false,
+    //        success: function (data) {
+    //            chartKenh1 = data;
+    //        },
+    //        error: function (xhr, ajaxOptions, thrownError) {
+    //            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+    //            $('#content').html(errorMsg);
+    //        }
+    //    });
+    //    return chartKenh1;
+    //}
 
     function GetChartKenh2Data() {
         var chartKenh2 = {};
@@ -499,7 +499,7 @@
         return chartKenh6;
     }
 
-    var kenh1 = GetChartKenh1Data();
+    //var kenh1 = GetChartKenh1Data();
     var kenh2 = GetChartKenh2Data();
     var kenh3 = GetChartKenh3Data();
     var kenh4 = GetChartKenh4Data();

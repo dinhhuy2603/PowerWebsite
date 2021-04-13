@@ -16,7 +16,7 @@ namespace PowerWebsite.Controllers
         static DateTime startBeginDate = new DateTime(2021, 4, 5);
         static DateTime endBeginDate = new DateTime(2021, 4, 6).AddTicks(-1);
 
-        float kenh1_2009 = (float)226.72;
+        //float kenh1_2009 = (float)226.72;
         float kenh2_2009 = (float)30813.393;
         float kenh3_2009 = (float)18308.866;
         float kenh4_2009 = (float)83015.867;
@@ -79,7 +79,8 @@ namespace PowerWebsite.Controllers
                     water = new Water();
                 }
 
-                var hienthi = db.hienthi.Select(i => new HienthiOverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh }).ToList();
+                var kenhRiceList = new string[] { "2", "3", "4", "5", "6" };
+                var hienthi = db.hienthi.Where(c => kenhRiceList.Contains(c.Kenh)).Select(i => new HienthiOverView { Kenh = i.Kenh, Ptotal = i.Ptotal, Kwh = i.Kwh }).ToList();
                 float count_Ptotal = 0;
                 float count_Kwh = 0;
                 if (hienthi != null)
@@ -88,9 +89,9 @@ namespace PowerWebsite.Controllers
                     {
                         switch (hienthi[i].Kenh)
                         {
-                            case "1":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
-                                break;
+                            //case "1":
+                            //    hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
+                            //    break;
                             case "2":
                                 hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
                                 break;
@@ -123,7 +124,7 @@ namespace PowerWebsite.Controllers
                 float count_pc15_Kwh = 0;
                 float count_solar_Ptotal = 0;
                 float count_solar_Kwh = 0;
-                if (hienthi != null)
+                if (hienthi1 != null)
                 {
                     for (var i = 0; i < hienthi1.Count; i++)
                     {

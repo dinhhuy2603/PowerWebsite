@@ -192,8 +192,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh1
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -400,8 +399,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh2
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -608,8 +606,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh3
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -815,8 +812,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh4
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -1022,8 +1018,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh5
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -1229,8 +1224,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder_kenh6
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh

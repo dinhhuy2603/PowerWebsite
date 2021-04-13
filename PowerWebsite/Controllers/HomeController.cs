@@ -138,7 +138,8 @@ namespace PowerWebsite.Controllers
                             case "2":
                                 kenh2.Kenh = hienthi[i].Kenh;
                                 kenh2.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                kenh2.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
+                                //kenh2.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
+                                kenh2.Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                                 kenh2.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh2_Kwh_last)) * 10f) / 10f).ToString();
                                 sum_ptotal += float.Parse(kenh2.Ptotal);
                                 sum_kwh_inday += float.Parse(kenh2.KWhDay);
@@ -147,7 +148,8 @@ namespace PowerWebsite.Controllers
                             case "3":
                                 kenh3.Kenh = hienthi[i].Kenh;
                                 kenh3.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                kenh3.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f).ToString();
+                                //kenh3.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f).ToString();
+                                kenh3.Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                                 kenh3.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh3_Kwh_last)) * 10f) / 10f).ToString();
                                 sum_ptotal += float.Parse(kenh3.Ptotal);
                                 sum_kwh_inday += float.Parse(kenh3.KWhDay);
@@ -156,7 +158,8 @@ namespace PowerWebsite.Controllers
                             case "4":
                                 kenh4.Kenh = hienthi[i].Kenh;
                                 kenh4.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                kenh4.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
+                                //kenh4.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
+                                kenh4.Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                                 kenh4.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh4_Kwh_last)) * 10f) / 10f).ToString();
                                 sum_ptotal += float.Parse(kenh4.Ptotal);
                                 sum_kwh_inday += float.Parse(kenh4.KWhDay);
@@ -165,7 +168,8 @@ namespace PowerWebsite.Controllers
                             case "5":
                                 kenh5.Kenh = hienthi[i].Kenh;
                                 kenh5.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                kenh5.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f).ToString();
+                                //kenh5.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f).ToString();
+                                kenh5.Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                                 kenh5.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh5_Kwh_last)) * 10f) / 10f).ToString();
                                 sum_ptotal += float.Parse(kenh5.Ptotal);
                                 sum_kwh_inday += float.Parse(kenh5.KWhDay);
@@ -174,7 +178,8 @@ namespace PowerWebsite.Controllers
                             case "6":
                                 kenh6.Kenh = hienthi[i].Kenh;
                                 kenh6.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                                kenh6.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f).ToString();
+                                //kenh6.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f).ToString();
+                                kenh6.Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                                 kenh6.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh6_Kwh_last)) * 10f) / 10f).ToString();
                                 sum_ptotal += float.Parse(kenh6.Ptotal);
                                 sum_kwh_inday += float.Parse(kenh6.KWhDay);
@@ -619,23 +624,23 @@ namespace PowerWebsite.Controllers
             }
         }
 
-        [HttpGet]
-        public JsonResult GetChartKenh1Data()
-        {
-            using (DBModel db = new DBModel())
-            {
-                var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
-                var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
-                         .Take(1).ToList().FirstOrDefault();
-                if (hienthi1 != null)
-                {
-                    var kenh1_Kwh_last = (recoder_kenh1_begin != null) ? recoder_kenh1_begin.Kwh : "0";
-                    hienthi1.Ptotal = ((float)Math.Round(float.Parse(hienthi1.Ptotal) * 10f) / 10f).ToString();
-                    hienthi1.Kwh = ((float)Math.Round((float.Parse(hienthi1.Kwh) - float.Parse(kenh1_Kwh_last)) * 10f) / 10f).ToString();
-                }
-                return Json(hienthi1 , JsonRequestBehavior.AllowGet);
-            }
-        }
+        //[HttpGet]
+        //public JsonResult GetChartKenh1Data()
+        //{
+        //    using (DBModel db = new DBModel())
+        //    {
+        //        var hienthi1 = db.hienthi.Where(a => a.Kenh.Equals("1")).FirstOrDefault();
+        //        var recoder_kenh1_begin = db.recoder_kenh1.Where(c => c.Thoigian >= startYesterdayTime && c.Thoigian <= endYesterdayTime).OrderByDescending(x => x.Thoigian)
+        //                 .Take(1).ToList().FirstOrDefault();
+        //        if (hienthi1 != null)
+        //        {
+        //            var kenh1_Kwh_last = (recoder_kenh1_begin != null) ? recoder_kenh1_begin.Kwh : "0";
+        //            hienthi1.Ptotal = ((float)Math.Round(float.Parse(hienthi1.Ptotal) * 10f) / 10f).ToString();
+        //            hienthi1.Kwh = ((float)Math.Round((float.Parse(hienthi1.Kwh) - float.Parse(kenh1_Kwh_last)) * 10f) / 10f).ToString();
+        //        }
+        //        return Json(hienthi1 , JsonRequestBehavior.AllowGet);
+        //    }
+        //}
 
         [HttpGet]
         public JsonResult GetChartKenh2Data()

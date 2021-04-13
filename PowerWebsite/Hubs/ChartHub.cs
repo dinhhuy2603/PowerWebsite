@@ -158,12 +158,12 @@ namespace PowerWebsite.Hubs
 
 
         // Chart Online Electric 1-2
-        public void InitChartKenh1Online()
-        {
-            var kenh1_data = new Electric1Controller().GetChartKenh1DataOnline().Data;
-            Clients.All.UpdateKenh1Online(kenh1_data);
-            _ChartOnline1Instance.GetKenh1OnlineData();
-        }
+        //public void InitChartKenh1Online()
+        //{
+        //    var kenh1_data = new Electric1Controller().GetChartKenh1DataOnline().Data;
+        //    Clients.All.UpdateKenh1Online(kenh1_data);
+        //    _ChartOnline1Instance.GetKenh1OnlineData();
+        //}
 
         public void InitChartKenh2Online()
         {

@@ -231,16 +231,14 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
+
     $(document).ready(function () {
-        //Perform Ajax request.
         Highcharts.setOptions({
             global: {
                 useUTC: false
             }
         });
-    });
 
-    $(function () {
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {

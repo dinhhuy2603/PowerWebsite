@@ -65,13 +65,13 @@ namespace PowerWebsite.Hubs
 
         private void SendChartElectric1Data()
         {
-            var kenh1Chart = new HomeController().GetChartKenh1Data().Data;
+            //var kenh1Chart = new HomeController().GetChartKenh1Data().Data;
             var kenh2Chart = new HomeController().GetChartKenh2Data().Data;
             var kenh3Chart = new HomeController().GetChartKenh3Data().Data;
             var kenh4Chart = new HomeController().GetChartKenh4Data().Data;
             var kenh5Chart = new HomeController().GetChartKenh5Data().Data;
             var kenh6Chart = new HomeController().GetChartKenh6Data().Data;
-            GetAllClients().All.UpdateChartElectric1(kenh1Chart, kenh2Chart, kenh3Chart, kenh4Chart, kenh5Chart, kenh6Chart);
+            GetAllClients().All.UpdateChartElectric1(kenh2Chart, kenh3Chart, kenh4Chart, kenh5Chart, kenh6Chart);
         }
 
         private void sendPopupHienThiData()

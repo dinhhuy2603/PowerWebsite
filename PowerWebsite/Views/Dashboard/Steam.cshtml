@@ -125,9 +125,9 @@
     </div>
 </div>
 
-<div class="loader-wrapper">
+@*<div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
-</div>
+</div>*@
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -151,9 +151,9 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    $(window).on("load", function () {
-        $(".loader-wrapper").fadeOut("slow");
-    });
+    //$(window).on("load", function () {
+    //    $(".loader-wrapper").fadeOut("slow");
+    //});
 
     function getSteamPc10Data() {
         var steamPc10Data = {};
@@ -191,7 +191,7 @@
 
     var steamPc10 = getSteamPc10Data();
     var steamPc15 = getSteamPc15Data();
-    $(function () {
+    $(document).ready(function () {
         Highcharts.setOptions({
             global: {
                 useUTC: false

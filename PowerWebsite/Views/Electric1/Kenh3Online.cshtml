@@ -232,16 +232,14 @@
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
     var kenh3 = @Html.Raw(Json.Encode(ViewBag.kenh3));
-    $(document).ready(function () {
-        //Perform Ajax request.
+
+    $(document).ready(function () {  
         Highcharts.setOptions({
             global: {
                 useUTC: false
             }
         });
-    });
 
-    $(function () {
         var chartHub = $.connection.chartHub;
         //Call InitChartData
         $.connection.hub.start().done(function () {

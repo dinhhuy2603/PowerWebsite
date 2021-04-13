@@ -265,8 +265,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder1_db_solar1
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -485,8 +484,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder1_db_solar2
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh
@@ -705,8 +703,7 @@ namespace PowerWebsite.Controllers
                         result = db.recoder1_db_logistics
                         .Where(p => p.Thoigian.Month >= 1 && p.Thoigian.Month <= 12 && p.Thoigian.Year == year)
                         .GroupBy(p => p.Thoigian.Month)
-                        .Select(g => new Result()
-                        {
+                        .Select(g => new {
                             Thoigian = g.Key,
                             firstValue = g.OrderBy(p => p.Thoigian).FirstOrDefault().Kwh,
                             lastValue = g.OrderByDescending(p => p.Thoigian).FirstOrDefault().Kwh

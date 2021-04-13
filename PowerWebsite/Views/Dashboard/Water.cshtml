@@ -98,7 +98,7 @@
             <div class="row mt-5">
                 <div class="col-xl-6 col-md-6">
                     <div class="card bg-card">
-                        <h5 class="card-header text-center font-20"><span class="chart_color" id="water_status" style="background:red"></span>LƯU LƯỢNG WATER</h5>
+                        <h5 class="card-header text-center font-20"><span class="chart_color" id="water_status" style="background:red"></span>WATER-Rice Cracker 1</h5>
                         <div class="card-body">
                             <div id="cardCollpase23" class="pt-3 d-flex justify-content-around flex-sm-column0 highcharts-figure" dir="ltr">
                                 <div id="chartWater1" class="chart-container" data-colors="#f1556c"></div>
@@ -125,9 +125,9 @@
     </div>
 </div>
 
-<div class="loader-wrapper">
+@*<div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
-</div>
+</div>*@
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -151,9 +151,9 @@
 <!-- App js-->
 <script src="~/Content/js/app.min.js"></script>
 <script type="text/javascript">
-    $(window).on("load", function () {
-        $(".loader-wrapper").fadeOut("slow");
-    });
+    //$(window).on("load", function () {
+    //    $(".loader-wrapper").fadeOut("slow");
+    //});
 
     function getWaterData() {
         var waterData = {};
@@ -192,7 +192,7 @@
     var water = getWaterData();
     var waterPc15 = GetWaterPc15Data();
 
-    $(function () {
+    $(document).ready(function () {
         Highcharts.setOptions({
             global: {
                 useUTC: false

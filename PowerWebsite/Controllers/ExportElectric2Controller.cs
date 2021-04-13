@@ -227,7 +227,7 @@ namespace PowerWebsite.Controllers
                 Sheet.Cells["A:AZ"].AutoFitColumns();
                 Response.Clear();
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                Response.AppendHeader("content-disposition", "attachment: filename=\"ReportDB_PC15.xlsx\"");
+                Response.AppendHeader("content-disposition", "attachment: filename=\"ReportDB_PC10.xlsx\"");
                 Response.BinaryWrite(Ep.GetAsByteArray());
                 Response.End();
             }
