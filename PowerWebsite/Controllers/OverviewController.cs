@@ -17,11 +17,11 @@ namespace PowerWebsite.Controllers
         static DateTime endBeginDate = new DateTime(2021, 4, 6).AddTicks(-1);
 
         //float kenh1_2009 = (float)226.72;
-        float kenh2_2009 = (float)30813.393;
-        float kenh3_2009 = (float)18308.866;
-        float kenh4_2009 = (float)83015.867;
-        float kenh5_2009 = (float)28150.823;
-        float kenh6_2009 = (float)291055.695;
+        //float kenh2_2009 = (float)30813.393;
+        //float kenh3_2009 = (float)18308.866;
+        //float kenh4_2009 = (float)83015.867;
+        //float kenh5_2009 = (float)28150.823;
+        //float kenh6_2009 = (float)291055.695;
 
         Recoder1_DB_Solar1 solar1_recoder_begin = new DBModel().recoder1_db_solar1.Where(c => c.Thoigian >= startBeginDate && c.Thoigian <= endBeginDate).OrderByDescending(x => x.Thoigian)
                          .Take(1).ToList().FirstOrDefault();
@@ -87,30 +87,32 @@ namespace PowerWebsite.Controllers
                 {
                     for (var i = 0; i < hienthi.Count; i++)
                     {
-                        switch (hienthi[i].Kenh)
-                        {
-                            //case "1":
-                            //    hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
-                            //    break;
-                            case "2":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
-                                break;
-                            case "3":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f).ToString();
-                                break;
-                            case "4":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
-                                break;
-                            case "5":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f).ToString();
-                                break;
-                            case "6":
-                                hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f).ToString();
-                                break;
-                            default:
-                                break;
+                        //switch (hienthi[i].Kenh)
+                        //{
+                        //    //case "1":
+                        //    //    hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
+                        //    //    break;
+                        //    case "2":
+                        //        //hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh2_2009) * 10f) / 10f).ToString();
+                        //        hienthi[i].Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
+                        //        break;
+                        //    case "3":
+                        //        hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh3_2009) * 10f) / 10f).ToString();
+                        //        break;
+                        //    case "4":
+                        //        hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh4_2009) * 10f) / 10f).ToString();
+                        //        break;
+                        //    case "5":
+                        //        hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh5_2009) * 10f) / 10f).ToString();
+                        //        break;
+                        //    case "6":
+                        //        hienthi[i].Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh6_2009) * 10f) / 10f).ToString();
+                        //        break;
+                        //    default:
+                        //        break;
 
-                        }
+                        //}
+                        hienthi[i].Kwh = ((float)Math.Round(float.Parse(hienthi[i].Kwh) * 10f) / 10f).ToString();
                         hienthi[i].Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
                         count_Ptotal += float.Parse(hienthi[i].Ptotal);
                         count_Kwh += float.Parse(hienthi[i].Kwh);
