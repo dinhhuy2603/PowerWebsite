@@ -126,15 +126,6 @@ namespace PowerWebsite.Controllers
                     {
                         switch (hienthi[i].Kenh)
                         {
-                            //case "1":
-                            //    kenh1.Kenh = hienthi[i].Kenh;
-                            //    kenh1.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
-                            //    kenh1.Kwh = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - kenh1_2009) * 10f) / 10f).ToString();
-                            //    kenh1.KWhDay = ((float)Math.Round((float.Parse(hienthi[i].Kwh) - float.Parse(kenh1_Kwh_last)) * 10f) / 10f).ToString();
-                            //    sum_ptotal += float.Parse(kenh1.Ptotal);
-                            //    sum_kwh_inday += float.Parse(kenh1.KWhDay);
-                            //    sum_kwh += float.Parse(kenh1.Kwh);
-                            //    break;
                             case "2":
                                 kenh2.Kenh = hienthi[i].Kenh;
                                 kenh2.Ptotal = ((float)Math.Round(float.Parse(hienthi[i].Ptotal) * 10f) / 10f).ToString();
@@ -198,15 +189,7 @@ namespace PowerWebsite.Controllers
                 var hienthi1_overview = GetHienThi1Data();
                 var cng_pc15 = GetCngPc15Data();
                 var water_pc15 = GetWaterPC15Data();
-                //Sum snack energy
-                var sum_snack = new HienthiOverView();
-
-                float kwhday1 = ((float)Math.Round(float.Parse(hienthi_overview.KWhDay) * 10f) / 10f);
-                float kwhday2 = ((float)Math.Round(float.Parse(hienthi1_overview.KWhDay) * 10f) / 10f);
-                sum_snack.Ptotal = (((float)Math.Round(float.Parse(hienthi_overview.Ptotal) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Ptotal) * 10f) / 10f)).ToString();
-                sum_snack.KWhDay = Math.Round(kwhday1 + kwhday2, 1).ToString();
-                sum_snack.Kwh = (((float)Math.Round(float.Parse(hienthi_overview.Kwh) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Kwh) * 10f) / 10f)).ToString();
-
+                
                 // Sum Gas
                 var sum_gas = new GasView();
                 sum_gas.luu_luong_hien_tai = (((float)Math.Round(float.Parse(gas_view.luu_luong_hien_tai) * 10f) / 10f) + ((float)Math.Round(float.Parse(cng_pc15.luu_luong_hien_tai) * 10f) / 10f)).ToString();
@@ -219,6 +202,15 @@ namespace PowerWebsite.Controllers
                 sum_water.luu_luong_tong_ngay = (((float)Math.Round(float.Parse(water_view.luu_luong_tong_ngay) * 10f) / 10f) + ((float)Math.Round(float.Parse(water_pc15.luu_luong_tong_ngay) * 10f) / 10f)).ToString();
                 // Sum Pc15 (Kenh 4+10))
                 var sum_pc15 = GetTotalPc15Data();
+                //Sum snack energy
+                var sum_snack = new HienthiOverView();
+                float kwhday1 = ((float)Math.Round(float.Parse(hienthi_overview.KWhDay) * 10f) / 10f);
+                float kwhday2 = ((float)Math.Round(float.Parse(hienthi1_overview.KWhDay) * 10f) / 10f);
+                float kwhdaypc15 = ((float)Math.Round(float.Parse(sum_pc15.KWhDay) * 10f) / 10f);
+                sum_snack.Ptotal = (((float)Math.Round(float.Parse(hienthi_overview.Ptotal) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Ptotal) * 10f) / 10f) + ((float)Math.Round(float.Parse(sum_pc15.Ptotal) * 10f) / 10f)).ToString();
+                sum_snack.KWhDay = Math.Round(kwhday1 + kwhday2 + kwhdaypc15, 1).ToString();
+                sum_snack.Kwh = (((float)Math.Round(float.Parse(hienthi_overview.Kwh) * 10f) / 10f) + ((float)Math.Round(float.Parse(hienthi1_overview.Kwh) * 10f) / 10f) + ((float)Math.Round(float.Parse(sum_pc15.Kwh) * 10f) / 10f)).ToString();
+
                 // Sum Solar
                 var sum_solar = GetTotalSolarData();
                 //Sum Steam
